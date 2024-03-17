@@ -1,0 +1,2 @@
+[贷款创造存款理论的源起、发展与应用](https://kns.cnki.net/kcms2/article/abstract?v=HR7ide6_o4TrM1IymsJCPbDZc7eDf8CPnoGO9F_kJq2gy4vYe6erSfA2moldo2IGFgW9kA15kvAFgEUmJle7lT5u8RADCEouFFAQjZAP5Kq2GoTmmxPigtPpNnVRuUaN__XFZsGC-u0=&uniplatform=NZKPT&flag=copy)
+10.16475/j.cnki.1006-1029.2019.11.001
