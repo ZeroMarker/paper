@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - 'v*-svd'
+    paths:
+      - 'goldbach/svd/**'
 
 permissions:
   contents: write
@@ -26,18 +28,18 @@ jobs:
       uses: xu-cheng/latex-action@v3
       with:
         root_file: svd_paper.tex
-        working_directory: svd
+        working_directory: goldbach/svd
         latexmk_use_xelatex: true
 
     - name: Upload PDF artifact
       uses: actions/upload-artifact@v4
       with:
         name: svd-paper-pdf
-        path: svd/svd_paper.pdf
+        path: goldbach/svd/svd_paper.pdf
 
     - name: Create Release and Upload PDF
       uses: softprops/action-gh-release@v2
       with:
-        files: svd/svd_paper.pdf
+        files: goldbach/svd/svd_paper.pdf
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

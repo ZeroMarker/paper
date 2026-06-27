@@ -5,9 +5,7 @@ on:
     tags:
       - 'v*-goldbach'
     paths:
-      - 'main.tex'
-      - 'sections/**'
-      - 'references/**'
+      - 'goldbach/**'
 
 permissions:
   contents: write
@@ -30,17 +28,18 @@ jobs:
       uses: xu-cheng/latex-action@v3
       with:
         root_file: main.tex
+        working_directory: goldbach
         latexmk_use_xelatex: true
 
     - name: Upload PDF artifact
       uses: actions/upload-artifact@v4
       with:
         name: goldbach-survey-pdf
-        path: main.pdf
+        path: goldbach/main.pdf
 
     - name: Create Release and Upload PDF
       uses: softprops/action-gh-release@v2
       with:
-        files: main.pdf
+        files: goldbach/main.pdf
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
