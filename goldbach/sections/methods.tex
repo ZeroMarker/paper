@@ -1,0 +1,88 @@
+\section{主要研究方法}\label{sec:methods}
+
+\subsection{圆法（Circle Method）}
+
+圆法由哈代和李特尔伍德于1920年代发展，是研究哥德巴赫猜想最重要的方法之一。
+
+\subsubsection{基本思想}
+
+设 $r(n)$ 表示偶数 $n$ 表示为两个素数之和的方法数，则
+\begin{equation}\label{eq:circle_method}
+    r(n) = \int_0^1 S(\alpha)^2 e(-n\alpha) \, d\alpha
+\end{equation}
+其中
+\begin{equation}
+    S(\alpha) = \sum_{p \leq n} (\log p) e(p\alpha)
+\end{equation}
+是素数的指数和，$e(x) = e^{2\pi i x}$。
+
+\subsubsection{优弧与劣弧}
+
+将积分区间 $[0,1]$ 分为两部分：
+\begin{itemize}
+    \item \textbf{优弧}（Major arcs）：$\alpha$ 接近有理数 $a/q$（$q$ 较小）的区域
+    \item \textbf{劣弧}（Minor arcs）：其余区域
+\end{itemize}
+
+优弧上的积分贡献主要项，劣弧上的积分需要证明是低阶项。
+
+\subsection{筛法（Sieve Methods）}
+
+筛法是研究哥德巴赫猜想的另一重要工具。
+
+\subsubsection{埃拉托斯特尼筛法}
+
+经典的埃拉托斯特尼筛法通过逐步剔除合数来筛选素数。设 $\pi(x)$ 表示不超过 $x$ 的素数个数，则
+\begin{equation}
+    \pi(x) = \sum_{n \leq x} \Lambda(n) + O(\sqrt{x})
+\end{equation}
+
+\subsubsection{布伦筛法}
+
+布伦筛法（1920）是第一个系统化的组合筛法。其核心不等式为：
+\begin{theorem}[布伦筛法]
+    设 $\mathcal{A}$ 为有限整数集合，$\mathcal{P}$ 为素数集合，则存在筛法函数 $S(\mathcal{A}, \mathcal{P}, z)$ 满足：
+    \begin{equation}
+        S(\mathcal{A}, \mathcal{P}, z) = \sum_{\substack{a \in \mathcal{A} \\ (a, P(z))=1}} 1
+    \end{equation}
+    其中 $P(z) = \prod_{\substack{p < z \\ p \in \mathcal{P}}} p$。
+\end{theorem}
+
+\subsubsection{塞尔伯格筛法}
+
+塞尔伯格筛法（1949）通过选择最优筛法权重改进了布伦筛法。其上界为：
+\begin{equation}
+    S(\mathcal{A}, \mathcal{P}, z) \leq \frac{X}{V(z)} + O\left(\sum_{\substack{d_1, d_2 < z \\ d_1, d_2 | P(z)}} \lambda_{d_1} \lambda_{d_2} r_{[d_1, d_2]}\right)
+\end{equation}
+
+\subsection{指数和估计}
+
+指数和估计在哥德巴赫猜想研究中起着关键作用。
+
+\subsubsection{维诺格拉多夫中值定理}
+
+\begin{theorem}[维诺格拉多夫中值定理]
+    设 $k$ 和 $s$ 为正整数，则
+    \begin{equation}
+        \int_0^1 \left| \sum_{n=1}^N e(\alpha n^k) \right|^{2s} \, d\alpha \ll N^{2s-k+\epsilon}
+    \end{equation}
+    对任意 $\epsilon > 0$ 成立。
+\end{theorem}
+
+\subsubsection{外尔不等式}
+
+外尔不等式提供了指数和的上界估计：
+\begin{equation}
+    \left| \sum_{n=1}^N e(\alpha n) \right| \ll N^{1/2} \left( \log N \right)^{1/2}
+\end{equation}
+
+\subsection{大筛法}
+
+大筛法是解析数论中的重要工具，由林尼克和邦别里发展。
+
+\begin{theorem}[大筛法不等式]
+    设 $a_1, \ldots, a_N$ 为复数，则
+    \begin{equation}
+        \sum_{q \leq Q} \sum_{\substack{a=1 \\ (a,q)=1}}^q \left| \sum_{n=1}^N a_n e\left(\frac{an}{q}\right) \right|^2 \leq (N + Q^2) \sum_{n=1}^N |a_n|^2
+    \end{equation}
+\end{theorem}

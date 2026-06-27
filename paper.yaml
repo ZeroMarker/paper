@@ -1,0 +1,435 @@
+# ============================================================
+# 我的文库 — 按主题分类
+# ============================================================
+
+# ------------------------------------------------------------
+# 1. 数学与理论计算机科学
+# ------------------------------------------------------------
+math_and_theory:
+  - key: K97B8U9T
+    item_type: journalArticle
+    publication_year: 2014
+    author: "Zhang, Yitang"
+    title: "Bounded gaps between primes"
+    publication_title: Annals of Mathematics
+    issn: "0003-486X"
+    doi: "10.4007/annals.2014.179.3.7"
+    url: "https://annals.math.princeton.edu/2014/179-3/p07"
+    date: "2014-05-01"
+    pages: "1121-1174"
+    issue: "3"
+    volume: "179"
+    journal_abbreviation: "Ann. Math."
+    language: en
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\USPHBBLQ\\Zhang - 2014 - Bounded gaps between primes.pdf"
+
+  - key: 56R2A524
+    item_type: preprint
+    publication_year: 2025
+    author: "Cairo, Hannah"
+    title: "A Counterexample to the Mizohata-Takeuchi Conjecture"
+    doi: "10.48550/arXiv.2502.06137"
+    url: "http://arxiv.org/abs/2502.06137"
+    abstract_note: >-
+      We derive a family of $L^p$ estimates of the X-Ray transform of positive measures in $\mathbb R^d$, which
+      we use to construct a $\log R$-loss counterexample to the Mizohata-Takeuchi conjecture for every $C^2$ hypersurface in
+      $\mathbb R^d$ that does not lie in a hyperplane. In particular, multilinear restriction estimates at the endpoint cannot
+      be sharpened directly by the Mizohata-Takeuchi conjecture.
+    date: "2025-03-12"
+    publisher: arXiv
+    automatic_tags: "Mathematics - Classical Analysis and ODEs"
+    file_attachments: >-
+      C:\Users\ttft3\Zotero\storage\Z8LCG4Y9\Cairo - 2025 - A Counterexample to the Mizohata-Takeuchi Conjecture.pdf;
+      C:\Users\ttft3\Zotero\storage\IX4XCF6X\2502.html
+
+# ------------------------------------------------------------
+# 2. 密码学与安全
+# ------------------------------------------------------------
+crypto_and_security:
+  - key: UBWD9JPU
+    item_type: conferencePaper
+    publication_year: 2005
+    author: "Wang, Xiaoyun; Yu, Hongbo"
+    title: "How to Break MD5 and Other Hash Functions"
+    publication_title: "Advances in Cryptology – EUROCRYPT 2005"
+    isbn: "978-3-540-32055-5"
+    doi: "10.1007/11426639_2"
+    abstract_note: >-
+      MD5 is one of the most widely used cryptographic hash functions nowadays. It was designed in 1992 as an improvement
+      of MD4, and its security was widely studied since then by several authors. The best known result so far was a semi free-start
+      collision, in which the initial value of the hash function is replaced by a non-standard value, which is the result of
+      the attack. In this paper we present a new powerful attack on MD5 which allows us to find collisions efficiently. We used
+      this attack to find collisions of MD5 in about 15 minutes up to an hour computation time. The attack is a differential
+      attack, which unlike most differential attacks, does not use the exclusive-or as a measure of difference, but instead
+      uses modular integer subtraction as the measure. We call this kind of differential a modular differential. An application
+      of this attack to MD4 can find a collision in less than a fraction of a second. This attack is also applicable to other
+      hash functions, such as RIPEMD and HAVAL.
+    date: "2005"
+    pages: "19-35"
+    publisher: Springer
+    place: "Berlin, Heidelberg"
+    language: en
+    automatic_tags: "Block Cipher; Differential Attack; Fast Software Encryption; Hash Function; Message Block"
+    editor: "Cramer, Ronald"
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\HMEDC5IU\\Wang和Yu - 2005 - How to Break MD5 and Other Hash Functions.pdf"
+
+  - key: 7KC9SPEZ
+    item_type: journalArticle
+    author: "Nakamoto, Satoshi"
+    title: "Bitcoin: A Peer-to-Peer Electronic Cash System"
+    abstract_note: >-
+      A purely peer-to-peer version of electronic cash would allow online payments to be sent directly from one
+      party to another without going through a financial institution. Digital signatures provide part of the solution, but the
+      main benefits are lost if a trusted third party is still required to prevent double-spending. We propose a solution to
+      the double-spending problem using a peer-to-peer network. The network timestamps transactions by hashing them into an
+      ongoing chain of hash-based proof-of-work, forming a record that cannot be changed without redoing the proof-of-work.
+      The longest chain not only serves as proof of the sequence of events witnessed, but proof that it came from the largest
+      pool of CPU power. As long as a majority of CPU power is controlled by nodes that are not cooperating to attack the network,
+      they'll generate the longest chain and outpace attackers. The network itself requires minimal structure. Messages are
+      broadcast on a best effort basis, and nodes can leave and rejoin the network at will, accepting the longest proof-of-work
+      chain as proof of what happened while they were gone.
+    language: en
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\9KAF4SR4\\Nakamoto - Bitcoin A Peer-to-Peer Electronic Cash System.pdf"
+
+# ------------------------------------------------------------
+# 3. 分布式系统与数据库
+# ------------------------------------------------------------
+distributed_systems:
+  - key: GKW4FUEH
+    item_type: conferencePaper
+    publication_year: 2003
+    author: "Ghemawat, Sanjay; Gobioff, Howard; Leung, Shun-Tak"
+    title: "The Google file system"
+    publication_title: "Proceedings of the nineteenth ACM symposium on Operating systems principles"
+    isbn: "978-1-58113-757-6"
+    doi: "10.1145/945445.945450"
+    url: "https://dl.acm.org/doi/10.1145/945445.945450"
+    date: "2003-10-19"
+    pages: "29-43"
+    publisher: ACM
+    place: "Bolton Landing NY USA"
+    language: en
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\UUGDSN2U\\Ghemawat 等 - 2003 - The Google file system.pdf"
+
+  - key: ZCF5V2A4
+    item_type: journalArticle
+    publication_year: 2008
+    author: "Chang, Fay; Dean, Jeffrey; Ghemawat, Sanjay; Hsieh, Wilson C.; Wallach, Deborah A.; Burrows, Mike; Chandra, Tushar; Fikes, Andrew; Gruber, Robert E."
+    title: "Bigtable: A Distributed Storage System for Structured Data"
+    publication_title: "ACM Transactions on Computer Systems"
+    issn: "0734-2071, 1557-7333"
+    doi: "10.1145/1365815.1365816"
+    url: "https://dl.acm.org/doi/10.1145/1365815.1365816"
+    abstract_note: >-
+      Bigtable is a distributed storage system for managing structured data that is designed to scale to a very
+      large size: petabytes of data across thousands of commodity servers. Many projects at Google store data in Bigtable, including
+      web indexing, Google Earth, and Google Finance. These applications place very different demands on Bigtable, both in terms
+      of data size (from URLs to web pages to satellite imagery) and latency requirements (from backend bulk processing to real-time
+      data serving). Despite these varied demands, Bigtable has successfully provided a flexible, high-performance solution for
+      all of these Google products. In this paper we describe the simple data model provided by Bigtable, which gives clients
+      dynamic control over data layout and format, and we describe the design and implementation of Bigtable.
+    date: "2008-06"
+    pages: "1-26"
+    issue: "2"
+    volume: "26"
+    journal_abbreviation: "ACM Trans. Comput. Syst."
+    short_title: Bigtable
+    language: en
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\MPG4PNDA\\Chang 等 - 2008 - Bigtable A Distributed Storage System for Structured Data.pdf"
+
+  - key: P9L6UZ7L
+    item_type: journalArticle
+    publication_year: 2008
+    author: "Dean, Jeffrey; Ghemawat, Sanjay"
+    title: "MapReduce: simplified data processing on large clusters"
+    publication_title: "Communications of the ACM"
+    issn: "0001-0782, 1557-7317"
+    doi: "10.1145/1327452.1327492"
+    url: "https://dl.acm.org/doi/10.1145/1327452.1327492"
+    abstract_note: >-
+      MapReduce is a programming model and an associated implementation for processing and generating large data
+      sets. Users specify a map function that processes a key/value pair to generate a set of intermediate key/value pairs,
+      and a reduce function that merges all intermediate values associated with the same intermediate key. Many real world tasks
+      are expressible in this model, as shown in the paper.
+    date: "2008-01"
+    pages: "107-113"
+    issue: "1"
+    volume: "51"
+    journal_abbreviation: "Commun. ACM"
+    short_title: MapReduce
+    language: en
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\SV7HTT3A\\Dean和Ghemawat - 2008 - MapReduce simplified data processing on large clusters.pdf"
+
+# ------------------------------------------------------------
+# 4. 深度学习与计算机视觉
+# ------------------------------------------------------------
+deep_learning:
+  - key: 2GXSXUJB
+    item_type: preprint
+    publication_year: 2015
+    author: "He, Kaiming; Zhang, Xiangyu; Ren, Shaoqing; Sun, Jian"
+    title: "Deep Residual Learning for Image Recognition"
+    doi: "10.48550/arXiv.1512.03385"
+    url: "http://arxiv.org/abs/1512.03385"
+    abstract_note: >-
+      Deeper neural networks are more difficult to train. We present a residual learning framework to ease the
+      training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as
+      learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide
+      comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from
+      considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers---8x
+      deeper than VGG nets but still having lower complexity. An ensemble of these residual nets achieves 3.57% error on the
+      ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10
+      with 100 and 1000 layers. The depth of representations is of central importance for many visual recognition tasks. Solely
+      due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset.
+      Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions, where we also won the 1st places
+      on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.
+    date: "2015-12-10"
+    publisher: arXiv
+    automatic_tags: "Computer Science - Computer Vision and Pattern Recognition"
+    file_attachments: >-
+      C:\Users\ttft3\Zotero\storage\UD9K62Q6\He 等 - 2015 - Deep Residual Learning for Image Recognition.pdf;
+      C:\Users\ttft3\Zotero\storage\8J92S53K\1512.html
+
+  - key: CCZTPISQ
+    item_type: preprint
+    publication_year: 2016
+    author: "Redmon, Joseph; Divvala, Santosh; Girshick, Ross; Farhadi, Ali"
+    title: "You Only Look Once: Unified, Real-Time Object Detection"
+    doi: "10.48550/arXiv.1506.02640"
+    url: "http://arxiv.org/abs/1506.02640"
+    abstract_note: >-
+      We present YOLO, a new approach to object detection. Prior work on object detection repurposes classifiers
+      to perform detection. Instead, we frame object detection as a regression problem to spatially separated bounding boxes
+      and associated class probabilities. A single neural network predicts bounding boxes and class probabilities directly from
+      full images in one evaluation. Since the whole detection pipeline is a single network, it can be optimized end-to-end
+      directly on detection performance. Our unified architecture is extremely fast. Our base YOLO model processes images in
+      real-time at 45 frames per second. A smaller version of the network, Fast YOLO, processes an astounding 155 frames per
+      second while still achieving double the mAP of other real-time detectors. Compared to state-of-the-art detection systems,
+      YOLO makes more localization errors but is far less likely to predict false detections where nothing exists. Finally,
+      YOLO learns very general representations of objects. It outperforms all other detection methods, including DPM and R-CNN,
+      by a wide margin when generalizing from natural images to artwork on both the Picasso Dataset and the People-Art Dataset.
+    date: "2016-05-09"
+    short_title: "You Only Look Once"
+    publisher: arXiv
+    automatic_tags: "Computer Science - Computer Vision and Pattern Recognition"
+    file_attachments: >-
+      C:\Users\ttft3\Zotero\storage\GQX92RBD\Redmon 等 - 2016 - You Only Look Once Unified, Real-Time Object Detection.pdf;
+      C:\Users\ttft3\Zotero\storage\MKSPJ6Q6\1506.html
+
+# ------------------------------------------------------------
+# 5. 大语言模型与自然语言处理
+# ------------------------------------------------------------
+llm_and_nlp:
+  - key: SRIBRCWK
+    item_type: preprint
+    publication_year: 2023
+    author: "Vaswani, Ashish; Shazeer, Noam; Parmar, Niki; Uszkoreit, Jakob; Jones, Llion; Gomez, Aidan N.; Kaiser, Lukasz; Polosukhin, Illia"
+    title: "Attention Is All You Need"
+    doi: "10.48550/arXiv.1706.03762"
+    url: "http://arxiv.org/abs/1706.03762"
+    abstract_note: >-
+      The dominant sequence transduction models are based on complex recurrent or convolutional neural networks
+      in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention
+      mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing
+      with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior
+      in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU
+      on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over
+      2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art
+      BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models
+      from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English
+      constituency parsing both with large and limited training data.
+    date: "2023-08-02"
+    publisher: arXiv
+    automatic_tags: "Computer Science - Computation and Language; Computer Science - Machine Learning"
+    file_attachments: >-
+      C:\Users\ttft3\Zotero\storage\N3LVTQGL\Vaswani 等 - 2023 - Attention Is All You Need.pdf;
+      C:\Users\ttft3\Zotero\storage\WUN2BJ86\1706.html
+
+  - key: 3HYH4DNQ
+    item_type: preprint
+    publication_year: 2025
+    author: "DeepSeek-AI; Guo, Daya; Yang, Dejian; Zhang, Haowei; Song, Junxiao; Zhang, Ruoyu; Xu, Runxin; Zhu, Qihao; Ma, Shirong; Wang, Peiyi; Bi, Xiao; Zhang, Xiaokang; Yu, Xingkai; Wu, Yu; Wu, Z. F.; Gou, Zhibin; Shao, Zhihong; Li, Zhuoshu; Gao, Ziyi; Liu, Aixin; Xue, Bing; Wang, Bingxuan; Wu, Bochao; Feng, Bei; Lu, Chengda; Zhao, Chenggang; Deng, Chengqi; Zhang, Chenyu; Ruan, Chong; Dai, Damai; Chen, Deli; Ji, Dongjie; Li, Erhang; Lin, Fangyun; Dai, Fucong; Luo, Fuli; Hao, Guangbo; Chen, Guanting; Li, Guowei; Zhang, H.; Bao, Han; Xu, Hanwei; Wang, Haocheng; Ding, Honghui; Xin, Huajian; Gao, Huazuo; Qu, Hui; Li, Hui; Guo, Jianzhong; Li, Jiashi; Wang, Jiawei; Chen, Jingchang; Yuan, Jingyang; Qiu, Junjie; Li, Junlong; Cai, J. L.; Ni, Jiaqi; Liang, Jian; Chen, Jin; Dong, Kai; Hu, Kai; Gao, Kaige; Guan, Kang; Huang, Kexin; Yu, Kuai; Wang, Lean; Zhang, Lecong; Zhao, Liang; Wang, Litong; Zhang, Liyue; Xu, Lei; Xia, Leyi; Zhang, Mingchuan; Zhang, Minghua; Tang, Minghui; Li, Meng; Wang, Miaojun; Li, Mingming; Tian, Ning; Huang, Panpan; Zhang, Peng; Wang, Qiancheng; Chen, Qinyu; Du, Qiushi; Ge, Ruiqi; Zhang, Ruisong; Pan, Ruizhe; Wang, Runji; Chen, R. J.; Jin, R. L.; Chen, Ruyi; Lu, Shanghao; Zhou, Shangyan; Chen, Shanhuang; Ye, Shengfeng; Wang, Shiyu; Yu, Shuiping; Zhou, Shunfeng; Pan, Shuting; Li, S. S.; Zhou, Shuang; Wu, Shaoqing; Ye, Shengfeng; Yun, Tao; Pei, Tian; Sun, Tianyu; Wang, T.; Zeng, Wangding; Zhao, Wanjia; Liu, Wen; Liang, Wenfeng; Gao, Wenjun; Yu, Wenqin; Zhang, Wentao; Xiao, W. L.; An, Wei; Liu, Xiaodong; Wang, Xiaohan; Chen, Xiaokang; Nie, Xiaotao; Cheng, Xin; Liu, Xin; Xie, Xin; Liu, Xingchao; Yang, Xinyu; Li, Xinyuan; Su, Xuecheng; Lin, Xuheng; Li, X. Q.; Jin, Xiangyue; Shen, Xiaojin; Chen, Xiaosha; Sun, Xiaowen; Wang, Xiaoxiang; Song, Xinnan; Zhou, Xinyi; Wang, Xianzu; Shan, Xinxia; Li, Y. K.; Wang, Y. Q.; Wei, Y. X.; Zhang, Yang; Xu, Yanhong; Li, Yao; Zhao, Yao; Sun, Yaofeng; Wang, Yaohui; Yu, Yi; Zhang, Yichao; Shi, Yifan; Xiong, Yiliang; He, Ying; Piao, Yishi; Wang, Yisong; Tan, Yixuan; Ma, Yiyang; Liu, Yiyuan; Guo, Yongqiang; Ou, Yuan; Wang, Yuduan; Gong, Yue; Zou, Yuheng; He, Yujia; Xiong, Yunfan; Luo, Yuxiang; You, Yuxiang; Liu, Yuxuan; Zhou, Yuyang; Zhu, Y. X.; Xu, Yanhong; Huang, Yanping; Li, Yaohui; Zheng, Yi; Zhu, Yuchen; Ma, Yunxian; Tang, Ying; Zha, Yukun; Yan, Yuting; Ren, Z. Z.; Ren, Zehui; Sha, Zhangli; Fu, Zhe; Xu, Zhean; Xie, Zhenda; Zhang, Zhengyan; Hao, Zhewen; Ma, Zhicheng; Yan, Zhigang; Wu, Zhiyu; Gu, Zihui; Zhu, Zijia; Liu, Zijun; Li, Zilin; Xie, Ziwei; Song, Ziyang; Pan, Zizheng; Huang, Zhen; Xu, Zhipeng; Zhang, Zhongyu; Zhang, Zhen"
+    title: "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
+    doi: "10.48550/arXiv.2501.12948"
+    url: "http://arxiv.org/abs/2501.12948"
+    abstract_note: >-
+      We introduce our first-generation reasoning models, DeepSeek-R1-Zero and DeepSeek-R1. DeepSeek-R1-Zero, a
+      model trained via large-scale reinforcement learning (RL) without supervised fine-tuning (SFT) as a preliminary step,
+      demonstrates remarkable reasoning capabilities. Through RL, DeepSeek-R1-Zero naturally emerges with numerous powerful
+      and intriguing reasoning behaviors. However, it encounters challenges such as poor readability, and language mixing. To
+      address these issues and further enhance reasoning performance, we introduce DeepSeek-R1, which incorporates multi-stage
+      training and cold-start data before RL. DeepSeek-R1 achieves performance comparable to OpenAI-o1-1217 on reasoning tasks.
+      To support the research community, we open-source DeepSeek-R1-Zero, DeepSeek-R1, and six dense models (1.5B, 7B, 8B, 14B,
+      32B, 70B) distilled from DeepSeek-R1 based on Qwen and Llama.
+    date: "2025-01-22"
+    short_title: DeepSeek-R1
+    publisher: arXiv
+    automatic_tags: "Computer Science - Computation and Language; Computer Science - Machine Learning; Computer Science - Artificial Intelligence"
+    file_attachments: >-
+      C:\Users\ttft3\Zotero\storage\N8A64YMW\DeepSeek-AI 等 - 2025 - DeepSeek-R1 Incentivizing Reasoning Capability in LLMs via Reinforcement Learning.pdf;
+      C:\Users\ttft3\Zotero\storage\RA5XCX6I\2501.html
+
+# ------------------------------------------------------------
+# 6. 中东局势与国际政治
+# ------------------------------------------------------------
+middle_east_and_politics:
+  - key: V4BHLIQZ
+    item_type: webpage
+    publication_year: 2025
+    author: "Ravid, Barak"
+    title: "U.S. enters Israel's war against Iran"
+    publication_title: Axios
+    url: "https://www.axios.com/2025/06/21/us-strike-iran-nuclear-israel-trump"
+    abstract_note: "Trump's direct intervention marks a historic escalation in the Middle East."
+    date: "2025-06-22"
+    language: en
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\3X3ZSXV3\\us-strike-iran-nuclear-israel-trump.html"
+
+  - key: 2ZGEDMYB
+    item_type: webpage
+    title: "Israel strikes Iran despite Trump's nuclear deal hopes"
+    url: "https://www.axios.com/2025/06/13/israel-strike-iran-trump-nuclear-talks"
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\EPMMBT48\\israel-strike-iran-trump-nuclear-talks.html"
+
+  - key: FGGDZAHW
+    item_type: newspaperArticle
+    publication_year: 2025
+    author: "Luscombe, Richard"
+    title: "After crafting quiet Florida life, Shah of Iran's alleged 'chief torturer' must now face trial"
+    publication_title: The Guardian
+    issn: "0261-3077"
+    url: "https://www.theguardian.com/world/2025/sep/11/parviz-sabeti-shah-iran-lawsuit"
+    abstract_note: "Parviz Sabeti crafted an anonymous new life for his family – but now he faces a $225m lawsuit for atrocities committed in prisons in Tehran and elsewhere"
+    date: "2025-09-11"
+    language: en-GB
+    automatic_tags: "Florida; Iran; Middle East and north Africa; Torture; US news; World news"
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\VR74TIGW\\parviz-sabeti-shah-iran-lawsuit.html"
+
+  - key: W2BELCQL
+    item_type: newspaperArticle
+    publication_year: 2024
+    author: "Bland, Archie"
+    title: "Tuesday briefing: What happened when the doors of Syria's most notorious prison were finally opened"
+    publication_title: The Guardian
+    issn: "0261-3077"
+    url: "https://www.theguardian.com/world/2024/dec/10/tuesday-briefing-what-happened-when-the-doors-of-syrias-most-notorious-prison-were-finally-opened"
+    abstract_note: "In today's newsletter: The Guardian's William Christou was the first western journalist to gain access to Sednaya prison. He reflects on what he saw"
+    date: "2024-12-10"
+    short_title: "Tuesday briefing"
+    language: en-GB
+    automatic_tags: "Middle East and north Africa; World news; Bashar al-Assad; Middle East; Syria; Weather"
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\DFFXPDI9\\tuesday-briefing-what-happened-when-the-doors-of-syrias-most-notorious-prison-were-finally-open.html"
+
+  - key: CUBTD9MD
+    item_type: webpage
+    publication_year: 2025
+    author: "Jie, Vinay Dwivedi,Lim Hui"
+    title: "India says it carried out military strikes against Pakistan as tensions spiral after Kashmir killings"
+    publication_title: CNBC
+    url: "https://www.cnbc.com/2025/05/07/india-says-it-carried-out-targeted-military-strikes-against-pakistan-.html"
+    abstract_note: "The operation follows a militant attack in Pahalgam, Jammu and Kashmir, in which 26 people were killed last month."
+    date: "2025-05-06"
+    language: en
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\GN5PWKC5\\india-says-it-carried-out-targeted-military-strikes-against-pakistan-.html"
+
+  - key: M9QYPWJY
+    item_type: journalArticle
+    author: "Luhnow, David; Thomas, Matthew; Colchester, Max"
+    title: "China Reins In Belt and Road"
+    language: en
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\8M6NT2RJ\\Luhnow 等 - China Reins In Belt and Road.pdf"
+
+# ------------------------------------------------------------
+# 7. 美国国内新闻
+# ------------------------------------------------------------
+us_news:
+  - key: KRNRNWWU
+    item_type: newspaperArticle
+    publication_year: 2025
+    author: "Sandoval, Edgar; County, Pooja SalhotraReporting from Kerr; Texas"
+    title: "Families Wait for Word of Missing as Texas Floods Death Toll Hits 120"
+    publication_title: The New York Times
+    issn: "0362-4331"
+    url: "https://www.nytimes.com/2025/07/09/us/texas-floods-missing-search.html"
+    abstract_note: "Officials defended their actions in the hardest-hit county, where no survivors have been found since Friday. Statewide, 173 people remain unaccounted for, the governor said."
+    date: "2025-07-09"
+    language: en-US
+    automatic_tags: "Abbott, Gregory W (1957- ); Camp Mystic (Hunt, Tex); Camps and Camping; Kerr County (Tex); Texas"
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\AHNLSK6G\\texas-floods-missing-search.html"
+
+  - key: UB2DGLK7
+    item_type: webpage
+    title: "Roe v. Wade"
+    publication_title: Oyez
+    url: "https://www.oyez.org/cases/1971/70-18"
+    abstract_note: >-
+      A case in which the Court struck down several Texas laws that criminalized abortion, holding that laws that
+      impose an undue burden on a woman's right to seek an abortion violate her fundamental right to privacy under the Due Process
+      Clause of the Fourteenth Amendment.
+    language: en
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\7TX98HBZ\\70-18.html"
+
+  - key: JIYY2HKT
+    item_type: webpage
+    publication_year: 2025
+    author: "Eudaily, Lora Kolodny,Chris"
+    title: "Tesla loses $152 billion in market cap after Musk-Trump spat, biggest hit ever"
+    publication_title: CNBC
+    url: "https://www.cnbc.com/2025/06/05/tesla-shares-musk-trump.html"
+    abstract_note: "The drop comes as shares of the EV maker saw a 22% rally in May with Musk wrapping up his time as head of Trump's Department of Government Efficiency, or DOGE."
+    date: "2025-06-05"
+    language: en
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\QGWH9A7Q\\tesla-shares-musk-trump.html"
+
+  - key: QMKBGD8G
+    item_type: webpage
+    title: "Trump set to grant another extension to avoid TikTok disruption"
+    url: "https://www.nbcnews.com/news/us-news/trump-extension-tiktok-rcna213625"
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\Y7S2A55S\\trump-extension-tiktok-rcna213625.html"
+
+  - key: 95CACFNC
+    item_type: webpage
+    title: "Here's how Trump calculated tariffs. The math has baffled economists - CNA"
+    url: "https://www.channelnewsasia.com/world/trump-tariffs-calculation-formula-5043991"
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\8MBW66AD\\trump-tariffs-calculation-formula-5043991.html"
+
+  - key: X4WEHHQ7
+    item_type: blogPost
+    publication_year: 2025
+    author: "Fortinsky, Sarah"
+    title: "Google officially updates name of 'Gulf of America' from Gulf of Mexico"
+    publication_title: The Hill
+    url: "https://thehill.com/policy/technology/5137409-google-officially-updates-name-of-gulf-of-america/"
+    abstract_note: >-
+      Google Maps users in the U.S. will now see "Gulf of America" displayed over the body of water that was once
+      labeled the "Gulf of Mexico." Users in Mexico will still see the name "Gulf of Mexico," a…
+    date: "2025-02-11"
+    language: en-US
+    type: Text
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\9Y2QA3RC\\5137409-google-officially-updates-name-of-gulf-of-america.html"
+
+# ------------------------------------------------------------
+# 8. 亚洲时事
+# ------------------------------------------------------------
+asia_news:
+  - key: 82PP4DHQ
+    item_type: webpage
+    title: "From Indonesia to Nepal, anime pirate flag has become symbol of Asian Gen Z's discontent | The Straits Times"
+    url: "https://www.straitstimes.com/asia/se-asia/from-indonesia-to-nepal-anime-pirate-flag-has-become-symbol-of-asian-gen-zs-discontent"
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\2PEZ6A5T\\from-indonesia-to-nepal-anime-pirate-flag-has-become-symbol-of-asian-gen-zs-discontent.html"
+
+# ------------------------------------------------------------
+# 9. 中文学术
+# ------------------------------------------------------------
+chinese_academic:
+  - key: 95PLEMTM
+    item_type: webpage
+    title: "贷款创造存款理论的源起、发展与应用 - 中国知网"
+    url: "https://kns.cnki.net/kcms2/article/abstract?v=HR7ide6_o4TrM1IymsJCPbDZc7eDf8CPnoGO9F_kJq2gy4vYe6erSfA2moldo2IGFgW9kA15kvAFgEUmJle7lT5u8RADCEouFFAQjZAP5Kq2GoTmmxPigtPpNnVRuUaN__XFZsGC-u0=&uniplatform=NZKPT&flag=copy"
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\UIQEPTJV\\abstract.html"
+
+  - key: R77VYY35
+    item_type: webpage
+    title: "现代汉语副词"就"字的功能视角研究 - 中国知网"
+    url: "https://kns.cnki.net/kcms2/article/abstract?v=HR7ide6_o4RL38Voe20h0DTIYIDMKRljv3fXTTx8Gpw4TsS3FT2F0z9L3FtSFFpHvhah6Ch3OlsV5c2OlDj0R6jZGeFSoKAaMkJQ_h8uSLE-AM4aErcSm-qCvYt-GaShBv9k6dyKwUg&uniplatform=NZKPT&flag=copy&captchaId=8ec0e100-0855-4ac8-8260-f12be83e335d"
+    file_attachments: "C:\\Users\\ttft3\\Zotero\\storage\\CM78GC5L\\abstract.html"
