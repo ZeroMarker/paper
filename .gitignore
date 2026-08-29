@@ -21,6 +21,26 @@
 # PDF files
 *.pdf
 
+# 生成的图片等中间产物
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.svg
+
+# BibTeX 索引与制表辅助
+*.idx
+*.ilg
+*.ind
+*.loa
+*.alg
+
+# TikZ/PGF 外部化缓存
+*.auxlock
+*.dpth
+*.md5
+
 # Editor files
 *.swp
 *.swo

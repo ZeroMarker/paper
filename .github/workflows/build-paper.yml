@@ -1,0 +1,83 @@
+name: Build Paper
+
+# tag 结构: <paper_name>-<major>.<minor>.<patch>
+# 例如: goldbach-1.0.0 / svd-1.0.0 / riemann-1.0.0
+# 目录规则: 顶层 <paper_name>/；根文件规则: 优先 main.tex，否则取目录中唯一的含 \documentclass 的 .tex
+
+on:
+  push:
+    tags:
+      - '*-*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Parse paper name from tag
+      id: parse
+      run: |
+        TAG="${GITHUB_REF_NAME}"
+        PAPER="${TAG%-*.*.*}"
+        if [ -d "$PAPER" ]; then
+          DIR="$PAPER"
+        else
+          echo "未找到论文目录: $PAPER" >&2
+          exit 1
+        fi
+        if [ -f "$DIR/main.tex" ]; then
+          ROOT_FILE="main.tex"
+        else
+          ROOT_FILE=$(grep -l -F '\documentclass' "$DIR"/*.tex | head -1 | xargs basename)
+        fi
+        if [ -z "$ROOT_FILE" ]; then
+          echo "未在 $DIR 中找到根 .tex 文件" >&2
+          exit 1
+        fi
+        echo "paper=$PAPER" >> "$GITHUB_OUTPUT"
+        echo "dir=$DIR" >> "$GITHUB_OUTPUT"
+        echo "root=$ROOT_FILE" >> "$GITHUB_OUTPUT"
+        if [ -f "$DIR/setup.sh" ]; then
+          echo "has_setup=true" >> "$GITHUB_OUTPUT"
+        else
+          echo "has_setup=false" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Run project setup.sh
+      if: steps.parse.outputs.has_setup == 'true'
+      run: |
+        DIR="${{ steps.parse.outputs.dir }}"
+        echo "运行项目 setup.sh: $DIR/setup.sh"
+        (cd "$DIR" && bash setup.sh)
+
+    - name: Install Chinese fonts
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y fonts-wqy-zenhei fonts-wqy-microhei fonts-noto-cjk
+        sudo fc-cache -fv
+
+    - name: Compile LaTeX document
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: ${{ steps.parse.outputs.root }}
+        working_directory: ${{ steps.parse.outputs.dir }}
+        latexmk_use_xelatex: true
+
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ steps.parse.outputs.paper }}-pdf
+        path: ${{ steps.parse.outputs.dir }}/${{ steps.parse.outputs.root }}.pdf
+
+    - name: Create Release and Upload PDF
+      uses: softprops/action-gh-release@v2
+      with:
+        files: ${{ steps.parse.outputs.dir }}/${{ steps.parse.outputs.root }}.pdf
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
