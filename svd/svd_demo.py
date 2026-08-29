@@ -15,8 +15,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 
-# 设置中文字体
-rcParams['font.sans-serif'] = ['SimHei', 'DejaVu Sans']
+# 设置中文字体（SimHei 为 Windows 本地；WenQuanYi/Noto 供 CI 的 Ubuntu 环境使用）
+rcParams['font.sans-serif'] = ['SimHei', 'WenQuanYi Zen Hei', 'Noto Sans CJK SC', 'DejaVu Sans']
 rcParams['axes.unicode_minus'] = False
 
 
