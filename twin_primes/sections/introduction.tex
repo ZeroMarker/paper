@@ -1,0 +1,38 @@
+\section{引言}\label{sec:introduction}
+
+孪生素数猜想是数论中最古老且最著名的未解决问题之一。它断言：存在无穷多对相差为 $2$ 的素数。前几对孪生素数是
+\begin{equation}
+    (3,5),\ (5,7),\ (11,13),\ (17,19),\ (29,31),\ (41,43),\ \ldots
+\end{equation}
+随着数值增大孪生素数越来越稀疏，但计算证据表明它们永远不会消失。
+
+\subsection{问题陈述}
+
+\begin{definition}[孪生素数猜想]
+    存在无穷多个素数 $p$，使得 $p+2$ 也是素数。
+\end{definition}
+
+等价地，令 $\pi_2(x) = \#\{p \le x : p,\ p+2 \text{ 均为素数}\}$，孪生素数猜想即 $\pi_2(x) \to \infty$。更强的定量版本由 Hardy 与 Littlewood 于1923年在其著名的“Partitio numerorum”论文中提出\cite{hardy1923some}：
+
+\begin{conjecture}[Hardy--Littlewood 猜想 B]
+    \begin{equation}
+        \pi_2(x) \sim 2 C_2 \frac{x}{(\log x)^2},
+    \end{equation}
+    其中 $C_2 = \prod_{p > 2}\left(1 - \frac{1}{(p-1)^2}\right) \approx 0.66016$ 称为孪生素数常数。
+\end{conjecture}
+
+孪生素数猜想是更一般的波利尼亚克（de Polignac）猜想\cite{depolignac1849}的特例：对任意偶数 $k$，存在无穷多对相差为 $k$ 的素数。$k=2$ 时即孪生素数，$k=4$ 的“表兄弟素数”、$k=6$ 的“性感素数”同样只有计算证据。
+
+\subsection{研究意义}
+
+孪生素数猜想的研究具有多重意义：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{理论价值}：该猜想刻画了素数在短间隔上的精细分布，是超越素数定理“平均意义”的第一道关口。
+    \item \textbf{方法论价值}：为攻克它而发展出的筛法理论——从布伦筛法、塞尔伯格筛法到张益唐与 Maynard--Tao 的多维筛法——是20世纪以来解析数论最核心的工具箱。
+    \item \textbf{突破的范式}：2013年张益唐的有界间隔结果\cite{zhang2014bounded}是数十年来素数分布研究的最大突破，其技术路线（GPY 方法结合修正的 Bombieri--Vinogradov 型分布水平）已成为整个领域的范式。
+\end{enumerate}
+
+\subsection{本文结构}
+
+本文组织如下：\cref{sec:history} 回顾孪生素数猜想的历史发展；\cref{sec:methods} 介绍主要研究方法；\cref{sec:results} 总结重要研究成果；\cref{sec:applications} 讨论相关应用；\cref{sec:open_problems} 列举开放问题；\cref{sec:conclusion} 总结全文。

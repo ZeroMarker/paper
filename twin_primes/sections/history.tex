@@ -1,0 +1,42 @@
+\section{历史发展}\label{sec:history}
+
+\subsection{早期历史}
+
+1849年，德·波利尼亚克（de Polignac）提出了一般形式的猜想\cite{depolignac1849}：对任意偶数 $k$，存在无穷多对相差为 $k$ 的素数。$k=2$ 的情形即孪生素数猜想。欧拉时代已经注意到孪生素数似乎无穷无尽，但第一个实质性的理论进展迟至二十世纪初才到来。
+
+\subsection{布伦筛法与布朗定理}
+
+1919年，挪威数学家布伦（Viggo Brun）发明了纯筛法（Brun sieve），并由此证明了第一个深刻结果\cite{brun1919}：
+
+\begin{theorem}[布朗定理]
+    孪生素数的倒数和收敛，即
+    \begin{equation}
+        B_2 = \sum_{p:\, p+2 \text{ 为素数}} \left(\frac{1}{p} + \frac{1}{p+2}\right) < \infty.
+    \end{equation}
+\end{theorem}
+
+这与全体素数的倒数和发散形成鲜明对比：如果孪生素数有限多，收敛是平凡的；布朗定理表明即使孪生素数无穷多，它们也必须“足够稀疏”。$B_2 \approx 1.902160583$ 称为布朗常数。布朗的筛法思想——用容斥原理的截断近似控制“几乎素数”——开启了现代筛法理论，也直接启发了后来的陈氏定理。
+
+\subsection{从塞尔伯格筛法到陈氏定理}
+
+1940年代，塞尔伯格（Selberg）发明了二次型上界筛法，将筛法的上界估计推进到“量级正确”的水平。结合 Bombieri--Vinogradov 定理（1965）对算术级数中素数分布的平均控制\cite{bombieri1965largesieve}，筛法在1970年代达到巅峰：1973年，陈景润证明\cite{chen1973twin}
+
+\begin{theorem}[陈氏定理（孪生素数形式）]
+    存在无穷多个素数 $p$，使得 $p+2$ 要么是素数，要么是至多两个素数的乘积（$P_2$ 型数）。
+\end{theorem}
+
+陈氏定理是迄今为止对孪生素数猜想最强的无条件逼近，其“加权筛”技术将 $P_2$ 型数的出现控制到必要的程度，被公认为筛法艺术的巅峰之作。
+
+\subsection{GPY 方法与张益唐突破}
+
+2005年，Goldston、Pintz 与 Yıldırım（GPY）取得了观念性突破\cite{goldston2009primes}：他们用塞尔伯格筛法构造相邻素数的差分加权平均，结合 Bombieri--Vinogradov 定理证明了
+\begin{equation}
+    \liminf_{n \to \infty} (p_{n+1} - p_n) = o(\log p_n),
+\end{equation}
+即相邻素数间隔可以任意小于平均间隔。然而 GPY 方法在逼近“有界间隔”时功亏一篑——除非素数在算术级数中的分布水平（level of distribution）能超过 $1/2$，而这恰好是 Elliott--Halberstam 猜想的内容。
+
+2013年4月，张益唐在线预印本论文中宣布突破\cite{zhang2014bounded}：他在不假设任何未证猜想的前提下，通过引入修正的分布水平定理（对光滑模数将分布水平从 $1/2$ 推进到 $1/2 + 1/584$），证明存在无穷多对间隔不超过 $7 \times 10^7$ 的素数。这是人类首次无条件证明素数间隔有界，立即震动了整个数学界。
+
+\subsection{Polymath8 与最终纪录}
+
+张益唐的结果发表后，陶哲轩发起的 Polymath8 合作项目在数月内将间隔界从 $7 \times 10^7$ 逐步压缩：结合 Maynard 的独立突破\cite{maynard2015small}，最终纪录为 $246$\cite{polymath2014variants}。在 Elliott--Halberstam 猜想下，间隔界可降至 $6$；在广义 Elliott--Halberstam 猜想下甚至可得 $12$（相邻素数情形 $6$）。值得强调的是，从“间隔 $\le 246$”到“间隔 $= 2$”之间仍然横亘着目前无人能跨越的鸿沟。

@@ -1,0 +1,30 @@
+\section{引言}\label{sec:introduction}
+
+费马大定理（Fermat's Last Theorem，FLT）是数学史上最著名的定理之一——同时也是被“悬置”时间最长的问题之一。它由皮埃尔·德·费马（Pierre de Fermat）于1637年前后在丢番图《算术》一书的页边空白处写下，并附上那句名言：“我已经发现了一个真正绝妙的证明，可惜这里空白处太小，写不下。”此后三百五十七年间，无数数学家为寻找这个证明前赴后继，直至1995年才由安德鲁·怀尔斯（Andrew Wiles）与理查德·泰勒（Richard Taylor）完成\cite{wiles1995modular,taylor1995ring}。
+
+\subsection{问题陈述}
+
+\begin{theorem}[费马大定理]\label{thm:FLT}
+    当整数 $n \ge 3$ 时，方程
+    \begin{equation}
+        x^n + y^n = z^n
+    \end{equation}
+    没有正整数解。
+\end{theorem}
+
+由于 $n$ 次解可以归约为 $n = 4$ 或 $n$ 为奇素数的情形，问题的核心归结为：对每个奇素数 $p$，$x^p + y^p = z^p$ 无正整数解。
+
+\subsection{研究意义}
+
+费马大定理的研究具有多重意义：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{理论价值}：对它的三百年攻坚催生了代数数论——库默尔为研究它创立的理想论、正规素数与类数理论至今是代数数论的基础设施。
+    \item \textbf{解决问题的范式}：怀尔斯的证明不是“直接攻击”方程，而是把它翻译成关于椭圆曲线与模形式的问题，标志着算术几何方法的成熟。
+    \item \textbf{辐射效应}：证明的核心——谷山--志村猜想——如今已推广为一般的模性定理，是朗兰兹纲领的基石性成果；证明中发展的模性提升（$R=T$）技术已成为数论的标准工具。
+    \item \textbf{文化意义}：它是大众文化中最广为人知的数学问题，其解决过程（怀尔斯1993年宣布、审稿发现漏洞、秘密修补、1995年完成）本身也是科学史的经典案例。
+\end{enumerate}
+
+\subsection{本文结构}
+
+本文组织如下：\cref{sec:history} 回顾费马大定理的历史发展；\cref{sec:methods} 介绍主要研究方法；\cref{sec:results} 总结重要研究成果；\cref{sec:applications} 讨论相关应用；\cref{sec:open_problems} 列举开放问题；\cref{sec:conclusion} 总结全文。

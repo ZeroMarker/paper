@@ -1,31 +1,51 @@
-# 哥德巴赫猜想综述
+# 数学论文文库
 
 ## 项目结构
 
 ```
 paper/
-├── main.tex                 # 主LaTeX文件
-├── sections/               # 章节文件
-│   ├── introduction.tex    # 引言
-│   ├── history.tex         # 历史发展
-│   ├── methods.tex         # 研究方法
-│   ├── results.tex         # 研究成果
-│   ├── applications.tex    # 应用与推广
-│   ├── open_problems.tex   # 开放问题
-│   ├── conclusion.tex      # 结论
-│   └── appendix.tex        # 附录
-├── references/             # 参考文献
-│   └── references.bib      # BibTeX文献库
-├── figures/                # 图片目录
-├── tables/                 # 表格目录
-└── compile.bat             # Windows编译脚本
+├── goldbach/               # 哥德巴赫猜想综述
+│   ├── main.tex            # 主LaTeX文件
+│   ├── sections/           # 章节文件
+│   ├── references/         # BibTeX文献库
+│   └── compile.bat         # Windows编译脚本
+├── svd/                    # SVD 论文
+│   ├── svd_paper.tex       # 主LaTeX文件
+│   └── svd_demo.py         # 演示脚本
+├── riemann/                # 黎曼猜想综述
+│   ├── main.tex            # 主LaTeX文件
+│   ├── sections/           # 章节文件
+│   ├── references/         # BibTeX文献库
+│   └── compile.bat         # Windows编译脚本
+├── twin_primes/            # 孪生素数猜想综述
+│   ├── main.tex            # 主LaTeX文件
+│   ├── sections/           # 章节文件
+│   ├── references/         # BibTeX文献库
+│   └── compile.bat         # Windows编译脚本
+├── fermat/                 # 费马大定理综述
+│   ├── main.tex            # 主LaTeX文件
+│   ├── sections/           # 章节文件
+│   ├── references/         # BibTeX文献库
+│   └── compile.bat         # Windows编译脚本
+└── paper.yaml              # Zotero 文库分类
 ```
+
+## 论文列表
+
+| 论文 | 目录 | 构建 tag |
+|------|------|----------|
+| 哥德巴赫猜想：历史、进展与展望 | `goldbach/` | `goldbach-1.0.0` |
+| SVD 论文 | `svd/` | `svd-1.0.0` |
+| 黎曼猜想：历史、进展与展望 | `riemann/` | `riemann-1.0.0` |
+| 孪生素数猜想：历史、进展与展望 | `twin_primes/` | `twin_primes-1.0.0` |
+| 费马大定理：历史、进展与展望 | `fermat/` | `fermat-1.0.0` |
 
 ## 编译方法
 
 ### Windows
 ```bash
-.\compile.bat
+cd goldbach && .\compile.bat
+cd riemann  && .\compile.bat
 ```
 
 ### Linux/macOS
@@ -36,16 +56,40 @@ pdflatex main
 pdflatex main
 ```
 
-## 主要内容
+## CI 构建
+
+统一使用通用工作流 `.github/workflows/build-paper.yml`：推送形如 `<paper_name>-<version>` 的 tag（例如 `riemann-1.0.0`）即触发，编译 PDF 并上传到 GitHub Release。
+
+目录解析规则：tag `<paper_name>-<version>` 对应顶层目录 `<paper_name>/`；根文件优先 `main.tex`，否则取目录中唯一的含 `\documentclass` 的 `.tex`。新增论文时无需修改工作流，建好顶层目录并打 tag 即可。
+
+若论文目录中存在 `setup.sh`，CI 会在编译前运行它（如 `svd/` 用它安装 Python 依赖并运行 `svd_demo.py` 生成插图）；没有 `setup.sh` 则跳过。生成的图片等中间产物不入库（见 `.gitignore`），每次构建现场生成。
+
+## 黎曼猜想综述主要内容
 
 1. **引言**：问题陈述与研究意义
-2. **历史发展**：从1742年至今的研究历程
-3. **研究方法**：圆法、筛法、指数和估计等
-4. **重要成果**：维诺格拉多夫定理、陈氏定理等
-5. **应用与推广**：加性数论、密码学等应用
-6. **开放问题**：强哥德巴赫猜想及相关猜想
+2. **历史发展**：从1859年至今的研究历程
+3. **研究方法**：显式公式、硬性定理、随机矩阵理论、代数几何类比等
+4. **重要成果**：零点数值验证、临界线零点比例、等价命题等
+5. **应用与推广**：素数分布、计算复杂度、密码学、数学物理等应用
+6. **开放问题**：GRH、林德勒夫假设、零点精细统计等
 7. **结论**：总结与展望
 
-## 参考文献
+## 孪生素数猜想综述主要内容
 
-包含哥德巴赫猜想研究的经典文献和最新进展。
+1. **引言**：猜想陈述与 Hardy--Littlewood 猜想 B
+2. **历史发展**：布伦筛法、陈氏定理、GPY 方法、张益唐突破、Polymath8
+3. **研究方法**：筛法理论、奇偶性壁垒、多维筛法、计算验证
+4. **重要成果**：有界间隔纪录（$7\times10^7 \to 246$）、陈氏定理、布朗常数
+5. **应用与推广**：素数间隔理论、概率模型、$k$ 元组理论
+6. **开放问题**：孪生素数主猜想、Elliott--Halberstam 猜想、Dickson 猜想
+7. **结论**：总结与展望
+
+## 费马大定理综述主要内容
+
+1. **引言**：定理陈述与研究意义
+2. **历史发展**：费马、欧拉、库默尔、弗雷曲线、里贝特定理、怀尔斯1995
+3. **研究方法**：无穷下降法、分圆域与理想论、模形式、模性提升（$R=T$）
+4. **重要成果**：部分结果时间线、怀尔斯--泰勒定理、模性定理、广义费马方程
+5. **应用与推广**：算术几何标准技术、朗兰兹纲领、模方法
+6. **开放问题**：Beal 猜想、广义费马方程、模性定理的推广
+7. **结论**：总结与展望

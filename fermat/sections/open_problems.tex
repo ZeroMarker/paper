@@ -1,0 +1,31 @@
+\section{开放问题}\label{sec:open_problems}
+
+\subsection{贝阿尔猜想}
+
+\begin{conjecture}[Beal 猜想]
+    若 $x^a + y^b = z^c$（$a, b, c \ge 3$）有正整数解，则 $x, y, z$ 必有公共素因子。
+\end{conjecture}
+
+该猜想由银行家安德鲁·比尔（Andrew Beal）于1993年提出并悬赏（现为一百万美元）。它是 FLT 的自然推广：当 $a = b = c = n$ 且 $x, y, z$ 互素时即 FLT。目前只有数值验证与特定指数组合的结果，modular method 是主要武器但远不足以覆盖一般情形。
+
+\subsection{广义费马方程}
+
+方程 $x^p + y^q = z^r$（互素解）的完整分类远未完成。Darmon--Granville 证明了固定指数组合下解有限，但对“存在多少解、能否有效计算”几乎没有一般方法。 signature $(p, p, 2)$（即 $x^p + y^p = z^2$）的完全解决（Darmon--Merel 1997：无非平凡解\cite{darmon1997winding}）是少数亮点。
+
+\subsection{第一情形的非正规素数}
+
+即使有了 FLT 的证明，“初等方法能否证明第一情形对无穷多指数成立”依然独立有趣：已知第一情形成立于无穷多素数指数（热尔曼型构造），但对单个具体指数 $p$（如 $p = 37$，非正规）的第一情形仍依赖重计算。Szpiro 猜想、abc 猜想将给出第一情形对几乎所有指数的强结果——Mochizuki 宣称的 abc 证明尚未获得数学界广泛接受。
+
+\subsection{模性定理的推广}
+
+模性定理只处理 $\mathbb{Q}$ 上的椭圆曲线。自然推广包括：
+
+\begin{itemize}
+    \item \textbf{全实域上的椭圆曲线}：大量进展（Taylor 2002 的潜在模性、Barnet-Lamb--Gee--Geraghty--Taylor 等）已确立“潜在模性”，但完全模性仍需跨过若干技术障碍，一般情形尚未解决；
+    \item \textbf{阿贝尔簇}：$\operatorname{GL}_2$ 型阿贝尔簇的模性只有部分结果；一般阿贝尔簇对应 $\operatorname{GSp}_{2g}$ 表示，属于朗兰兹纲领的未开拓区域；
+    \item \textbf{函数域与几何朗兰兹}：Drinfeld、L.\,Lafforgue 在函数域上完成 $\operatorname{GL}_n$ 的对应，几何朗兰兹纲领（Fargues--Scholze 的揽纤维化观点）正在把“对应”本身几何化。
+\end{itemize}
+
+\subsection{有效性与计算}
+
+即使 FLT 成立，也存在“定量”层面的开放问题：给定指数 $p$，能否有效 bound 潜在解的大小使得“无解”可计算验证？目前 FLT 的证明是存在性证明（归谬），不提供此类界。广义费马方程的有效可解性、以及类群与 Selmer 群的可计算性（BSD 数值验证依赖于此）都是活跃的计算方向。

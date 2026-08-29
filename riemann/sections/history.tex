@@ -1,0 +1,31 @@
+\section{历史发展}\label{sec:history}
+
+\subsection{黎曼的1859年论文（现代整理与评注见\cite{edwards1974riemann}）}
+
+1859年，黎曼当选柏林科学院通讯院士，为表谢意提交了论文《论小于给定数值的素数个数》（\textit{Über die Anzahl der Primzahlen unter einer gegebenen Grösse}）\cite{riemann1859prime}。这篇仅八页的论文开创了解析数论，其中包含三个里程碑式的成果：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item $\zeta(s)$ 的解析延拓与函数方程的证明；
+    \item 素数计数函数 $J(x)$ 与 $\zeta$ 函数零点之间的显式公式的雏形；
+    \item 关于零点分布的五条陈述，其中最后一条即黎曼猜想，黎曼本人写道“这是有可能的，但并未能严格证明”。
+\end{enumerate}
+
+黎曼还指出在区间 $0 < t < T$ 内临界线上零点的个数约为 $\tfrac{1}{2\pi} T \log T$，并由此得出猜想“所有零点的实部均为 $\tfrac{1}{2}$”的启发式依据。
+
+\subsection{十九世纪末的奠基}
+
+1895年，冯·曼戈尔特（von Mangoldt）严格证明了黎曼的显式公式\cite{vonmangoldt1895}：
+\begin{equation}\label{eq:explicit}
+    \psi_0(x) = x - \sum_{\rho} \frac{x^{\rho}}{\rho} - \log(2\pi) - \frac{1}{2}\log\!\left(1 - x^{-2}\right),
+\end{equation}
+其中 $\psi(x) = \sum_{n \le x} \Lambda(n)$ 是切比雪夫函数，求和遍及 $\zeta$ 的全部非平凡零点 $\rho$。\cref{eq:explicit} 揭示了素数分布与零点位置之间精确的对偶关系，使黎曼猜想从孤立的命题变为理解素数的核心。1896年，阿达马（Hadamard）与德拉瓦莱-普桑（de la Vallée Poussin）独立证明了 $\zeta(s)$ 在 $\Re(s)=1$ 上无零点，由此建立了素数定理。1901年，冯·科赫证明黎曼猜想等价于素数定理的平方根误差项\cite{vonkoch1901}。
+
+\subsection{二十世纪的发展}
+
+1914年，哈代（Hardy）证明临界线上存在无穷多个零点\cite{hardy1914zeroes}，这是第一个硬性定理。1921年，哈代与李特尔伍德（Littlewood）将其加强为：临界带内正高度不超过 $T$ 的零点中，至少有 $cT$ 个位于临界线上\cite{hardy1921zeros}。1942年，塞尔伯格（Selberg）将这一结果提高到\textbf{正比例}：存在常数 $c > 0$ 使得至少 $c$ 份零点在临界线上\cite{selberg1942zeros}。1974年，莱文森（Levinson）证明至少 $1/3$ 的零点在临界线上\cite{levinson1974zeros}；1989年，康瑞（Conrey）将其提高到 $2/5$\cite{conrey1989zeros}；2024年，Pratt、Robles、Zaharescu 等人将下界提升到约 $41.7\%$\cite{pratt2024zeros}。
+
+\subsection{计算验证与千禧年地位}
+
+自20世纪以来，零点数值验证不断推进：1956年 Lehmer 验证到前约2.5万个零点；1979年布伦特（Brent）利用黎曼-西格尔公式验证到前4千万个零点\cite{brent1979zeros}；1980年代起 Odlyzko 对高高度零点进行大规模计算，验证了蒙哥马利对关联猜想的预言\cite{odlyzko1987zeros}；2021年，Platt 与 Trudgian 以严格区间算术将验证范围推进到高度 $3 \times 10^{12}$\cite{platt2021verification}。
+
+2000年，克雷数学研究所将黎曼猜想列为千禧年大奖难题之一；2018年，阿蒂亚（Atiyah）在海德堡获奖者论坛上宣布的“证明”未获数学界认可，这也从侧面反映了该问题的难度。

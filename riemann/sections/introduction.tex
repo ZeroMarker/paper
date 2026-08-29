@@ -1,0 +1,38 @@
+\section{引言}\label{sec:introduction}
+
+黎曼猜想是数学中最著名且影响最深远的未解决问题之一。该猜想由德国数学家波恩哈德·黎曼（Bernhard Riemann）于1859年在论文《论小于给定数值的素数个数》\cite{riemann1859prime}中首次提出，至今已有一个半世纪以上的历史。1900年，希尔伯特将其列为第23个数学问题中的第8问题的一部分\cite{hilbert1900problems}；2000年，克雷数学研究所又将其列为七个“千禧年大奖难题”之一，悬赏百万美元征求解答。
+
+\subsection{问题陈述}
+
+黎曼 $\zeta$ 函数最初定义为正整数级数
+\begin{equation}
+    \zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}, \qquad \Re(s) > 1,
+\end{equation}
+黎曼证明它可以解析延拓到整个复平面（在 $s=1$ 处有唯一一阶极点），并满足函数方程
+\begin{equation}
+    \zeta(s) = 2^s \pi^{s-1} \sin\!\left(\frac{\pi s}{2}\right) \Gamma(1-s)\, \zeta(1-s).
+\end{equation}
+
+\begin{definition}[黎曼猜想]\label{def:RH}
+    $\zeta(s)$ 的所有非平凡零点都位于临界线 $\Re(s) = \tfrac{1}{2}$ 上，即形如 $s = \tfrac{1}{2} + it$（$t \in \mathbb{R}$）。
+\end{definition}
+
+$\zeta$ 函数的非平凡零点成对出现：若 $\rho$ 是零点，则 $\bar{\rho}$、$1-\rho$ 和 $1-\bar{\rho}$ 也是零点。因此非平凡零点关于临界线 $\Re(s)=\tfrac{1}{2}$ 和实轴对称，全部落在临界带 $0 < \Re(s) < 1$ 内。黎曼猜想断言这一对称轴恰好“兜住”了所有零点。
+
+\subsection{研究意义}
+
+黎曼猜想的研究具有多重意义：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{素数分布}：零点位置直接控制素数计数函数 $\pi(x)$ 的误差项。冯·科赫（von Koch）于1901年证明\cite{vonkoch1901}：黎曼猜想等价于
+    \begin{equation}
+        \pi(x) = \operatorname{Li}(x) + O(\sqrt{x} \log x).
+    \end{equation}
+    \item \textbf{方法论价值}：为攻克该猜想发展出的解析延拓、函数方程、显式公式、迹公式等工具，已成为现代数论与数学物理的标准方法。
+    \item \textbf{辐射效应}：广义黎曼假设（GRH）关系到 $L$ 函数零点的分布，其推论遍布代数数论、计算复杂度与密码学，许多定理以“假设 GRH 成立”为前提。
+    \item \textbf{类比启示}：韦伊（Weil）证明了有限域上曲线的黎曼假设，德利涅（Deligne）证明了一般有限域簇的黎曼假设\cite{deligne1974weil}，提示该猜想可能在更大的框架下获得解决。
+\end{enumerate}
+
+\subsection{本文结构}
+
+本文组织如下：\cref{sec:history} 回顾黎曼猜想的历史发展；\cref{sec:methods} 介绍主要研究方法；\cref{sec:results} 总结重要研究成果；\cref{sec:applications} 讨论相关应用；\cref{sec:open_problems} 列举开放问题；\cref{sec:conclusion} 总结全文。

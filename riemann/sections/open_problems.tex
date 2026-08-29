@@ -1,0 +1,41 @@
+\section{开放问题}\label{sec:open_problems}
+
+\subsection{主猜想}
+
+尽管经过一个半世纪的努力，黎曼猜想本身仍然悬而未决。当前所有已知的方法都只能处理“平均意义”上的零点行为，无法排除个别离群零点。主要障碍包括：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{硬性定理的极限}：现有矩方法只能给出临界线零点比例的下界，即使比例趋于 $1$ 也无法归零例外集；
+    \item \textbf{缺少正确的上同调框架}：数域情形尚无对应于 étale 上同调的理论，韦尔—德利涅路线无法直接移植；
+    \item \textbf{希尔伯特—韦尔算子的存在性}：始终未能构造出谱恰为全部零点纵坐标的自伴算子。
+\end{enumerate}
+
+\subsection{广义与变体}
+
+\begin{conjecture}[广义黎曼假设]
+    所有狄利克雷 $L$ 函数 $\chi$ 的非平凡零点都满足 $\Re(s) = \tfrac{1}{2}$。
+\end{conjecture}
+
+GRH 是应用最广的形式，但证明难度不低于黎曼猜想本身。与之平行的还有：
+
+\begin{conjecture}[林德勒夫假设]
+    对任意 $\varepsilon > 0$，有 $\zeta(\tfrac{1}{2}+it) = O(t^{\varepsilon})$。
+\end{conjecture}
+
+林德勒夫假设弱于黎曼猜想（可由 GRH 推出），但其自身的最佳已知界（Bourgain 2017 年的 $13/84$ 幂\cite{bourgain2017decoupling}）与 $\varepsilon$ 仍有巨大距离，是次凸性研究的核心。
+
+\subsection{零点的精细统计}
+
+\begin{conjecture}[蒙哥马利对关联猜想]
+    零点纵坐标的规范化对关联函数为 $1 - \left(\frac{\sin \pi\tau}{\pi\tau}\right)^2$。
+\end{conjecture}
+
+蒙哥马利证明的只是傅里叶变换的一个小邻域内的情形（且需假设黎曼猜想）。完整证明乃至证明“零点间距统计服从 GUE”都远超当前技术。与之相关的还有高阶关联（Bogomolny--Keating 猜想）与间距单点分布（GUE 预言无重复间距）。
+
+\subsection{单零点与简单性}
+
+数值计算中从未发现重零点，但“所有非平凡零点均为单零点”的猜想至今没有任何硬性定理全面支持——现有方法只能证明临界线上存在正比例的单零点（Levinson--Conrey 型结果的副产品），对临界线外是否存在重零点或单零点束手无策。
+
+\subsection{反方向的怀疑}
+
+大多数数学家相信黎曼猜想成立，但也有严肃的反面声音：Ivić、Bombieri 等曾讨论过“李特尔伍德型离群”零点在理论上无法排除的可能性；随机矩阵模型本身并不蕴含黎曼猜想成立——GUE 统计只约束“大多数”零点。对反例的搜索（例如在极高度区域）受限于计算复杂度 $O(T \log^2 T)$ 的增长率，短期内难以将验证范围提高数个数量级。

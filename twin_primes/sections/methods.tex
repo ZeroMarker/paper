@@ -1,0 +1,53 @@
+\section{研究方法}\label{sec:methods}
+
+\subsection{筛法理论}
+
+筛法是孪生素数研究的核心工具。其基本问题是：给定整数集合 $\mathcal{A}$，估计其中不被小于 $z$ 的素数整除的元素个数 $S(\mathcal{A}, z)$。
+
+\subsubsection{布伦纯筛法}
+
+布伦的思想是容斥原理的截断：严格容斥需要遍历所有 $\lfloor \log x \rfloor$ 层的 M\"obius 函数展开，误差项会失控；布伦只保留前 $r$ 层并优化 $r$，以放弃部分精度为代价换取误差可控\cite{brun1919}。纯筛法给出了孪生素数计数的上界
+\begin{equation}
+    \pi_2(x) \ll \frac{x}{(\log x)^2} \prod_{p} \frac{\text{修正因子}}{1},
+\end{equation}
+其量级与 Hardy--Littlewood 预言一致，但常数无法达到最优。
+
+\subsubsection{塞尔伯格上界筛法}
+
+塞尔伯格将筛法转化为二次型优化问题：选取权重 $\lambda_d$（$d$ 取遍平方自由数，$d \le D$），要求 $\lambda_1 = 1$ 且估计
+\begin{equation}
+    S(\mathcal{A}, z) \le \sum_{n \le x} \left(\sum_{d \mid n,\ d \le D} \lambda_d\right)^2.
+\end{equation}
+对 $\lambda_d$ 的最优选取将上界压到 $\left(2 e^{\gamma} + o(1)\right) \cdot \frac{2C_2\, x}{(\log z)^2}$ 量级，与猜想主项只差常数因子 $2e^{\gamma} \approx 3.56$——这一“ parity barrier（奇偶性壁垒）”是任何线性组合筛法都无法逾越的极限\cite{halberstam1974sieve,iwaniec2004opera}。
+
+\subsubsection{奇偶性壁垒与加权筛}
+
+奇偶性壁垒（parity problem）指出：经典筛法无法区分“奇数个素因子”与“偶数个素因子”的整数，因此无法直接证明 $p+2$ 为素数。突破的办法是给筛法加权：陈景润用精细的加权筛把“坏”的 $P_2$ 型数（两个大素因子）压到可控，从而证明 $p+2$ 至多是两个素数之积\cite{chen1973twin}。Iwaniec 的半线性筛、Rosser--Iwaniec 筛法等改进使得 $\beta$ 筛的上下界达到目前可能的最优。
+
+\subsection{GPY 方法}
+
+GPY 的核心想法是用塞尔伯格筛权 $\Lambda_R(n; k, l) = \sum_{d \mid n,\ d \le R} \lambda_d \log(nd/l)$ 构造相邻素数的加权差分和\cite{goldston2009primes}：
+\begin{equation}
+    \sum_{n \le N} \left(\psi(n) - \psi(n+2)\right)^2 \Lambda_R(n),
+\end{equation}
+其中 $\psi$ 为切比雪夫函数。该和式的展开中出现 von Mangoldt 函数的二阶相关项
+\begin{equation}
+    \sum_{n \le x} \Lambda(n) \Lambda(n+2) \sim 2 C_2\, x \quad (\text{Hardy--Littlewood}).
+\end{equation}
+在分布水平 $\theta = 1/2$（即 Bombieri--Vinogradov）下，GPY 证明了间隔 $o(\log p)$；$\theta > 1/2$ 即可得有界间隔。
+
+\subsection{张益唐的分布水平突破}
+
+张益唐的贡献是证明了一个修正的 Bombieri--Vinogradov 型定理\cite{zhang2014bounded}：对光滑的模数 $d \le x^{1/2 + 1/584}$，素数在算术级数中的误差平均可控。技术路线包括：对完整 Kloosterman 和的 Deligne 型分布估计、约束容斥（restriction to well-factorable moduli）、以及对 $L$ 函数次凸性的应用。这绕过了 Elliott--Halberstam 猜想中 $1/2$ 的壁垒。
+
+\subsection{Maynard--Tao 多维筛法}
+
+Maynard（与陶哲轩独立）将 GPY 的一维筛权推广到多维\cite{maynard2015small}：取允许的 $k$ 元线性型 $\{n + h_1, \ldots, n + h_k\}$，构造权重
+\begin{equation}
+    w(n) = \sum_{d \mid P(n)} \lambda(d_1, \ldots, d_k),
+\end{equation}
+其中 $\lambda$ 是多维塞尔伯格权。当 $k$ 足够大时（如 $k \ge 105$），可证明存在无穷多 $n$ 使型中至少两个分量同为素数。该方法的关键优势是对分布水平不敏感：只要 $\theta > 0$ 即可，从而绕开了 GPY 方法的根本限制。间隔界 $246$ 正是 Polymath8 对 $k=50$ 左右的最优允许素数三元组/五元组做大规模直径最小化计算得到的\cite{polymath2014variants}。
+
+\subsection{计算方法}
+
+数值方面，$\pi_2(x)$ 的计数已推进到 $x \le 10^{19}$（Oliveira e Silva 等人），验证了 Hardy--Littlewood 主项的精度；布朗常数的计算甚至意外发现了 Intel Pentium 处理器的 FDIV 缺陷\cite{nicely1995enumeration}。允许 $k$ 元组的可容许性判定与最小直径搜索依赖组合优化与大规模并行计算。

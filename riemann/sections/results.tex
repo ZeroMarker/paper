@@ -1,0 +1,69 @@
+\section{重要成果}\label{sec:results}
+
+\subsection{零点的数值验证}
+
+黎曼猜想已在有限范围内得到严格验证。设 $N_0(T)$ 为临界线上 $0 < \Im(\rho) \le T$ 的零点个数，数值验证的目标是证明 $N_0(T) = N(T)$ 对某个 $T$ 成立。主要里程碑见表~\ref{tab:verification}。
+
+\begin{table}[htbp]
+    \centering
+    \caption{黎曼猜想零点验证的主要里程碑}
+    \label{tab:verification}
+    \begin{tabular}{lll}
+        \toprule
+        年份 & 验证者 & 验证范围（前多少个零点 / 高度） \\
+        \midrule
+        1904 & Gram & 前 15 个零点 \\
+        1935 & Titchmarsh & 前 195 个零点 \\
+        1956 & Lehmer & 前 25000 个零点 \\
+        1966--68 & Rosser--Schoenfeld 等 & 前 350 万个零点 \\
+        1979--82 & Brent 等 & 前 2 亿个零点 \\
+        2004 & Gourdon--Demichel & 前 $10^{13}$ 个零点（未严格验证） \\
+        2021 & Platt--Trudgian & 高度 $3\times 10^{12}$（严格区间算术） \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+需要强调的是，数值验证无论推进到多远都不能代替证明——$\pi(x) - \operatorname{Li}(x)$ 的教训是现成的：尽管它在所有经验范围内恒为负，李特尔伍德早在1914年就证明了它无穷多次变号，而已知的第一次变号位置（不超过 $e^{728}$，即约 $10^{316}$，Skewes 数量级）远超任何可计算验证的范围。
+
+\subsection{临界线上的零点比例}
+
+硬性定理方面的最好结果是 Pratt--Robles--Zaharescu--Zeindler 于2024年证明的\cite{pratt2024zeros}
+\begin{equation}
+    \kappa(T) = \frac{N_0(T)}{N(T)} \ge 0.4173 \quad (T \text{ 充分大}),
+\end{equation}
+将康瑞1989年的 $41.05\%$ \cite{conrey1989zeros} 微幅提高。这些方法的发展脉络是：Hardy（无穷多）$\to$ Hardy--Littlewood（正密度）$\to$ Selberg（正比例）$\to$ Levinson（$1/3$）$\to$ Conrey（$2/5$）$\to$ 当前的 $41.7\%$。值得注意的是，即使 $\kappa(T) \to 1$，也不足以证明黎曼猜想。
+
+\subsection{等价命题}
+
+黎曼猜想已被证明等价于许多来自不同领域的命题，其中最著名的包括：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{素数误差项}（von Koch, 1901）：$\pi(x) = \operatorname{Li}(x) + O(\sqrt{x}\log x)$\cite{vonkoch1901}。
+    \item \textbf{Robin 准则}（1984）：对 $n \ge 73$，
+    \begin{equation}
+        \sigma(n) < e^{\gamma} n \log \log n,
+    \end{equation}
+    其中 $\sigma(n)$ 为因子和函数，$\gamma$ 为欧拉常数\cite{robin1984divisors}。
+    \item \textbf{拉格拉斯准测}（Lagarias, 2002）：对任意 $n \ge 1$，
+    \begin{equation}
+        \sigma(n) \le H_n + e^{H_n} \log H_n,
+    \end{equation}
+    其中 $H_n = \sum_{k \le n} 1/k$ 为调和数\cite{lagarias2002elementary}。
+    \item \textbf{尼曼—博林准则}（Nyman--Beurling, 1950）：在 $[0,1]$ 上函数族 $\{\rho_\alpha - \rho_\beta\}$（$\rho_\alpha(x) = \{\alpha/x\}$）在 $L^2(0,1)$ 中稠密。
+    \item \textbf{Redheffer 矩阵准则}（1977）：设 $A_n$ 为由 $a_{ij}=1$（$j \mid i$ 或 $j = i+1$）定义的 $0$-$1$ 矩阵，则黎曼猜想等价于 $\det A_n = O(n^{1/2+\epsilon})$ 对所有 $n$ 成立。
+\end{enumerate}
+
+这些等价命题的重要意义在于：它们把“复分析命题”翻译成了初等不等式或稠密性问题，为可能的“初等证明”或反例搜索提供了具体靶子。
+
+\subsection{广义黎曼假设下的结果}
+
+广义黎曼假设（GRH）断言所有狄利克雷 $L$ 函数的非平凡零点都在临界线上。在 GRH 下，一系列重要结果成立：
+
+\begin{itemize}
+    \item 最小二次非剩余 $n(p) = O(\log^2 p)$（Bach, 1990）；
+    \item 算术级数中最小素数 $p(a,q) \le 2\, q^2 \log^2 q$（Lamzouri 等）；
+    \item 类域论中的类数公式误差项、欧拉理想类群的分布精确化；
+    \item 素性判定的确定性多项式算法（Miller 判定法，见 \cref{sec:applications}）。
+\end{itemize}
+
+这些结果的普遍存在使得 GRH 成为数论计算与实践中的“默认公理”，也进一步凸显了原始问题的紧迫性。

@@ -1,0 +1,21 @@
+\section{应用与推广}\label{sec:applications}
+
+\subsection{素数间隔理论}
+
+孪生素数研究的技术溢出直接重塑了素数间隔理论。Maynard--Tao 多维筛法不仅能证明“某个间隔 $\le H$ 出现无穷多次”，还能证明：对任意 $m$，存在无穷多区间 containing 至少 $m$ 个素数，区间长度为 $C_m$（当前纪录 $C_m \approx m^3 e^{4m}$，Elliott--Halberstam 下 $m \log m$ 型）。这类“素数在短区间内成簇”的结果在素数间隔分布、素数 $k$ 元组研究中被广泛引用。
+
+\subsection{布朗常数与计算数论}
+
+布朗常数 $B_2$ 的数值计算有出人意料的副产品：1994年，Thomas Nicely 在计算 $B_2$ 至 $10^{14}$ 时发现了 Intel Pentium 处理器的 FDIV 浮点除法缺陷，迫使 Intel 召回芯片、损失约4.75亿美元\cite{nicely1995enumeration}。这是高精度数论计算影响工程实践的著名案例。
+
+\subsection{概率模型与启发式}
+
+Cram\'er 概率模型\cite{cramer1936primes}将素数视为密度 $1/\log n$ 的独立随机事件，预言孪生素数以 $\sim 2x/(\log x)^2$ 的速率出现——但没有考虑局部修正。Hardy--Littlewood 的奇异级数 $2C_2$ 恰好补上了对每个奇素数 $p$ 的“$p \nmid n(n+2)$”修正。Gallagher 证明了：若哈代—李特尔伍德素数 $k$ 元组猜想成立，则素数在短区间中的分布严格服从 Poisson 统计。孪生素数猜想因此被视为检验“素数随机性”模型的最灵敏探针。
+
+\subsection{密码学的间接关联}
+
+素数间隔的分布影响大素数随机搜索的成功率：在 $k$ 比特区间内平均有 $\Theta(k)$ 个素数，孪生素数级别的结果保证间隔分布不会出现病态聚集。虽然现行密码体系（RSA、离散对数）的安全性不直接依赖孪生素数猜想，但 Elliott--Halberstam 型分布水平的结果是评估“素数是否可能聚集在可预测区域”的理论基础。
+
+\subsection{$k$ 元组与素数模式}
+
+允许 $k$ 元组（admissible $k$-tuple）理论是孪生素数猜想的组合推广：覆盖同余刻画了“不可能被任何单个素数整除筛尽”的整数组，Dickson 猜想（1919）断言每个允许 $k$ 元组都产生无穷多次全素数。该框架如今是可计算数论（如素数星座搜索）与加性组合之间的桥梁，也是 Polymath8 计算 $H = 246$ 的基础\cite{polymath2014variants}。

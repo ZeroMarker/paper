@@ -1,0 +1,42 @@
+\section{历史发展}\label{sec:history}
+
+\subsection{费马的页边与无穷下降法}
+
+费马本人证明了 $n = 4$ 的情形：不存在正整数满足 $x^4 + y^4 = z^4$（甚至 $x^4 + y^4 = z^2$ 也无解）。其证明方法——\textbf{无穷下降法}（infinite descent）——假设存在最小解，再构造出更小的解导致矛盾，这一方法至今是数论的基本工具。费马在给友人的信中给出了 $n=4$ 的完整证明轮廓，这也是他唯一“兑现”的页边猜想。
+
+\subsection{十八与十九世纪的部分证明}
+
+\begin{itemize}
+    \item \textbf{欧拉（1753）}：证明 $n=3$ 的情形\cite{euler1770algebra}，但其论证在 $\mathbb{Z}[\sqrt{-3}]$ 中唯一分解一步存在缺口，后由拉格朗日等补全；
+    \item \textbf{索菲·热尔曼（Sophie Germain, 1823前后）}：证明了第一情形对一类“热尔曼素数” $p$（$2p+1$ 也是素数）成立，即 $p \nmid xyz$ 时无解；
+    \item \textbf{狄利克雷与勒让德（1825）}：独立证明 $n=5$；
+    \item \textbf{拉梅（1839）}：证明 $n=7$，但论证已极其繁复，逐个素数硬攻的路显然走不通。
+\end{itemize}
+
+\subsection{库默尔的理想数革命}
+
+1847年，拉梅宣布了基于 $\mathbb{Z}[\zeta_p]$ 中唯一分解的“完整证明”，旋即被刘维尔（Liouville）指出唯一分解未必成立——事实上分解在 $p \ge 23$ 时已经失效。库默尔（Kummer）为挽救局面创立了理想数（ideals）理论\cite{kummer1847decomposition}：
+
+\begin{theorem}[库默尔，1847]
+    若 $p$ 是正规素数（regular prime），即 $p$ 不整除分圆域 $\mathbb{Q}(\zeta_p)$ 的类数，则费马大定理对指数 $p$ 成立。
+\end{theorem}
+
+库默尔证明了 $p \le 100$ 的素数中仅 $37$、$59$、$67$ 非正规，并证明了第一情形对一大类非正规素数仍然成立（这段历史的详细梳理见\cite{edwards1977fermat}）。理想论的意义远超 FLT 本身——它标志着代数数论的诞生。到20世纪中叶，借助大型计算与 Vandiver 等人的改进，FLT 的第一、第二情形已验证到指数 $p < 125000$，但距离完全解决遥遥无期。
+
+\subsection{几何转向：弗雷曲线与里贝特定理}
+
+问题的决定性转折来自几何方向。1984年，弗赖（Gerhard Frey）在 Oberwolfach 提出了一个惊人的观察\cite{frey1986links}：若 $a^p + b^p = c^p$ 有非平凡解，则半稳定椭圆曲线
+\begin{equation}\label{eq:frey}
+    E_{a,b}: \quad y^2 = x(x - a^p)(x + b^p)
+\end{equation}
+的判别式恰为 $(abc)^{6p}$ 的固定因子倍，其伴随的伽罗瓦表示将具有极其反常的性质——这条曲线“不可能是模的”。塞尔（Serre）将这一观察精确化为水平约化猜想（即著名的 $\varepsilon$ 猜想）\cite{serre1987letters}；1986年，里贝特（Ribet）证明了它\cite{ribet1990galois}：
+
+\begin{theorem}[里贝特定理，1986]
+    弗雷曲线 \cref{eq:frey} 不是模的。
+\end{theorem}
+
+于是证明链缩短为：\textbf{谷山--志村猜想（半稳定情形）$\Rightarrow$ 弗雷曲线是模的 $\Rightarrow$ 与里贝特定理矛盾 $\Rightarrow$ 费马大定理}。 FLT 由此归约为谷山--志村猜想\cite{taniyama1955problems}的一个特例——一个关于椭圆曲线与模形式统一性的深刻命题。
+
+\subsection{怀尔斯的七年与1995年的完成}
+
+1986年秋得知里贝特定理后，怀尔斯闭关七年秘密研究半稳定椭圆曲线的模性。1993年6月23日，他在剑桥牛顿研究所宣布证明了半稳定情形的谷山--志村猜想，从而证明费马大定理。然而审稿过程中科茨（Coates）与凯茨（Katz）发现了欧拉系（Euler system）论证中的一个关键漏洞。1994年9月，怀尔斯与泰勒（Taylor）在几乎放弃之际发现了绕过漏洞的“泰勒--怀尔斯配补”（patching）技术\cite{taylor1995ring}，最终证明于1995年发表在《数学年刊》上\cite{wiles1995modular}。2001年，Breuil、Conrad、Diamond、Taylor 将结论推广到全部椭圆曲线，完成了一般的模性定理\cite{breuil2001modularity}。

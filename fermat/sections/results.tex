@@ -1,0 +1,43 @@
+\section{重要成果}\label{sec:results}
+
+\subsection{部分结果的时间线}
+
+\begin{table}[htbp]
+    \centering
+    \caption{费马大定理部分结果的时间线}
+    \label{tab:timeline}
+    \begin{tabular}{llll}
+        \toprule
+        年份 & 数学家 & 覆盖的指数 & 方法 \\
+        \midrule
+        1637--1665 & 费马 & $n=4$ & 无穷下降法 \\
+        1753 & 欧拉 & $n=3$ & $\mathbb{Z}[\sqrt{-3}]$ 中的下降 \\
+        1825 & 狄利克雷、勒让德 & $n=5$ & 素数分解 + 下降 \\
+        1839 & 拉梅 & $n=7$ & 分圆整数 \\
+        1847 & 库默尔 & 全部正规素数 & 理想论、类数 \\
+        1850--1976 & 库默尔至瓦格斯塔夫 & 第一情形 $p < 125{,}000$ & 伯努利数判据 + 计算 \\
+        1986 & 里贝特 & （归约） & 水平约化 \\
+        1995 & 怀尔斯、泰勒 & \textbf{全部指数} & 模性提升 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{怀尔斯--泰勒定理}
+
+\begin{theorem}[怀尔斯1995；泰勒--怀尔斯1995]
+    设 $E$ 是定义在 $\mathbb{Q}$ 上的半稳定椭圆曲线，则 $E$ 是模的。特别地，费马大定理成立。
+\end{theorem}
+
+证明的长链为：半稳定谷山--志村猜想 $\Rightarrow$ 半稳定弗雷曲线（若 FLT 有解则存在）是模的 $\Rightarrow$ 与里贝特定理矛盾 $\Rightarrow$ FLT。值得强调的是，怀尔斯的论文实际证明了比 FLT 所需更多的内容，其技术核心（泰勒--怀尔斯配补）是独立于 FLT 的重大成果。
+
+\subsection{模性定理}
+
+\begin{theorem}[Breuil--Conrad--Diamond--Taylor, 2001]
+    所有定义在 $\mathbb{Q}$ 上的椭圆曲线都是模的。
+\end{theorem}
+
+这完成了谷山--志村--魏伊猜想的全部内容。模性定理的推论包括：Hasse--Weil $L$ 函数的解析延拓与函数方程、BSD 猜想中“解析秩等于代数秩”在 $\operatorname{ord}_{s=1} L(E,s) = 0$ 或 $1$ 情形的证明（Gross--Zagier 与 Kolyvagin 的结果因此适用于所有椭圆曲线）等。
+
+\subsection{广义费马方程}
+
+对 $x^p + y^q = z^r$ 型方程（指数不全相等），已有一系列条件性或特定指数的结果（Darmon--Granville 1995：固定指数组合下仅有有限个本原解\cite{darmon1995equations}）。Catalan 方程 $x^a - y^b = 1$ 的唯一解 $3^2 - 2^3 = 1$ 由米哈伊列斯库（Mih\u{a}ilescu）于2004年无条件证明\cite{mihailescu2004catalan}，这是与 FLT 平行的“指数丢番图方程”领域的另一里程碑。

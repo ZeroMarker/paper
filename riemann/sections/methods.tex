@@ -1,0 +1,59 @@
+\section{研究方法}\label{sec:methods}
+
+\subsection{解析方法}
+
+（经典参考书：Titchmarsh--Heath-Brown\cite{titchmarsh1986theory}。）
+
+\subsubsection{显式公式}
+
+显式公式\cref{eq:explicit}将素数分布问题转化为零点位置问题。设 $\Theta = \sup\{\Re(\rho)\}$ 为零点实部的上确界，则
+\begin{equation}
+    \psi(x) = x + O\!\left(x^{\Theta} \log^2 x\right),
+\end{equation}
+即 $\Theta = \tfrac{1}{2}$ 当且仅当黎曼猜想成立。这一对偶关系使得大量关于素数的结果都可以改写为关于零点的结果，反之亦然。
+
+\subsubsection{硬性定理}
+
+哈代—李特尔伍德—塞尔伯格路线使用积分平均
+\begin{equation}
+    N_0(T) = \#\left\{\rho = \tfrac{1}{2} + i\gamma : 0 < \gamma \le T\right\}
+\end{equation}
+与总数
+\begin{equation}
+    N(T) = \#\left\{\rho : 0 < \Im(\rho) \le T\right\} = \frac{T}{2\pi}\log\frac{T}{2\pi} - \frac{T}{2\pi} + O(\log T)
+\end{equation}
+之比 $\kappa(T) = N_0(T)/N(T)$ 来刻画临界线零点的比例。莱文森方法\cite{levinson1974zeros}通过研究 $\zeta(s)$ 的小扰动（乘以移位的导数）并利用其平均值的二阶矩估计下界，康瑞等人随后通过更精细的矩估计与大规模符号计算改进了常数\cite{conrey1989zeros,pratt2024zeros}。
+
+\subsubsection{矩问题}
+
+$\zeta$ 函数在临界线上的 $2k$ 次矩
+\begin{equation}
+    I_k(T) = \frac{1}{T}\int_{T}^{2T} |\zeta(\tfrac{1}{2}+it)|^{2k}\, dt
+\end{equation}
+是估计零点比例与 $L$ 函数次凸性（林德勒夫型问题）的核心工具。康瑞—加希（Conrey--Ghosh）与冈—凯恩（Gonek）对主项与次项提出了著名猜想；对所有 $k$，$I_k(T)$ 的阶 $(\log T)^{k^2}$ 已通过 Soundararajan 的上界与 Harper 等人的下界基本确定。
+
+\subsection{代数与几何方法}
+
+\subsubsection{有限域上的类比}
+
+在函数域情形，$\zeta$ 函数类比于曲线 $C$ 上的 $\zeta_C(s)$，其零点与曲线的雅可比簇相关联。韦伊证明曲线情形的黎曼假设\cite{weil1948courbes}，德利涅利用 étale 上同调与拖埃范数（Castelnuovo--Severi 不等式的推广）证明了一般有限域簇的黎曼假设\cite{deligne1974weil}。这一成功表明黎曼猜想可能是某个更大的“迹公式—上同调”框架的推论。
+
+\subsubsection{韦尔准则与正定性}
+
+韦尔指出：若能找到一个希尔伯特空间上的自伴算子 $H$，使得
+\begin{equation}
+    \operatorname{Spec}(H) = \left\{\gamma : \tfrac{1}{2} + i\gamma \text{ 是 } \zeta \text{ 的零点}\right\},
+\end{equation}
+则黎曼猜想立即可得，因为自伴算子的谱是实数。这即希尔伯特—韦尔（Hilbert--Pólya）纲领。贝里—基廷（Berry--Keating）猜测对应的算子形如 $xp$\cite{berry1999heisenberg}；康瑞等研究了迹公式 $\operatorname{Tr}(e^{itH}) = \sum_{\gamma} e^{it\gamma}$ 与韦尔项 $\frac{t}{2\pi}\log \frac{t}{2\pi}$ 的匹配问题。
+
+\subsection{随机矩阵理论}
+
+1972年，蒙哥马利（Montgomery）在普林斯顿与戴森（Dyson）的著名相遇催生了 $\zeta$ 零点与随机厄米矩阵本征值之间的联系：蒙哥马利对关联猜想\cite{montgomery1973pair}断言，零点间距的规范化对关联函数为
+\begin{equation}
+    R_2(\tau) = 1 - \left(\frac{\sin \pi \tau}{\pi \tau}\right)^2,
+\end{equation}
+这正是高斯酉系综（GUE）的对应量。Odlyzko 对高高度零点的计算\cite{odlyzko1987zeros}以惊人的精度验证了这一预言，凯茨（Katz）与萨纳克（Sarnak）随后将其推广到函数域 $L$ 函数的对称类型分类\cite{katz1999zeros}。随机矩阵理论由此成为 conjecturing 零点统计性质的主要框架，但尚未转化为证明。
+
+\subsection{计算方法}
+
+零点验证的标准工具是黎曼—西格尔（Riemann--Siegel）公式，它将 $\zeta(\tfrac{1}{2}+it)$ 表示为关于 $t$ 的快速可计算的渐近级数，配合区间算术可以在严格意义下验证“区间内所有零点均在临界线上”。Platt 采用高精度离散黎曼—西格尔方法验证了 $\zeta$ 与大量狄利克雷 $L$ 函数的零点\cite{platt2021verification}，为条件性结果提供了可靠的数值基础。

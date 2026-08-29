@@ -1,0 +1,53 @@
+\section{研究方法}\label{sec:methods}
+
+\subsection{无穷下降法}
+
+费马的无穷下降法处理 $n=4$ 的要点是：若 $x^4 + y^4 = z^2$ 有解，则可构造面积与本方和更小的直角三角形解，与最小性矛盾。下降法在 $n=3$（欧拉）、$n=5$（狄利克雷）的证明中也发挥核心作用，但每个指数都需要量身定制的论证，无法统一处理所有素数指数。
+
+\subsection{分圆域与库默尔理论}
+
+对奇素数 $p$，分解
+\begin{equation}
+    x^p + y^p = \prod_{j=0}^{p-1} (x + \zeta_p^j y),
+\end{equation}
+其中 $\zeta_p = e^{2\pi i/p}$。若因子在 $\mathbb{Z}[\zeta_p]$ 中“互素”，则每个因子几乎是 $p$ 次幂，由此可导出矛盾。困难在于 $\mathbb{Z}[\zeta_p]$ 不再有唯一分解——替代品是理想类群与类数 $h_p$。库默尔的关键发现是：
+
+\begin{itemize}
+    \item 类数的正则部分 $h_p^+$ 与非正则部分 $h_p^-$ 的分解（解析类数公式）；
+    \item $p \mid h_p^-$ 当且仅当 $p$ 整除某些伯努利数 $B_2, B_4, \ldots, B_{p-3}$ 的分子；
+    \item 由此得到可计算的正规性判据，将 FLT 归约为对伯努利数的整除性检查。
+\end{itemize}
+
+这一“解析—代数互动”的范式（类数与 $L$ 函数值、伯努利数）后来发展为岩泽（Iwasawa）理论，至今仍是数论的主流方向。
+
+\subsection{椭圆曲线与模形式}
+
+怀尔斯路线的基础对象是椭圆曲线与模形式之间的对应（背景知识见\cite{silverman2009arithmetic}）。
+
+\begin{definition}[模性]
+    定义在 $\mathbb{Q}$ 上的椭圆曲线 $E$ 称为\textbf{模的}（modular），若存在权为 $2$ 的尖点模形式 $f$（某级 $\Gamma_0(N)$ 上）使得 $E$ 的 $L$ 函数等于 $f$ 的 $L$ 函数：$L(E, s) = L(f, s)$。
+\end{definition}
+
+模形式由其 Hecke 本征值决定，而椭圆曲线的模性等价于其伴随的二维伽罗瓦表示
+\begin{equation}
+    \rho_{E,\ell} : \operatorname{Gal}(\overline{\mathbb{Q}}/\mathbb{Q}) \to \operatorname{GL}_2(\mathbb{Z}_\ell)
+\end{equation}
+来自模形式的构造。谷山--志村猜想（现在的模性定理）断言：\textbf{所有} $\mathbb{Q}$ 上的椭圆曲线都是模的。
+
+\subsection{里贝特水平约化}
+
+里贝特定理是连接弗雷构造与模性的桥梁。其证明使用模曲线 $X_0(N)$ 的雅可比簇上的新形式理论（Hecke 代数的商）：若某条判别式为 $N^p$ 次幂的曲线是模的，其模形式必然来自更低水平——而水平约化到 $2$ 或 $1$ 后不存在权 $2$ 的尖点形式，矛盾。这一“水平下降”技术本身已成为模形式计算的标准方法。
+
+\subsection{怀尔斯的模性提升：$R = T$}
+
+怀尔斯证明的核心是\textbf{模性提升定理}（modularity lifting）：设 $\rho: G_{\mathbb{Q}} \to \operatorname{GL}_2(\mathbb{Z}/p\mathbb{Z})$ 是绝对不可约的模表示，且满足若干局部条件（在 $3$ 与 $\ell \ne p$ 处的横截性等），则任何以 $\rho$ 为模 $p$ 约化的形变 $\tilde{\rho}: G_{\mathbb{Q}} \to \operatorname{GL}_2(\mathbb{Z}_p)$ 也是模的。
+
+技术路线概述（系统阐述见\cite{cornell1997modular}）：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{形变环与 Hecke 环}：构造表示的普适形变环 $R$，以及由模形式构成的 Hecke 代数 $T$；模性提升即证明典范映射 $R \to T$ 是同构（$R = T$）；
+    \item \textbf{Selmer 群的上界}：借鉴 Kolyvagin 的欧拉系思想，对 Selmer 群给出控制 $R$ 的若干“长度”上界；
+    \item \textbf{泰勒--怀尔斯配补}：对形变问题的辅助水平集做归纳，将 $R = T$ 从“充分多辅助水平”的情形拼补到全局，并配合切换技巧（$3$--$5$ switch：把模 $3$ 非横截的情形换基到模 $5$ 横截的曲线）处理剩余情形。
+\end{enumerate}
+
+对于半稳定弗雷曲线，配合里贝特定理即完成 FLT 的证明。\textbf{“构造模表示的船，然后证明它模性提升”}这一策略此后被推广：完全交判别法与 Gorenstein 条件的系统化、四元数代数上的模性提升（Barnet-Lamb--Gee--Geraghty--Taylor 等），以及最终的一般模性定理\cite{breuil2001modularity}。

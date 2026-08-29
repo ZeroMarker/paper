@@ -1,0 +1,54 @@
+\section{重要成果}\label{sec:results}
+
+\subsection{素数间隔的纪录演进}
+
+从 GPY 到 Polymath8，无条件下“存在无穷多对间隔不超过 $H$ 的素数”中的 $H$ 呈指数式下降，见表~\ref{tab:gaps}。
+
+\begin{table}[htbp]
+    \centering
+    \caption{有界素数间隔纪录的演进（无条件下）}
+    \label{tab:gaps}
+    \begin{tabular}{llll}
+        \toprule
+        年份 & 结果 & 间隔界 $H$ & 方法 \\
+        \midrule
+        2005 & Goldston--Pintz--Yıldırım & $o(\log p)$ & 一维塞尔伯格筛 \\
+        2013 & 张益唐 & $7 \times 10^7$ & 修正分布水平 $1/2 + 1/584$ \\
+        2013 & Maynard--Tao & $600$ & 多维筛法 \\
+        2014 & Polymath8b & $246$ & 多维筛法 + 组合优化 \\
+        \midrule
+        \multicolumn{4}{l}{条件性结果（假设 Elliott--Halberstam 猜想，分布水平 $\theta = 1$）} \\
+        2014 & Polymath8b & $6$ & 多维筛法 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{陈氏定理及其推广}
+
+陈氏定理（\cref{sec:history}）仍是孪生素数猜想的最强无条件逼近。其推广包括：
+
+\begin{itemize}
+    \item \textbf{定量形式}：形如 $p + P_2$ 的数在 $x$ 以内有 $\gg x/(\log x)^2$ 个，与孪生素数猜想的主项量级完全一致；
+    \item \textbf{推广到一般间隔}：对任意偶数 $h$，存在无穷多素数 $p$ 使 $p + h$ 为 $P_2$ 型数；
+    \item \textbf{Pintz 的精化}：可以要求 $p+2$ 的两个素因子都大于 $(p+2)^{c}$。
+\end{itemize}
+
+\subsection{计数与常数}
+
+\begin{itemize}
+    \item \textbf{布朗常数}：$B_2 \approx 1.902160583$，其倒数和的收敛性（布朗定理）是孪生素数“稀疏性”的经典刻画\cite{brun1919}；
+    \item \textbf{数值计数}：$\pi_2(10^{18})$ 的精确值与 Hardy--Littlewood 预言 $2C_2 \int_2^{x} dt/(\log t)^2$ 的相对偏差已小于 $10^{-5}$ 量级；
+    \item \textbf{最大已知孪生素数对}：随着分布式计算不断刷新（2023年纪录为 388342 位的 $2996863034895 \cdot 2^{1290000} \pm 1$）。
+\end{itemize}
+
+\subsection{相邻素数间隔}
+
+与孪生素数猜想平行的是关于全部相邻素数间隔 $\{p_{n+1} - p_n\}$ 的研究。张益唐与后续工作证明了
+\begin{equation}
+    \liminf_{n \to \infty} (p_{n+1} - p_n) \le 246,
+\end{equation}
+即某个不超过 $246$ 的偶数作为间隔出现无穷多次——但不知道是哪一个。作为对照，另一端证明了间隔可以任意大（Erd\H{o}s--Rankin 构造，Ford--Green--Konyagin--Maynard--Tao 2016年给出最优增长阶）。
+
+\subsection{与哥德巴赫猜想的联系}
+
+陈景润1973年的另一著名结果——每个充分大偶数可表示为素数与 $P_2$ 型数之和（“$1+2$”）\cite{chen1973twin}——与孪生素数形式的陈氏定理使用同一套加权筛技术。两个问题共享“奇偶性壁垒”这一根本障碍，方法上的任何突破往往同时作用于两者。

@@ -1,0 +1,44 @@
+\section{开放问题}\label{sec:open_problems}
+
+\subsection{主猜想}
+
+尽管有界间隔已降至 $246$，从“某个间隔 $\le 246$”到“间隔恰为 $2$”之间没有已知的可行路径。主要障碍：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{奇偶性壁垒}：经典筛法在原理上无法区分 $P_1$ 与 $P_3$ 型数，需要全新的观念；
+    \item \textbf{分布水平的 $1/2$ 壁垒}：GPY 方法需要 $\theta > 1/2$，张益唐的推进依赖对特定和式的精细估计，而继续推进分布水平指数目前没有已知的改进路径；
+    \item \textbf{二项式系数项的缺失}：Maynard--Tao 方法本质上只能给出“至少两个素数”，无法指定它们相距 $2$。
+\end{enumerate}
+
+\subsection{重要的条件性与推广猜想}
+
+\begin{conjecture}[Elliott--Halberstam 猜想]
+    素数在算术级数中的分布水平达到 $\theta = 1$，即对任意 $A > 0$，
+    \begin{equation}
+        \sum_{q \le x} \max_{(a,q)=1} \left|\pi(x; q, a) - \frac{\pi(x)}{\varphi(q)}\right| \ll \frac{x}{(\log x)^A}.
+    \end{equation}
+\end{conjecture}
+
+在 EH 猜想下，Polymath8b 得到素数间隔界 $6$\cite{polymath2014variants}；广义 EH 猜想（允许模数与 $n$ 不互素的情形）可进一步改进。EH 猜想还蕴含孪生素数型的加权相关估计，是当前条件性研究的枢纽。
+
+\begin{conjecture}[Dickson 猜想]
+    任意允许的 $k$ 元线性型组 $\{a_i n + b_i\}$ 同时取素数有无穷多次。
+\end{conjecture}
+
+Dickson 猜想蕴含孪生素数猜想、表兄弟素数猜想以及 Sophie Germain 素数（$p$ 与 $2p+1$ 同为素数）的无穷性。
+
+\begin{conjecture}[Hardy--Littlewood 素数 $k$ 元组猜想]
+    每个允许 $k$ 元组的全素数出现次数有精确渐近公式，主项由奇异级数给出。
+\end{conjecture}
+
+\subsection{单侧问题}
+
+\begin{itemize}
+    \item \textbf{具体间隔的出现}：我们不知道间隔 $2$、$4$、$6$ 中哪一个出现无穷多次（间隔 $246$ 以内的某个偶数必然出现无穷多次）；
+    \item \textbf{孪生素数计数的下界}：目前连 $\pi_2(x) \gg x/(\log x)^{2}$ 也只在陈氏定理的 $P_2$ 放宽意义下成立；
+    \item \textbf{反向问题（大间隔）}：Erd\H{o}s--Rankin 问题——相邻素数间隔的最大增长阶——2016年由 Ford--Green--Konyagin--Maynard--Tao 基本解决\cite{ford2016large}，但孪生素数一端的“小间隔”问题依然完全开放。
+\end{itemize}
+
+\subsection{反方向的审视}
+
+与哥德巴赫猜想、黎曼猜想不同，孪生素数猜想在启发式上“应该成立”（Cram\'er--Hardy--Littlewood 模型给出明确主项），历史上没有严肃的反面论据。真正的风险在方法侧：所有现有工具（筛法、指数和、矩估计）都触及奇偶性壁垒，学界普遍认为需要革命性的新思想——例如将素数与加性组合、遍历理论（Green--Tao 路线）或 $L$ 函数矩理论更深地结合。
