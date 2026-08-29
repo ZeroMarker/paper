@@ -14,7 +14,7 @@
 
 \subsubsection{定量形式}
 
-即使证明了哥德巴赫猜想，定量版本仍有待研究。设 $r(n)$ 表示偶数 $n$ 表示为两个素数之和的方法数，哈代-李特尔伍德猜想给出：
+即使证明了哥德巴赫猜想，定量版本仍有待研究。设 $r(n)$ 表示偶数 $n$ 表示为两个素数之和的方法数，哈代-李特尔伍德猜想给出\cite{hardy1923some}：
 
 \begin{equation}
     r(n) \sim \frac{n}{(\log n)^2} \prod_{\substack{p|n \\ p>2}} \frac{p-1}{p-2} \prod_{p>2} \left(1 - \frac{1}{(p-1)^2}\right)
@@ -24,13 +24,13 @@
 
 \subsection{相关猜想}
 
-\subsubsection{李生素数猜想}
+\subsubsection{孪生素数猜想}
 
-\begin{conjecture}[李生素数猜想]
+\begin{conjecture}[孪生素数猜想]
     存在无穷多对素数 $(p, p+2)$。
 \end{conjecture}
 
-张益唐（2013）证明了存在无穷多对素数，其间隔不超过 $7 \times 10^7$。后续工作已将此界缩小到246。
+在 GPY 方法\cite{goldston2009small}的基础上，张益唐（2013）证明了存在无穷多对素数，其间隔不超过 $7 \times 10^7$\cite{zhang2014bounded}。后续工作已将此界缩小到 $246$\cite{maynard2015small}。
 
 \subsubsection{波利尼亚克猜想}
 
@@ -38,21 +38,15 @@
     对于任意偶数 $k$，存在无穷多对素数 $(p, p+k)$。
 \end{conjecture}
 
-\subsubsection{迪克曼猜想}
+\subsubsection{例外集的最优指数}
 
-\begin{conjecture}[迪克曼猜想]
-    设 $\Psi(x,y)$ 表示不超过 $x$ 且所有素因子不超过 $y$ 的整数个数，则
-    \begin{equation}
-        \Psi(x,x^{1/u}) \sim x \rho(u)
-    \end{equation}
-    其中 $\rho(u)$ 是迪克曼函数。
-\end{conjecture}
+殆哥德巴赫定理给出非哥德巴赫偶数例外集 $E(x) \ll x^{1-\delta}$，但最优指数完全未知：能否证明 $E(x) \ll x^{1/2+\epsilon}$（乃至 $E(x) = O((\log x)^A)$）没有任何已知路径。例外集的指数与素数在算术级数中的分布水平（Elliott--Halberstam 型猜想）密切相关，是圆法与筛法的共同前沿。
 
 \subsection{可能的研究方向}
 
 \subsubsection{新筛法的发展}
 
-当前筛法的主要局限在于无法有效处理加性结构。发展新的筛法工具，特别是能够捕捉素数加性性质的筛法，是重要的研究方向。
+当前筛法的主要局限在于无法有效处理加性结构\cite{halberstam1974sieve}。发展新的筛法工具，特别是能够捕捉素数加性性质的筛法，是重要的研究方向。
 
 \subsubsection{代数几何方法}
 
@@ -60,7 +54,7 @@
 
 \subsubsection{概率方法}
 
-概率数论的方法为研究素数分布提供了新视角。埃多什-卡茨定理等结果可能有助于理解哥德巴赫猜想。
+概率数论的方法为研究素数分布提供了新视角。爱多士--卡茨（Erd\H{o}s--Kac）定理等结果可能有助于理解哥德巴赫猜想。
 
 \subsubsection{计算机辅助证明}
 
@@ -78,7 +72,7 @@
         \midrule
         强哥德巴赫猜想 & 未解决 \\
         哈代-李特尔伍德渐近公式 & 未证明 \\
-        李生素数猜想 & 部分解决 \\
+        孪生素数猜想 & 部分解决 \\
         波利尼亚克猜想 & 未解决 \\
         弱哥德巴赫猜想的定量形式 & 未解决 \\
         \bottomrule
