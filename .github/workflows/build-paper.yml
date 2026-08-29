@@ -43,6 +43,7 @@ jobs:
         echo "paper=$PAPER" >> "$GITHUB_OUTPUT"
         echo "dir=$DIR" >> "$GITHUB_OUTPUT"
         echo "root=$ROOT_FILE" >> "$GITHUB_OUTPUT"
+        echo "pdf=${ROOT_FILE%.tex}.pdf" >> "$GITHUB_OUTPUT"
         if [ -f "$DIR/setup.sh" ]; then
           echo "has_setup=true" >> "$GITHUB_OUTPUT"
         else
@@ -73,11 +74,11 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ${{ steps.parse.outputs.paper }}-pdf
-        path: ${{ steps.parse.outputs.dir }}/${{ steps.parse.outputs.root }}.pdf
+        path: ${{ steps.parse.outputs.dir }}/${{ steps.parse.outputs.pdf }}
 
     - name: Create Release and Upload PDF
       uses: softprops/action-gh-release@v2
       with:
-        files: ${{ steps.parse.outputs.dir }}/${{ steps.parse.outputs.root }}.pdf
+        files: ${{ steps.parse.outputs.dir }}/${{ steps.parse.outputs.pdf }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
