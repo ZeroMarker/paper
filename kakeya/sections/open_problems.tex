@@ -1,0 +1,36 @@
+\section{开放问题}\label{sec:open_problems}
+
+\subsection{高维挂谷猜想（$n \ge 4$）}
+
+三维证明之后，首要问题自然是：
+
+\begin{conjecture}
+    对 $n \ge 4$，$\mathbb{R}^n$ 中的 Besicovitch 集具有满 Hausdorff（与 Minkowski）维数 $n$。
+\end{conjecture}
+
+目前 $n \ge 4$ 的最好下界仍是 $(n+2)/2$\cite{wolff1995}，与猜想差距随 $n$ 增大而拉大。Wang--Zahl 的结构纲领（粘性/颗粒二分）原则上不依赖维数，但其技术细节（凸集体积估计的指数）在 $n \ge 4$ 时会出现定量退化，能否推广是当前最受关注的方向。
+
+\subsection{Kakeya 极大算子}
+
+\begin{conjecture}
+    \cref{conj:maximal} 对所有 $p \ge n$ 成立，即 $\|M_\delta\|_{L^p \to L^p} \lesssim \delta^{-n/p}$（带上界 $\delta^{-\frac{n}{p}}$ 的最优衰减）。
+\end{conjecture}
+
+在 $n = 3$，Wang--Zahl 的工作给出 $p = 3$ 的情形；$n \ge 4$ 时连 $p = n$ 都远未触及。与 Nikodym 极大算子、X 射线变换相关算子的 $L^p$ 映射性质的层级关系也远未理清（参见 Mizohata--Takeuchi 猜想的最新反例进展）。
+
+\subsection{局部光滑化与限制性}
+
+\begin{itemize}
+    \item \textbf{局部光滑化猜想}：$n \ge 3$ 时波动方程解的局部 $L^p$ 正则性增益；其与挂谷的等价桥梁（\cref{sec:applications}）意味着三维挂谷的解决是起点而非终点。
+    \item \textbf{限制性猜想}：$n \ge 3$ 时球面 Fourier 变换的 $(p, q)$ 限制性估计；多项式分划已推进若干维数，但完整猜想仍开放。
+    \item \textbf{Bochner--Riesz 求和}：临界指标以上的平均收敛性，同样以挂谷型计数为核心障碍。
+\end{itemize}
+
+\subsection{变体与推广}
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{Furstenberg 集}：$n \ge 3$ 的 Furstenberg 集维数下界；平面情形的最终估计仍在对数因子层面精化。
+    \item \textbf{算术挂谷}：$\mathbb{Z}^n$ 或一般数环上包含所有方向直线的集合的大小；与关联几何、sum--product 的定量联系。
+    \item \textbf{定量结构}：Besicovitch 集的 $\delta$-邻域体积是否必须满足 $|E_\delta| \gtrsim (\log (1/\delta))^{-C}$ 型下界，且最优对数指数是多少；二维中已知 $\frac{1}{\log(1/\delta)}$ 不可改进，高维的最优衰减率完全未知。
+    \item \textbf{有效版本}：给出 Besicovitch 集构造与维数下界的显式常数与算法复杂度。
+\end{enumerate}

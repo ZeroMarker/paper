@@ -1,0 +1,33 @@
+\section{引言}\label{sec:introduction}
+
+挂谷猜想（Kakeya conjecture）是当代调和分析与组合几何中最核心的未解问题之一。它起源于一个看似初等的几何谜题——挂谷宗一（S\=oichi Kakeya）1917年提出的\textbf{转针问题}：在平面上，面积最小的、能使一根单位长度的针（线段）旋转掉头的区域是什么？出人意料的是，Besicovitch 于1928年证明：如果不对区域作凸性等正则性要求，这样的区域面积可以任意小，甚至存在\textbf{测度为零}的集合，其中包含指向每一个方向的单位线段\cite{besicovitch1928}。这类集合如今被称为 \textbf{Besicovitch 集} 或 \textbf{挂谷集}。
+
+测度为零之后，一个更精细的问题自然浮现：挂谷集究竟“多薄”？把它推广到高维，就得到现代意义上的挂谷猜想。
+
+\begin{definition}[Besicovitch 集]\label{def:kakeya-set}
+    称紧集 $E \subset \mathbb{R}^n$ 为 \textbf{Besicovitch 集}（挂谷集），若对每个方向 $\omega \in S^{n-1}$，$E$ 都包含一条方向为 $\omega$ 的单位长线段。
+\end{definition}
+
+\begin{conjecture}[挂谷猜想]\label{thm:kakeya}
+    设 $n \ge 2$。若 $E \subset \mathbb{R}^n$ 是 Besicovitch 集，则其 Hausdorff 维数（等价地，Minkowski 维数）为
+    \begin{equation}
+        \dim_{\mathrm{H}} E = \dim_{\mathrm{M}} E = n .
+    \end{equation}
+\end{conjecture}
+
+换言之，无论集合的测度多么小，它“必须足够厚”以至于充满整个空间的维数。这一陈述在 $n = 2$ 时由 Davies 于1971年证明\cite{davies1971}；$n = 3$ 的情形在悬置逾百年后，于2025年被王虹（Hong Wang）与 Joshua Zahl 完全解决\cite{wangzahl2025}；$n \ge 4$ 时至今悬而未决，目前最好的下界仍是 Wolff 在1995年建立的 $(n+2)/2$\cite{wolff1995}。
+
+\subsection{研究意义}
+
+挂谷猜想远不止是一个几何 curiosities，它的研究意义体现在多个层面：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{调和分析的核心}：Kakeya 极大算子的 $L^p$ 有界性等价于挂谷猜想的定量版本；而局部光滑化猜想、限制性猜想与 Bochner--Riesz 求和问题中的\textbf{任何一个}都蕴含 Kakeya 极大猜想\cite{tao2001notices}。挂谷集刻画了 Fourier 变换中波包（tube）聚集的最坏情形，是这一整族问题的共同组合核心。
+    \item \textbf{色散方程}：波动方程与 Schrödinger 方程解的解耦（decoupling）估计、Strichartz 估计的最优性，本质上依赖于对管状邻域交叠的计数，其困难与挂谷集的维数同源\cite{bourgaindemeter2015}。
+    \item \textbf{方法论的辐射}：为攻克有限域版本的挂谷问题，Dvir 于2008年引入的多项式方法\cite{dvir2009}催生了一场组合学的技术革命，Cap set 问题\cite{ellenberggijswijt2017}等一系列长期难题随之解决。
+    \item \textbf{维数理论的试金石}：挂谷集是“测度为零但维数最大”的病态对象，其研究推动了 Hausdorff 测度、覆盖引理与投影理论的发展，并与 Furstenberg 集问题、加法组合中的 sum--product 现象深刻交织\cite{tao2001notices}。
+\end{enumerate}
+
+\subsection{本文结构}
+
+本文组织如下：\cref{sec:history} 回顾从转针问题到维数问题的历史发展；\cref{sec:methods} 介绍主要研究方法；\cref{sec:results} 总结重要研究成果；\cref{sec:applications} 讨论相关应用与联系；\cref{sec:open_problems} 列举开放问题；\cref{sec:conclusion} 总结全文。

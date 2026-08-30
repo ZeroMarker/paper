@@ -1,0 +1,88 @@
+\section{重要成果}\label{sec:results}
+
+\subsection{进展总览}
+
+从1917年的转针问题到2025年三维情形的解决，挂谷猜想的研究呈现出“平面先行、高维渐进、组合与代数交替突破”的清晰脉络。\cref{tab:progress} 按时间顺序汇总了主要里程碑，其后各小节逐一展开。
+
+\begin{table}[htbp]
+    \centering
+    \caption{挂谷猜想的主要进展（$n \ge 3$ 的维数下界）}
+    \label{tab:progress}
+    \begin{tabular}{lll}
+        \toprule
+        年份 & 作者 & 结果 \\
+        \midrule
+        1917 & Kakeya & 提出转针问题\cite{kakeya1917} \\
+        1928 & Besicovitch & 平面挂谷集测度可为零\cite{besicovitch1928} \\
+        1971 & Davies & $n = 2$：满维数（猜想完全解决）\cite{davies1971} \\
+        1977 & Córdoba & $\dim_{\mathrm{M}} E \ge (n+1)/2$\cite{cordoba1977} \\
+        1991 & Bourgain & 下界的对数型改进\cite{bourgain1991} \\
+        1995 & Wolff & $\dim_{\mathrm{M}} E \ge (n+2)/2$\cite{wolff1995} \\
+        2001 & Katz--\L aba--Tao & $n = 3$：$5/2 + \varepsilon$（对某个小 $\varepsilon > 0$）\cite{klt2001} \\
+        2008/09 & Dvir & 有限域情形完全解决\cite{dvir2009} \\
+        2011 & Bennett--Carbery--Tao & 多线性 Kakeya（去端点）最优\cite{bct2011} \\
+        2018 & Guth & 多线性 Kakeya 端点（多项式分划）\cite{guth2018} \\
+        2025 & Wang--Zahl & $n = 3$：满维数（猜想完全解决）\cite{wangzahl2025} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{平面情形：Davies 定理}
+
+\begin{theorem}[Davies, 1971]\label{thm:davies}
+    设 $E \subset \mathbb{R}^2$ 是 Besicovitch 集，则
+    \begin{equation}
+        \dim_{\mathrm{H}} E = \dim_{\mathrm{M}} E = 2 .
+    \end{equation}
+\end{theorem}
+
+Davies 的证明将 Besicovitch 的 Perron 树构造反向利用：若 $\dim_{\mathrm{M}} E < 2$，则 $E$ 的 $\delta$-邻域体积按某个负幂衰减，而逐方向的管子覆盖会迫使这个体积出现对数型的矛盾下界。平面情形的完整解决也附带给出定量的结论：$|E_\delta| \gtrsim 1/\log(1/\delta)$，且该对数衰减不可改进（Besicovitch 构造可达到）。
+
+\subsection{Wolff 的 $(n+2)/2$ 下界}
+
+\begin{theorem}[Wolff, 1995]\label{thm:wolff}
+    设 $n \ge 2$，$E \subset \mathbb{R}^n$ 是 Besicovitch 集，则
+    \begin{equation}
+        \dim_{\mathrm{H}} E \ge \frac{n+2}{2}, \qquad \dim_{\mathrm{M}} E \ge \frac{n+2}{2}.
+    \end{equation}
+    相应地，Kakeya 极大算子 $M_\delta$ 在 $L^p(\mathbb{R}^n)$ 上满足 $\|M_\delta\|_{L^p \to L^p} \le C \delta^{-n/p}$ 对一切 $p \ge \frac{n+2}{2}$ 成立。
+\end{theorem}
+
+Wolff 的毛刷论证同时建立了维数下界与极大算子的 $L^p$ 界，将 Córdoba 的 $(n+1)/2$ 普遍推进半维。此后近三十年，$n \ge 4$ 的最好下界一直是 $(n+2)/2$——它恰落在“平面型”与“各向同性型”两个极端情形的较差者上，暗示线性方法已经用尽。
+
+\subsection{三维情形的渐进逼近}
+
+Katz、\L aba 与 Tao 于2001年证明，三维 Besicovitch 集的维数严格大于 $5/2$\cite{klt2001}：存在绝对小量 $\varepsilon > 0$（最初约 $10^{-7}$ 量级），使得 $\dim_{\mathrm{H}} E \ge 5/2 + \varepsilon$。其方法是“斜率重整化”（planiness/stickiness 的雏形）：若反例在某粗尺度上高度集中在低维代数形态附近，则归纳放大 $\varepsilon$；否则粗尺度上的散开直接贡献体积。Katz--Tao 随后系统化了“有限域模型模拟实数尺度递归”的方法论\cite{katztao2002}，为二十余年后的最终突破奠定了词汇与框架。
+
+\subsection{有限域上的完全解决}
+
+\begin{theorem}[Dvir, 2008]\label{thm:dvir}
+    设 $\mathbb{F}_q$ 为有限域，$K \subset \mathbb{F}_q^n$ 包含每个方向的一条完整直线，则
+    \begin{equation}
+        |K| \ge c_n q^n .
+    \end{equation}
+\end{theorem}
+
+有限域挂谷问题的解决（\cref{sec:methods}）在组合学界的影响远超问题本身：多项式方法随即解决了 Cap set 问题\cite{ellenberggijswijt2017}，并成为组合几何的标准武器。这也反衬出实数情形的困难——尺度递归与代数曲面的相互作用无法被有限域模型捕捉。
+
+\subsection{多线性 Kakeya 估计}
+
+\begin{theorem}[Bennett--Carbery--Tao; Guth]\label{thm:bct}
+    设 $n \ge 2$，$\mathbb{T}_1, \ldots, \mathbb{T}_n$ 为 $n$ 组方向两两横向的 $\delta$-管族，则对任意 $\alpha > 0$（非端点）/ $\alpha = 0$（端点），
+    \begin{equation}
+        \Bigl| \bigcup_{j=1}^{n} \bigcup_{T \in \mathbb{T}_j} T \Bigr| \;\gtrsim_{\,\alpha} \; \delta^{\,\alpha} \Bigl( \prod_{j=1}^{n} \#\mathbb{T}_j \Bigr)^{1/n} \qquad (\text{端点情形无因子 } \delta^{\alpha}).
+    \end{equation}
+\end{theorem}
+
+Bennett--Carbery--Tao 于2006年宣布、2011年正式发表的非端点证明\cite{bct2011}使用多线性 $L^{p}$ 正交性与尺度归纳；Guth 的多项式分划方法补齐了端点\cite{guth2018}。多线性估计是限制性理论中“半线性”问题与波包分析之间的枢纽，其端点解决直接推动了高维限制性估计的进展。
+
+\subsection{三维挂谷猜想的证明（2025）}
+
+\begin{theorem}[Wang--Zahl, 2025]\label{thm:wangzahl}
+    设 $E \subset \mathbb{R}^3$ 是 Besicovitch 集，则
+    \begin{equation}
+        \dim_{\mathrm{H}} E = 3 .
+    \end{equation}
+\end{theorem}
+
+王虹与 Zahl 的证明\cite{wangzahl2025}以“凸集并集体积估计”为主线（方法概述见\cref{sec:methods}），把 Katz--\L aba--Tao 的重整化思想、Wolff 公理化的管族二分法与 Guth 的代数技术熔于一炉：反例要么在粗尺度上“粘性”退化（此时尺度归纳给出矛盾），要么“颗粒状”散开（此时计数给出体积下界）。证明篇幅逾百页，发表后立即被视为调和分析近十年最重要的成果；它同时确立了三维 Kakeya 极大算子的 $L^3$ 有界性，并使局部光滑化、限制性等猜想链条中依赖三维挂谷的环节全部打通。

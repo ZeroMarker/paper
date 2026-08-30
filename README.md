@@ -27,6 +27,11 @@ paper/
 │   ├── sections/           # 章节文件
 │   ├── references/         # BibTeX文献库
 │   └── compile.bat         # Windows编译脚本
+├── kakeya/                 # 挂谷猜想综述
+│   ├── main.tex            # 主LaTeX文件
+│   ├── sections/           # 章节文件
+│   ├── references/         # BibTeX文献库
+│   └── compile.bat         # Windows编译脚本
 └── paper.yaml              # Zotero 文库分类
 ```
 
@@ -39,6 +44,7 @@ paper/
 | 黎曼猜想：历史、进展与展望 | `riemann/` | `riemann-1.0.0` |
 | 孪生素数猜想：历史、进展与展望 | `twin_primes/` | `twin_primes-1.0.0` |
 | 费马大定理：历史、进展与展望 | `fermat/` | `fermat-1.0.0` |
+| 挂谷猜想：历史、进展与展望 | `kakeya/` | `kakeya-1.0.0` |
 
 ## 编译方法
 
@@ -92,4 +98,14 @@ pdflatex main
 4. **重要成果**：部分结果时间线、怀尔斯--泰勒定理、模性定理、广义费马方程
 5. **应用与推广**：算术几何标准技术、朗兰兹纲领、模方法
 6. **开放问题**：Beal 猜想、广义费马方程、模性定理的推广
+7. **结论**：总结与展望
+
+## 挂谷猜想综述主要内容
+
+1. **引言**：Besicovitch 集与挂谷猜想的陈述、研究意义
+2. **历史发展**：挂谷转针问题（1917）、Pál 正三角形、Besicovitch 零测集、Davies 平面满维数
+3. **研究方法**：Kakeya 极大算子、Córdoba 灌木丛论证、Wolff 毛刷论证、多线性方法与多项式分划、有限域多项式方法（Dvir 定理）、Wang--Zahl 凸集体积估计
+4. **重要成果**：维数下界时间线、Davies 定理、Wolff $(n+2)/2$、Dvir 定理、多线性 Kakeya 估计、Wang--Zahl 三维证明（2025）
+5. **应用与联系**：限制性估计、Bochner--Riesz 求和、局部光滑化、色散方程解耦、组合几何与数论、多项式方法的辐射效应
+6. **开放问题**：高维（$n \ge 4$）挂谷猜想、Kakeya 极大算子、局部光滑化与限制性、Furstenberg 集与算术挂谷
 7. **结论**：总结与展望

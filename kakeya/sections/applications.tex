@@ -1,0 +1,30 @@
+\section{应用与联系}\label{sec:applications}
+
+\subsection{限制性估计与 Bochner--Riesz 求和}
+
+挂谷猜想处于调和分析中一整族著名问题的组合核心\cite{tao2001notices}。其联系经由波包分解显现：Fourier 限制性估计、Bochner--Riesz 求和与球面收敛问题最终都归结为对“方向各异、位置交叠的 $\delta$-管族”的计数，而挂谷集正是这些计数问题的最坏情形。特别地，限制性猜想、Bochner--Riesz 猜想与局部光滑化猜想中的任何一个都蕴含 Kakeya 极大猜想：反过来说，挂谷集的构造为上述问题提供了共同的障碍性反例来源。
+
+\subsection{色散方程与局部光滑化}
+
+波动方程的局部光滑化猜想（Sogge）断言解在时空局部 $L^p$ 范数上获得超出能量估计的正则性增益。Wolff 观察到：局部光滑化猜想在空间维数 $n$ 时蕴含 Kakeya 极大猜想——把解的初值取为聚焦波包，其在 $(x, t)$ 空间中的支撑恰好构成挂谷型管族\cite{tao2001notices}。因此：
+
+\begin{itemize}
+    \item 挂谷集的维数下界直接给出局部光滑化的部分结果（Wolff 据此证明了 $n = 2$ 的局部光滑化）；
+    \item Wang--Zahl 的三维证明\cite{wangzahl2025}打通了 $n = 3$ 时的相应链条。
+\end{itemize}
+
+在 $l^2$ 解耦理论的框架下\cite{bourgaindemeter2015}，波动方程与 Schrödinger 方程的 Strichartz 估计被统一处理，而解耦证明中的关键计数——不同平面上波包的交叠控制——正是多线性 Kakeya 估计的近亲（\cref{thm:bct}）。
+
+\subsection{组合几何与数论}
+
+挂谷问题亦是组合几何与加法组合的交汇点\cite{tao2001notices}：
+
+\begin{itemize}
+    \item \textbf{算术挂谷问题}：将 $\mathbb{R}^n$ 换成整数格点或数环，问包含所有“有理方向”直线的集合的下界。此类问题与点线关联（incidence）估计和 sum--product 现象相互供养。
+    \item \textbf{Furstenberg 集问题}：包含每个方向一条直线的“分形版”挂谷集，其维数下界问题近年来随投影理论的发展取得决定性进展。
+    \item \textbf{Nikodym 集}：过每点存在一条直线仅与集合交于该点的对偶对象，其极大算子与 Kakeya 极大算子的技术互相转化。
+\end{itemize}
+
+\subsection{多项式方法的辐射效应}
+
+Dvir 对有限域挂谷问题的解决\cite{dvir2009}催生的多项式方法，已成为组合数学近二十年最重要的技术革命之一。其标志性成果是 Cap set 问题的解决：Ellenberg--Gijswijt 借助与 Dvir 同源的“低次多项式零点”论证，证明 $\mathbb{F}_3^n$ 中无三点等差数列子集的大小为 $O(c^n)$（$c < 3$）\cite{ellenberggijswijt2017}。此外，多项式分划（\cref{sec:methods}）同样源于挂谷研究，如今在限制性估计、Erd\H{o}s 重叠距离等问题的最前沿工作中不可或缺。

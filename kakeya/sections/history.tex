@@ -1,0 +1,33 @@
+\section{历史发展}\label{sec:history}
+
+\subsection{挂谷的转针问题（1917）}
+
+1917年，日本数学家挂谷宗一在仙台提出如下问题\cite{kakeya1917}：平面上面积最小的区域是什么，使得一根单位长度的线段（“针”）能够在其中\textbf{连续地}旋转 $180^\circ$（即掉头）？挂谷本人猜想答案是三尖内摆线（deltoid），其面积为 $\pi/8$。
+
+这个问题很快在两个方向上被解决，而两个答案都出乎挂谷的意料：
+
+\begin{itemize}
+    \item \textbf{凸区域}：P\'al 于1921年证明，面积最小的凸区域是高为 $1$ 的正三角形，面积为 $1/\sqrt{3} \approx 0.577$\cite{pal1921}；
+    \item \textbf{一般区域}：Besicovitch 证明，若不要求凸性，区域面积可以任意小——下确界为 $0$。
+\end{itemize}
+
+值得一提的是，Besicovitch 的这项工作是在第一次世界大战与俄国内战的动荡中完成的：他当时辗转于俄国腹地，直到1928年才在《Mathematische Zeitschrift》上正式发表\cite{besicovitch1928}。
+
+\subsection{Besicovitch 集与 Perron 树}
+
+Besicovitch 构造的关键工具是 \textbf{Perron 树}。其思想概述如下：取一个高为 $1$ 的三角形（其中所有“针”的候选方向已经齐备），将其底边 $2^m$ 等分，得到 $2^m$ 个细三角形；通过平移这些细三角形使其大幅交叠，可以使得并集的面积随 $m$ 的增大而任意缩小。对 $m \to \infty$ 取极限，便得到一个包含所有方向单位线段、而 Lebesgue 测度为零的紧集——即 Besicovitch 集。
+
+这一构造有两点需要强调：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{面积极小值不存在}：下确界 $0$ 不能被任何具有良好性质的区域取到——Besicovitch 集不含内点，针在其中无法“连续”转动。原问题因此需要重新表述，而这恰恰揭示了问题的深层结构。
+    \item \textbf{高维推广}：Besicovitch 与 Nagata 等人很快将构造推广到 $\mathbb{R}^n$：对任意 $n \ge 2$，都存在测度为零的紧集包含所有方向的单位线段。
+\end{enumerate}
+
+\subsection{从面积到维数}
+
+测度为零的结论把问题的焦点从“面积”推向了“维数”：一个测度为零的集合，其 Hausdorff 维数与 Minkowski 维数可以介于 $0$ 与 $n$ 之间，挂谷集究竟落在何处？
+
+1971年，Davies 证明平面上的挂谷集必须具有满 Hausdorff 维数\cite{davies1971}，从而完全解决了 $n = 2$ 的情形（见\cref{thm:davies}）。但 Davies 的论证本质上是二维的，依赖对平面管状的精细几何，无法推广。于是，$n \ge 3$ 的挂谷猜想成为悬而未决的核心问题，并在20世纪后半叶逐渐显现出它在调和分析中的枢纽地位（见\cref{sec:applications}）。
+
+从1977年 Córdoba 将挂谷集与 Kakeya 极大算子联系起来\cite{cordoba1977}，到2025年 Wang--Zahl 完成三维证明\cite{wangzahl2025}，这条跨越近五十年的攻坚路线将在\cref{sec:methods}与\cref{sec:results}中详细梳理。
