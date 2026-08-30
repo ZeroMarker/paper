@@ -32,6 +32,11 @@ paper/
 │   ├── sections/           # 章节文件
 │   ├── references/         # BibTeX文献库
 │   └── compile.bat         # Windows编译脚本
+├── langlands/              # 朗兰兹纲领综述
+│   ├── main.tex            # 主LaTeX文件
+│   ├── sections/           # 章节文件
+│   ├── references/         # BibTeX文献库
+│   └── compile.bat         # Windows编译脚本
 └── paper.yaml              # Zotero 文库分类
 ```
 
@@ -45,6 +50,7 @@ paper/
 | 孪生素数猜想：历史、进展与展望 | `twin_primes/` | `twin_primes-1.0.0` |
 | 费马大定理：历史、进展与展望 | `fermat/` | `fermat-1.0.0` |
 | 挂谷猜想：历史、进展与展望 | `kakeya/` | `kakeya-1.0.0` |
+| 朗兰兹纲领：历史、进展与展望 | `langlands/` | `langlands-1.0.0` |
 
 ## 编译方法
 
@@ -108,4 +114,14 @@ pdflatex main
 4. **重要成果**：维数下界时间线、Davies 定理、Wolff $(n+2)/2$、Dvir 定理、多线性 Kakeya 估计、Wang--Zahl 三维证明（2025）
 5. **应用与联系**：限制性估计、Bochner--Riesz 求和、局部光滑化、色散方程解耦、组合几何与数论、多项式方法的辐射效应
 6. **开放问题**：高维（$n \ge 4$）挂谷猜想、Kakeya 极大算子、局部光滑化与限制性、Furstenberg 集与算术挂谷
+7. **结论**：总结与展望
+
+## 朗兰兹纲领综述主要内容
+
+1. **引言**：互反律与函子性两大支柱、完备性猜想、研究意义
+2. **历史发展**：高斯与阿廷互反律、自守形式的算术化、1967 年朗兰兹致韦伊信件、局部/整体/几何三个层次
+3. **研究方法**：adèle 语言与自守表示、$L$ 函数与欧拉积、Arthur--Selberg 迹公式与内窥理论、形变理论与 $R=T$、势自守性、Shtuka 与几何朗兰兹、逆定理
+4. **重要成果**：进展时间线、Langlands--Tunnell 二维互反律、模性定理与 Serre 猜想、局部朗兰兹（$\operatorname{GL}_n$）、函数域完全解决（Drinfeld、L. Lafforgue、V. Lafforgue）、Ng\^o 基本引理、Arthur 分类、Kim--Shahidi 对称幂、Gaitsgory--Raskin 几何朗兰兹（2024）
+5. **应用与联系**：费马大定理与 Sato--Tate、解析数论红利、表示论与代数几何、数学物理（S-对偶）
+6. **开放问题**：广义 Artin 猜想、一般函子性与广义 Ramanujan、Selberg 特征值、$p$-adic 朗兰兹、带分歧几何朗兰兹与韦伊纲领 II
 7. **结论**：总结与展望

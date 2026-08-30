@@ -1,0 +1,43 @@
+\section{研究方法}\label{sec:methods}
+
+\subsection{自守表示与 adèle 语言}
+
+设 $G$ 是 $\mathbb{Q}$ 上约化群。$G$ 的自守表示生活在 adèle 环的拓扑群 $G(\mathbb{A})$ 上：整体尖点表示 $\pi$ 是 $G(\mathbb{A})$ 的不可约表示，在无穷远与几乎所有的非阿贝尔素点处都可分解
+\begin{equation}
+    \pi \;\simeq\; \bigotimes_v' \pi_v ,
+\end{equation}
+其中每个局部因子 $\pi_v$ 是局部表示。这一“局部--整体”结构使纲领成为一个巨大的\textbf{局部对偶网络}：局部朗兰兹对应在每个 $v$ 处描述 $\pi_v$ 与伽罗瓦表示的局部数据（共轭类、$L$-因子）的匹配。对 $\operatorname{GL}_n$，尖点自守表示的谱分解与唯一性由 Jacquet--Langlands 及 Jacquet--Piatetski-Shapiro--Shalika 的理论给出。
+
+\subsection{$L$ 函数与欧拉积}
+
+纲领的“账簿”是自守 $L$ 函数。对尖点表示 $\pi$ 与对偶群表示 $r$，定义
+\begin{equation}
+    L(s, \pi, r) \;=\; \prod_v L_v(s, \pi_v, r),
+\end{equation}
+在几乎所有 $v$ 处 $L_v$ 由 Satake 参数（非分歧情形的局部朗兰兹数据）给出。互反律与函子性都可翻译成 $L$ 函数的恒等式：
+\begin{equation}
+    L(s, \rho) \;=\; L(s, \pi(\rho)) \qquad \text{（互反律：阿廷 $L$ = 自守 $L$）}.
+\end{equation}
+Godement--Jacquet 把 $\operatorname{GL}_n$ 的标准 $L$ 函数构造为 Schwartz 函数在 adele 矩阵代数上的积分，从而统一了泰特论文与经典赫克理论。整性、函数方程与解析延拓（广义朗兰兹）与对应本身（互反律、函子性）是纲领的两大技术目标。
+
+\subsection{迹公式与内窥理论}
+
+与“构造对应”相对的方法是\textbf{谱计算}：Selberg 迹公式比较群 $G$ 上测试函数的迹恒等式，Arthur 将其发展为 \textbf{Arthur--Selberg 迹公式}，其谱分解中出现的“幽灵项”正是互反律的候选者——把迹公式两端分别按自守表示与伽罗瓦（稳定的）轨道展开，比较系数即得对应的候选与函数方程。
+
+这引出了\textbf{内窥理论}（endoscopy）：稳定轨道与普通轨道的偏差由内窥群 $H \subset {}^LG$ 记账，而\textbf{基本引理}——稳定共轭类与普通共轭类在轨道积分层面的转移恒等式——是整个迹公式方法的基石。它历经二十余年悬置，最终由 Ng\^o 通过 Hitchin 丛的周变换（函数域几何方法）证明\cite{ngo2010}，并由此打通了 Arthur 对辛群与正交群的内窥分类\cite{arthur2013}。
+
+\subsection{形变理论与模性提升}
+
+数域一侧的突破依赖伽罗瓦表示的形变理论。设 $\rho: G_{\mathbb{Q}} \to \operatorname{GL}_2(\mathbb{F}_p)$ 为模表示，形变环 $R$ 参数化其提升，自守一侧的 Hecke 代数 $T$ 记录自守形式；“模性提升”即证明 $R = T$。本文库中费马大定理综述已详述怀尔斯的 $R=T$ 技术\cite{wiles1995modular,taylor1995ring}；其后的发展是\textbf{势自守性}（potential automorphy）\cite{blggt2014}：不要求 $\rho$ 本身自守，而是先换基到足够多的辅助域使其自守，再借自守表示的强乘法性与 $L$ 函数的“同名同迹”论证拉回全局。势自守性与 Taylor--Wiles 配补结合，产生了 Sato--Tate 等一批标志性成果。
+
+\subsection{函数域与几何朗兰兹}
+
+在曲线 $X/\mathbb{F}_q$ 上，纲领呈现出范畴化的几何形态。Drinfeld 发明 \textbf{Shtuka}——一种带“自相似映射”的主丛——用它构造 $\operatorname{GL}_2$ 的互反律；V. G. Lafforgue（Laurent Lafforgue 之弟）把 Shtuka 推广到一般约化群，从自守一侧构造出伽罗瓦参数\cite{vlafforgue2018}。
+
+几何朗兰兹猜想则断言：$\operatorname{Bun}_G(X)$ 上的自守 D-模范畴等价于 $^LG$ 局部系统的谱分解范畴，Hecke 特征单子（Hecke eigensheaf）扮演尖点表示的角色。其证明（未分歧 $\operatorname{GL}_n$ 情形）由 Gaitsgory、Raskin 与合作者于2024年以五篇、近九百页的系列工作完成\cite{gaitsgoryraskin2024}，技术核心是归纳地构造 Hecke 特征单子并证明其凝聚性——这需要在导出代数几何的框架下同时控制奇异支持、Uhlenbeck 空间与量子 Kac--Moody 对称。
+
+与此同时，Fargues 与 Scholze 把几何朗兰兹的 Betti 层思想搬回 $p$-adic 局部世界：在 Fargues--Fontaine 曲线上，$\operatorname{Bun}_G$ 的向量丛范畴携带的 Hecke 作用给出了\textbf{局部朗兰兹的几何化}，并对一般约化群构造出局部朗兰兹对应的 $L$-同态部分\cite{fargues2021}。
+
+\subsection{逆定理与转移}
+
+从自守一侧“反向”构造对应的工具是\textbf{逆定理}（converse theorem）：若一个欧拉积足够多的扭曲 $L(s, \pi \otimes \chi)$ 满足函数方程，则 $\pi$ 必为自守表示。配合函子性的部分结果（$\operatorname{GL}_n \times \operatorname{GL}_m$ 的秩积，Cogdell--Piatetski-Shapiro--Shalika），逆定理把“证明函子性”转化为“证明解析延拓与函数方程”——这是对称幂提升（\cref{sec:results}）的逻辑骨架。

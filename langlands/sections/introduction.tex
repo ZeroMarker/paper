@@ -1,0 +1,24 @@
+\section{引言}\label{sec:introduction}
+
+朗兰兹纲领（Langlands Program）是当代数学中影响最深远的统一性构想。它由罗伯特·朗兰兹（Robert Langlands）在1967年写给安德烈·韦伊（André Weil）的一封信中提出\cite{langlands1967}，并在其后的《Euler Products》一书中系统阐述\cite{langlands1971}。纲领的核心断言可以粗略表述为：
+
+\begin{quote}
+    \textit{数域（或局部域、函数域）上约化群的尖点自守表示，与伽罗瓦群（或韦伊群）到对偶群 $^LG$ 的连续同态之间，存在一个保持 $L$ 函数的自然对应。}
+\end{quote}
+
+这条对应由两根支柱撑起。其一是\textbf{互反律}（reciprocity）：伽罗瓦一侧的 $n$ 维表示应当对应到 $\operatorname{GL}_n$ 的自守表示，使得两者的 $L$ 函数相等——这是阿贝尔类域论到非阿贝尔情形的推广。其二是\textbf{函子性}（functoriality）：不同群的自守表示之间应当按对偶群的齐次同态 $^LH \to {}^LG$ 相互转移，例如 $\operatorname{GL}_2$ 的尖点表示应产生其对称幂 $\operatorname{Sym}^k$ 的 $\operatorname{GL}_{k+1}$ 自守表示。所有已知的 $L$ 函数——黎曼 $\zeta$、狄利克雷 $L$、阿廷 $L$、哈塞--韦伊 $L$、赫克 $L$——都应被统一为自守 $L$ 函数，这就是所谓\textbf{完备性猜想}。
+
+\subsection{研究意义}
+
+朗兰兹纲领的研究意义体现在多重层面：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{数论的统一}：从二次互反律到类域论，互反律的每一次推广都催生了数论的新纪元；非阿贝尔互反律是这一系列推广的自然终点，也是纲领的起点。
+    \item \textbf{解决问题的范式}：怀尔斯对费马大定理的证明本质上是纲领的一个个例——把椭圆曲线的伽罗瓦表示嵌入自守世界（模性）。这一“伽罗瓦表示 $\to$ 自守表示”的翻译技术（模性提升、势自守性）如今已成为数论的标准基础设施\cite{blggt2014}。
+    \item \textbf{表示论与几何}：纲领把自守表示论、李群表示论、代数几何（Shimura 簇、Shtuka、Hitchin 丛）与导出范畴方法编织在一起；2024年几何朗兰兹猜想的解决\cite{gaitsgoryraskin2024}代表了代数几何与表示论技术的当代巅峰。
+    \item \textbf{可迁移的技术}：迹公式（Arthur）、形变环（$R=T$）、几何化（Fargues--Scholze\cite{fargues2021}）等技术工具的辐射面远超纲领本身。
+\end{enumerate}
+
+\subsection{本文结构}
+
+本文组织如下：\cref{sec:history} 回顾从经典互反律到几何朗兰兹的历史发展；\cref{sec:methods} 介绍主要研究方法；\cref{sec:results} 总结重要研究成果；\cref{sec:applications} 讨论相关应用与联系；\cref{sec:open_problems} 列举开放问题；\cref{sec:conclusion} 总结全文。

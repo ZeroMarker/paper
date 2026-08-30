@@ -1,0 +1,85 @@
+\section{重要成果}\label{sec:results}
+
+\subsection{进展总览}
+
+\begin{table}[htbp]
+    \centering
+    \caption{朗兰兹纲领的主要进展}
+    \label{tab:progress}
+    \begin{tabular}{lll}
+        \toprule
+        年份 & 作者 & 结果 \\
+        \midrule
+        1950/67 & Tate & adèle 语言下的 Hecke $L$ 函数理论\cite{tate1967} \\
+        1967/71 & Langlands & 致韦伊信件，纲领提出\cite{langlands1967,langlands1971} \\
+        1970 & Jacquet--Langlands & $\operatorname{GL}_2$ 互反律与 Jacquet--Langlands 对应\cite{jacquet1970} \\
+        1980--83 & Langlands; Tunnell & 八面体与可解二十面体型 Artin 猜想\cite{langlands1980,tunnell1981} \\
+        1983 & Drinfeld & 函数域上 $\operatorname{GL}_2$ 互反律（Shtuka）\cite{drinfeld1983} \\
+        1995/2001 & Wiles; Taylor--Wiles; BCDT & 椭圆曲线模性定理（谷山--志村）\cite{wiles1995modular,taylor1995ring,bcdt2001} \\
+        2000/01 & Henniart; Harris--Taylor & 局部朗兰兹对应（$\operatorname{GL}_n$）\cite{harristaylor2001} \\
+        2002 & Kim--Shahidi & 对称三、四次幂函子性\cite{kimshahidi2002} \\
+        2002 & L. Lafforgue & 函数域上 $\operatorname{GL}_n$ 全局互反律\cite{lafforgue2002} \\
+        2008 & Khare--Wintenberger & Serre 模性猜想\cite{khare2009} \\
+        2008 & Ng\^o & 基本引理\cite{ngo2010} \\
+        2008 & CHST 等 & Sato--Tate 猜想（全实与全虚四次域） \\
+        2013 & Arthur & 辛群与正交群的内窥分类\cite{arthur2013} \\
+        2018 & V. Lafforgue & 一般约化群：自守 $\Rightarrow$ 伽罗瓦（函数域）\cite{vlafforgue2018} \\
+        2021 & Fargues--Scholze & 局部朗兰兹的几何化\cite{fargues2021} \\
+        2024 & Gaitsgory--Raskin 等 & 未分歧几何朗兰兹猜想（$\operatorname{GL}_n$）\cite{gaitsgoryraskin2024} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{二维互反律：Artin 猜想的进击}
+
+\begin{theorem}[Langlands; Tunnell]\label{thm:langlands-tunnell}
+    设 $\rho: G_{\mathbb{Q}} \to \operatorname{GL}_2(\mathbb{C})$ 是不可约二维复表示，其像在 $\operatorname{PGL}_2(\mathbb{C})$ 中为二面体、四面体、八面体或可解二十面体群，则存在尖点自守表示 $\pi$（权 $1$）使得 $L(s,\rho) = L(s,\pi)$。
+\end{theorem}
+
+二面体情形由赫克与阿廷的诱导表示理论解决；Langlands 用迹公式与基变换\cite{langlands1980}处理四面体与八面体，Tunnell 补齐可解二十面体\cite{tunnell1981}，从而 Artin 猜想在\textbf{可解}像的全部情形成立。不可解（真二十面体）情形仅有零星突破（Buzzard--Dickinson--Shepherd-Barron--Taylor 1995 的模 $5$ 十二面体型例证），仍是纲领最艰难的前沿之一。
+
+\subsection{模性定理及其推广}
+
+怀尔斯与泰勒--怀尔斯对半稳定椭圆曲线证明模性\cite{wiles1995modular,taylor1995ring}，Breuil--Conrad--Diamond--Taylor 补全一般情形\cite{bcdt2001}——谷山--志村猜想自此成为\textbf{模性定理}：$\mathbb{Q}$ 上全部椭圆曲线都是模的。这一成果把纲领从“对应存在性”转化为可计算的算术机器，其推广包括：
+
+\begin{itemize}
+    \item \textbf{Serre 模性猜想}：所有奇椭圆二维伽罗瓦表示都来自模形式（Khare--Wintenberger，2008年证明\cite{khare2009}）——互反律在“满约化”意义下的完全胜利；
+    \item \textbf{Sato--Tate 猜想}：模椭圆曲线的 Frobenius 角均匀分布于 Sato--Tate 测度（Clozel--Harris--Shepherd-Barron--Taylor 等，2008）——势自守性技术的直接产物；
+    \item \textbf{全实域上的势自守}：$\operatorname{GL}_2$ 型的 R=T 与正则代数势自守定理\cite{blggt2014}，使 Sato--Tate 推广到任意全实域上的椭圆曲线。
+\end{itemize}
+
+\subsection{局部朗兰兹对应（$\operatorname{GL}_n$）}
+
+\begin{theorem}[Harris--Taylor; Henniart]\label{thm:local-langlands}
+    设 $F$ 是 $p$-adic 局部域，$n \ge 1$。则存在典范的对应：$F$ 上 $\operatorname{GL}_n$ 的不可约光滑表示 $\leftrightarrow$ 韦伊群 $W_F$ 到 $\operatorname{GL}_n(\mathbb{C})$ 的 $n$ 维半单 Frobenius 半单表示，保持 $L$-因子、$\varepsilon$-因子与特征标对偶。
+\end{theorem}
+
+Harris--Taylor 的证明基于 Lubin--Tate 形式模型与简单 Shimura 簇的几何\cite{harristaylor2001}；Henniart 以特征刻画独立完成。一般约化群的局部对应在“$L$-同态与增强原理”意义下由 Fargues--Scholze 的几何化给出\cite{fargues2021}，其唯一性问题仍在推进。
+
+\subsection{函数域的完全解决}
+
+\begin{theorem}[Drinfeld; L. Lafforgue]\label{thm:lafforgue}
+    设 $X$ 是有限域上的光滑射影曲线，$n \ge 1$。则 $X$ 的函数域上 $\operatorname{GL}_n$ 的尖点自守表示与绝对伽罗瓦群的 $n$ 维不可约 $\ell$-adic 表示之间存在保持 $L$ 函数的双射。
+\end{theorem}
+
+Drinfeld 以 Shtuka 技术解决 $n = 2$\cite{drinfeld1983}；Laurent Lafforgue 以 Shtuka 的递归约化完成一般 $n$\cite{lafforgue2002}（2002年菲尔兹奖）。V. Lafforgue 进一步对\textbf{任意约化群}从自守一侧构造全局伽罗瓦参数（划分入全局朗兰兹参数）\cite{vlafforgue2018}——函数域上“自守 $\Rightarrow$ 伽罗瓦”方向就此完成，而逆方向（伽罗瓦 $\Rightarrow$ 自守）对 $\operatorname{GL}_n$ 由逆定理补齐。
+
+\subsection{内窥理论与基本引理}
+
+\begin{theorem}[Ng\^o, 2008]\label{thm:ngo}
+    约化李代数上的（加性）基本引理对所有内窥数据成立：稳定轨道积分与普通轨道积分之间的转移因子由幂零轨道上的同伦不变量给出。
+\end{theorem}
+
+Ng\^o 的证明把基本引理翻译为 Hitchin 丛上的周变换公式\cite{ngo2010}——几何朗兰兹的技术（Hitchin 系统）首次反哺数域一侧的迹公式。由此 Arthur 完成了辛群与正交群的自守表示内窥分类\cite{arthur2013}，GAN--Gross--Prasad 型分支律与中心 $L$ 值问题的架构随之成形相关猜想体系见 Gan--Gross--Prasad 的分支律与中心 $L$ 值理论 \cite{ggp2012}。
+
+\subsection{对称幂函子性与 Ramanujan 界}
+
+Kim--Shahidi 证明 $\operatorname{GL}_2$ 的对称三次幂与四次幂提升\cite{kimshahidi2002}：模形式 $\pi$ 的 Satake 参数经 $\operatorname{Sym}^k$（$k \le 4$）转移为 $\operatorname{GL}_{k+1}$ 的尖点自守表示。结合零密度与素数定理的解析技术，这给出 Ramanujan--Petersson 猜想在 $\operatorname{GL}_2$ 上当时最好的定量界 $\alpha_p \ll p^{-1/2+1/10}$ 级别的改进——函子性“部分解决”直接兑换成解析数论红利的典型样本。
+
+\subsection{几何朗兰兹的证明（2024）}
+
+\begin{theorem}[Gaitsgory--Raskin 及合作者，2024]\label{thm:geometric}
+    设 $X$ 是代数闭域上光滑射影曲线，$G$ 是分裂约化群。则未分歧几何朗兰兹等价成立：$\operatorname{Bun}_G(X)$ 上自守范畴与 $^LG$-局部系统的谱分解范畴范畴等价，且等价子实现 Hecke 特征单子性质。
+\end{theorem}
+
+五篇系列论文\cite{gaitsgoryraskin2024}以归纳构造 Hecke 特征单子为主线，用凝聚性（rounding）与常数项（nearby cycles）技术控制奇异支持；该工作使 Gaitsgory 获得2025年数学突破奖。几何朗兰兹的物理化身（4d 规范理论与 S-对偶）早在 Kapustin--Witten 的工作中已被预见，证明的完成反过来为物理对应提供了严格的数学基础。

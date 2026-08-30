@@ -1,0 +1,41 @@
+\section{开放问题}\label{sec:open_problems}
+
+\subsection{数域上的整体互反律}
+
+\begin{conjecture}[广义 Artin 猜想]\label{conj:artin}
+    设 $K/\mathbb{Q}$ 为数域，$\rho: G_K \to \operatorname{GL}_n(\mathbb{C})$ 不可约非常值。则 $L(s,\rho)$ 整性延拓到全平面，且当 $\rho$ 不可约时为全纯非零。
+\end{conjecture}
+
+等价的强形式是 $\operatorname{GL}_n$ 的互反律：$\rho$ 应对应权系匹配的 $\operatorname{GL}_n$ 尖点自守表示。可解情形已解决（\cref{thm:langlands-tunnell}），真二十面体（$A_5$）情形四十年仅有孤立突破。当前主流路线是“模 $\ell$ 先行”：证明 $\rho \bmod \ell$ 自守，再经 $R=T$ 提升——这把问题推向\textbf{自守性的一般判定}，也是 $10$ 万美元级“朗兰兹纲领特别奖”悬赏的方向。
+
+\subsection{一般函子性}
+
+\begin{conjecture}[函子性]\label{conj:functoriality}
+    对任何 $L$-同态 $^LH \to {}^LG$，$H$ 的尖点自守表示经 $r$ 转移为 $G$ 的自守同构类。
+\end{conjecture}
+
+已知的主要是 $\operatorname{GL}_n \times \operatorname{GL}_m$ 的秩积（逆定理方法）、$\operatorname{GL}_2$ 的对称幂至四次\cite{kimshahidi2002}与基变换；一般情形连 $\operatorname{GL}_2 \times \operatorname{GL}_2$ 之外的 Rankin--Selberg 型提升都依赖大量附加条件。Shimura 簇上的几何方法（Kisin 型模性）与函数域的 Shtuka 方法是两条候选路线。函子性蕴含广义 Ramanujan 猜想：
+
+\begin{conjecture}[广义 Ramanujan 猜想]
+    $\operatorname{GL}_n$ 尖点自守表示在几乎所有非分歧点的 Satake 参数的任何嵌入都满足谱界。
+\end{conjecture}
+
+\subsection{Selberg 特征值猜想与 Ramanujan 的谱版本}
+
+Selberg 特征值猜想断言全实域上 $\operatorname{GL}_2$ 的尖点表示无穷远因子不以“例外”参数出现——它等价于马斯特洛夫算子的第一正特征值 $\ge 1/4$，其最优已知界由对称幂函子性推进。这一猜想控制着覆盖图扩张器、谱图论与量子混沌中的一系列问题，是纲领在“离散数学”侧的出口。
+
+\subsection{$p$-adic 朗兰兹}
+
+局部朗兰兹对应把 $p$-adic 表示分类为复表示；\textbf{$p$-adic 朗兰兹纲领}进一步要求用 $p$-adic 群（如 $\operatorname{GL}_2(\mathbb{Q}_p)$ 的 Banach 空间表示）的语言重建局部对应——$\operatorname{GL}_2(\mathbb{Q}_p)$ 情形由 Breuil--Emerton--Kisin--Pa\v{s}k\=unas 等人完成，一般群（尤其 $n \ge 3$）的整体 $p$-adic 朗兰兹仍处混沌。Fargues--Scholze 的几何化\cite{fargues2021}提供了统一的几何舞台，但其“$p$-adic 化”（与 Schneider--Vigneras 的 $p$-adic 局部 Langlands 参数化兼容）尚未完成。
+
+\subsection{带分歧的几何朗兰兹与相对化}
+
+2024年的证明只处理\textbf{未分歧}情形；一般曲线与带分歧局部系统的几何朗兰兹、以及“相对朗兰兹”（Gaitsgory--Lysenko、Ben-Zvi--Kazhdan 的相对化）仍有大量技术空隙。更深的方向是\textbf{算术化}：Scholze 提出的“韦伊纲领 II”期望把几何朗兰兹的对应升格为数域上 Shimura 簇的 Hodge 模事实，作为整体互反律的新证明路径——若成功，数域朗兰兹与几何朗兰兹将真正合流。
+
+\subsection{结构层面}
+
+\begin{itemize}
+    \item \textbf{内窥分类的推广}：Arthur 的辛/正交分类\cite{arthur2013}向例外群与一般整体域的移植；
+    \item \textbf{参数的可结晶描述}：全局朗兰兹参数在 Shimura 簇的局部模型中的几何实现；
+    \item \textbf{算术统计的应用}：$L$-同态与丢番图稳定性（Diophantine stability）驱动的算术统计一致性问题（Ellenberg--Venkatesh 等）。
+\end{itemize}
