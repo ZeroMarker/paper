@@ -1,0 +1,109 @@
+\section{附录：关键引理与科尔莫哥洛夫强大数定律的证明梗概}\label{sec:appendix}
+
+\subsection{两个初等引理}
+
+\begin{lemma}[克罗内克尔引理]\label{lem:kronecker}
+    设 $0 < b_n \uparrow \infty$，实数列 $x_n$ 满足 $\sum_n x_n / b_n$ 收敛，则
+    \begin{equation}
+        \frac{1}{b_n}\sum_{k=1}^n b_k x_k \to 0.
+    \end{equation}
+\end{lemma}
+
+\begin{proof}[证明梗概]
+    记 $r_n = \sum_{k \geq n} x_k / b_k \to 0$。分部求和（Abel 变换）得
+    $\sum_{k \leq n} b_k x_k = b_n r_{n+1}\cdot(-1)$ 型表达式加收敛余项；具体地
+    $\frac{1}{b_n}\sum_{k=1}^n b_k x_k = r_1 - \frac{1}{b_n}\sum_{k=1}^{n-1}(b_{k+1}-b_k) r_{k+1}$，
+    其中 $r_{k+1} \to 0$，而加权平均 $\frac{1}{b_n}\sum_{k<n}(b_{k+1}-b_k) = (b_n - b_1)/b_n \leq 1$，
+    由 Toeplitz 引理知右端趋于 $0$。
+\end{proof}
+
+\begin{lemma}[Toeplitz 引理]\label{lem:toeplitz}
+    若 $a_{nk} \geq 0$，$\sum_{k=1}^{n} a_{nk} = 1$，且对每个固定 $k$ 有 $a_{nk} \to 0$（$n \to \infty$），则对任何收敛数列 $s_k \to s$ 有 $\sum_{k=1}^n a_{nk} s_k \to s$。
+\end{lemma}
+
+\subsection{科尔莫哥洛夫不等式的证明}
+
+\begin{proof}[定理~\ref{thm:kolmogorov-ineq} 的证明]
+    设 $\tau = \min\{k \leq n: |S_k| \geq \lambda\}$（不存在则取 $n+1$），$A = \{\max_{k \leq n} |S_k| \geq \lambda\} = \{\tau \leq n\}$。在 $A$ 上分事件 $\tau = k$ 求和：
+    \begin{equation}
+        \mathbb{E}\left[S_n^2 \mathbf{1}_A\right] \geq \sum_{k=1}^n \mathbb{E}\left[S_n^2 \mathbf{1}_{\{\tau = k\}}\right]
+        = \sum_{k=1}^n \mathbb{E}\left[(S_k + (S_n - S_k))^2 \mathbf{1}_{\{\tau = k\}}\right].
+    \end{equation}
+    由 $\{\tau = k\} \in \sigma(X_1, \dots, X_k)$ 与 $S_n - S_k$ 独立（且均值为零），
+    \begin{equation}
+        \mathbb{E}\left[(S_k + (S_n - S_k))^2 \mathbf{1}_{\{\tau = k\}}\right]
+        = \mathbb{E}\left[S_k^2 \mathbf{1}_{\{\tau = k\}}\right] + \mathbb{E}\left[(S_n - S_k)^2\right] P(\tau = k)
+        \geq \lambda^2 P(\tau = k),
+    \end{equation}
+    两边对 $k$ 求和即得 $\mathbb{E}[S_n^2 \mathbf{1}_A] \geq \lambda^2 P(A)$，而 $\mathbb{E}[S_n^2 \mathbf{1}_A] \leq \mathbb{E}S_n^2 = \operatorname{Var}(S_n)$。
+\end{proof}
+
+\subsection{科尔莫哥洛夫强大数定律的证明梗概}
+
+\begin{proof}[定理~\ref{thm:kolmogorov-slln} 的 i.i.d. 情形，$\mathbb{E}|X_1| < \infty$]
+    不妨设 $\mathbb{E}X_1 = 0$（以 $X_k - \mathbb{E}X_k$ 代替）。分三步：
+
+    \textbf{第一步（截断的合法性）}：令 $\tilde{X}_k = X_k \mathbf{1}_{\{|X_k| \leq k\}}$。由
+    $\sum_k P(X_k \neq \tilde{X}_k) = \sum_k P(|X_1| > k) \leq \mathbb{E}|X_1| < \infty$，
+    博雷尔--康泰利引理给出 $X_k = \tilde{X}_k$ 最终几乎必然成立，故只需证 $\tilde{S}_n/n \to 0$ a.s.。
+
+    \textbf{第二步（对截断和用极大值不等式）}：记 $\mu_k = \mathbb{E}\tilde{X}_k \to 0$（控制收敛），且
+    $\sum_k \operatorname{Var}(\tilde{X}_k)/k^2 \leq \sum_k \mathbb{E}[X_1^2 \mathbf{1}_{\{|X_1| \leq k\}}]/k^2 = \mathbb{E}\left[X_1^2 \sum_{k \geq |X_1|} k^{-2}\right] \leq C\,\mathbb{E}|X_1| < \infty$。
+    对 $n_k = k^2$ 的子列，科尔莫哥洛夫不等式（定理~\ref{thm:kolmogorov-ineq}，取 $\lambda = \varepsilon k^2$）配合方差估计给出
+    $P\left(\max_{n \leq n_{k+1}} |\tilde{S}_n - n\mu_n| \geq \varepsilon k^2\right) \leq C' \operatorname{Var}(\tilde{X}_{n_{k+1}}\text{ 段})/(\varepsilon^2 k^4) + \ldots$，
+    其和有限，故由博雷尔--康泰利引理得子列级 a.s. 收敛；区间内波动由 $n_{k+1}/n_k \to 1$ 与 $\max_{n_k < n \leq n_{k+1}} |\tilde{S}_n - \tilde{S}_{n_k}| \leq \max |\tilde{S}_m - m \mu_m| \text{ 项} + \sum_{n_k < m \leq n_{k+1}} |\tilde{X}_m|$ 控制，后者逐段除以 $k^2$ 可和，得 $\tilde{S}_n/n \to 0$ a.s.。
+
+    \textbf{第三步（克罗内克尔收尾）}：由第二步的估计同时可得 $\sum_k \operatorname{Var}(\tilde{X}_k)/k^2 < \infty$ 与 $\sum_k |\mu_k|/k < \infty$（因 $\mu_k \to 0$），于是级数 $\sum_k (\tilde{X}_k - \mu_k)/k$ 由三级数判据 a.s. 收敛（或直接对 $\tilde{S}_n$ 用克罗内克尔引理的随机版本），结合引理~\ref{lem:kronecker} 得
+    $\frac{1}{n}\sum_{k \leq n} (\tilde{X}_k - \mu_k) \to 0$ a.s.，再加 $\frac{1}{n}\sum_{k \leq n} \mu_k \to 0$，证毕。
+\end{proof}
+
+\begin{remark}
+    上述“截断 $\to$ 方差求和 $\to$ 克罗内克尔”三步法是二十世纪概率论的通用模板：把同样的骨架中的矩条件替换，即得 Marcinkiewicz--Zygmund 定理、Baum--Katz 定理与鞅版本；三级数定理（\cref{thm:three-series}）则是把三步法用于级数而得的“充要化”版本。Etemadi 的两两独立版本（\cref{thm:etemadi}）表明极大值不等式对两两独立序列也成立（只需把二乘分解中的独立性换成两两性），从而整个模板在两两独立下依然运转。
+\end{remark}
+
+\subsection{伯努利原始证明的思想}
+
+伯努利对\cref{thm:bernoulli} 的证明不用任何概率不等式（彼时概率论尚无分析工具），而是直接研究二项式 $(r+s)^{nt}$ 展开中各系数的\textbf{比值结构}：他证明了位于中心区域的 $t$ 个相邻二项式系数之和，与位于中心的单个系数之比随 $n$ 增大而任意增大，从而“成功次数落在 $[np \pm \varepsilon n]$ 之外”的系数总质量相对可以忽略。这等价于对不完全贝塔函数 $B(n;p)$ 的精细估计。伯努利由此导出定量界：例如要以超过 $1000:1$ 的把握保证频率与 $p$ 的偏差小于 $1/1000$，所需的试验次数 $n$ 约在 $25{,}000$ 量级（对 $p$ 不太接近 $0$ 或 $1$）——数字虽庞大，却首次让“频率趋近概率”成为\textbf{可计算的确定性陈述}。
+
+\subsection{符号与术语表}
+
+\begin{table}[htbp]
+    \centering
+    \caption{本文使用的主要符号}
+    \label{tab:notation}
+    \begin{tabular}{ll}
+        \toprule
+        符号 & 含义 \\
+        \midrule
+        $X_1, X_2, \dots$ & 随机变量序列（观测序列） \\
+        $S_n$ & 部分和 $X_1 + \cdots + X_n$ \\
+        $\xrightarrow{P}$, $\xrightarrow{a.s.}$, $\Rightarrow$ & 依概率收敛、几乎必然收敛、依分布收敛 \\
+        i.i.d. & 独立同分布（independent and identically distributed） \\
+        $\mathbb{E}$, $\operatorname{Var}$ & 数学期望与方差 \\
+        $\mu$, $\sigma^2$ & 公共均值与方差 \\
+        $F_n$ & 经验分布函数 \\
+        $\mathcal{F}_n$, $\mathcal{F}_\infty$ & 递增 $\sigma$-域流与其极限 \\
+        $\mathcal{I}$ & 平移不变 $\sigma$-域（遍历定理中的不变量） \\
+        i.o. & “无穷多次发生”（infinitely often） \\
+        $X^{(c)}$ & 截断变量 $X \mathbf{1}_{\{|X| < c\}}$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section*{术语对照}
+\begin{spacing}{1.0}
+\begin{itemize}[itemsep=0pt,topsep=4pt]
+    \item 弱大数定律（Weak Law of Large Numbers, WLLN）：样本平均依概率收敛于均值；
+    \item 强大数定律（Strong Law of Large Numbers, SLLN）：样本平均几乎必然收敛于均值；
+    \item 完全收敛（complete convergence）：$\sum_n P(|\cdot| > \varepsilon) < \infty$ 对一切 $\varepsilon$ 成立，强于 a.s. 收敛；
+    \item 博雷尔--康泰利引理（Borel--Cantelli lemmas）：概率求和与“无穷多次发生”的互推工具；
+    \item 截断法（truncation）：以 $X\mathbf{1}_{\{|X|\leq n\}}$ 代替 $X$ 以获得有限方差的技术；
+    \item 三级数定理（three-series theorem）：独立级数 a.s. 收敛的充要条件；
+    \item 迭代对数定律（law of the iterated logarithm, LIL）：部分和波动的精确 a.s. 包络；
+    \item 完全收敛 / 遍历定理（ergodic theorem）：平稳过程时间平均的 a.s. 收敛定理；
+    \item 渐近均分性（AEP）：信息论中 $-\log p$ 的大数定律；
+    \item 一致大数定律（uniform LLN）：对函数类 $\mathcal{F}$ 上确界成立的 a.s. 收敛（Glivenko--Cantelli、VC 理论）；
+    \item 型与余型（type and cotype）：控制巴拿赫空间中独立和行为的几何参数；
+    \item 正规数（normal number）：各位数字在给定进制下频率均等的实数。
+\end{itemize}
+\end{spacing}

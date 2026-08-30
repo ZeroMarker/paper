@@ -1,0 +1,125 @@
+\section{重要成果}\label{sec:results}
+
+\subsection{进展时间线}
+
+\begin{table}[htbp]
+    \centering
+    \caption{大数定律发展中的标志性成果}
+    \label{tab:timeline}
+    \begin{tabular}{llp{8.2cm}}
+        \toprule
+        年份 & 人物 & 成果 \\
+        \midrule
+        1713 & 雅各布·伯努利 & 《猜度术》：第一个大数定律（伯努利试验的弱大数定律）与定量试验次数界 \\
+        1835 & 泊松 & 推广到变概率试验并命名“大数定律” \\
+        1866 & 切比雪夫 & 切比雪夫不等式；两两独立、方差有界的（弱）大数定律 \\
+        1906 & 马尔可夫 & 推广到相依序列，创立马尔可夫链；截断技术 \\
+        1909 & 博雷尔 & 第一个强大数定律（伯努利序列）；正规数定理 \\
+        1917 & 康泰利 & 强大数定律的严格证明；博雷尔--康泰利引理定型 \\
+        1928 & 科尔莫哥洛夫 & 独立级数的三级数定理（a.s. 收敛的完全刻画） \\
+        1929 & 辛钦 & i.i.d. 弱大数定律只需有限均值（截断论证） \\
+        1929 & 科尔莫哥洛夫 & 科尔莫哥洛夫不等式与迭代对数定律（有界方差情形） \\
+        1930 & 科尔莫哥洛夫 & 独立（不必同分布）序列强大数定律的充分条件 \\
+        1931 & 伯克霍夫 & 逐点遍历定理：平稳序列的时间平均 a.s. 收敛 \\
+        1933 & 格利文科/康泰利 & 经验分布函数的一致 a.s. 收敛（函数值大数定律） \\
+        1933 & 科尔莫哥洛夫 & 《概率论基础》：公理化框架下大数定律的最终形态 \\
+        1937 & Marcinkiewicz--Zygmund & $n^{-1/p} S_n \to 0$ a.s. 的矩阶数刻画 \\
+        1941 & Hartman--Wintner & i.i.d. 情形的迭代对数定律（定律的精确“边界”） \\
+        1948 & Hsu--Robbins & 完全收敛概念与刻画 \\
+        1965 & Baum--Katz & 收敛速率的完全理论（矩阶数 $\leftrightarrow$ 加权求和） \\
+        1981 & Etemadi & 两两独立同分布即得强大数定律（初等证明） \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{经典定理的精确陈述}
+
+以下按历史顺序给出主要定理。设 $X_1, X_2, \dots$ 为随机变量序列，$S_n = X_1 + \cdots + X_n$。
+
+\begin{theorem}[伯努利，1713]\label{thm:bernoulli}
+    设 $X_k$ i.i.d. 服从 $\operatorname{Bernoulli}(p)$，则对任意 $\varepsilon > 0$，
+    $P\left(\left|S_n/n - p\right| > \varepsilon\right) \to 0$。
+\end{theorem}
+
+\begin{theorem}[切比雪夫，1866]\label{thm:chebyshev}
+    设 $X_k$ 两两独立且存在常数 $C$ 使 $\operatorname{Var}(X_k) \leq C$ 对所有 $k$ 成立，则
+    $\frac{1}{n}\sum_{k=1}^n \left(X_k - \mathbb{E}X_k\right) \xrightarrow{P} 0$。
+\end{theorem}
+
+\begin{theorem}[辛钦，1929]\label{thm:khinchin}
+    设 $X_k$ i.i.d. 且 $\mathbb{E}|X_1| < \infty$，$\mathbb{E}X_1 = \mu$，则
+    $S_n/n \xrightarrow{P} \mu$。反之，若 $S_n/n$ 依概率收敛到有限极限，则 $\mathbb{E}|X_1| < \infty$。
+\end{theorem}
+
+\begin{theorem}[科尔莫哥洛夫，1930]\label{thm:kolmogorov-slln}
+    设 $X_k$ 相互独立。若 $\sum_{k=1}^{\infty} \operatorname{Var}(X_k)/k^2 < \infty$，则
+    $\frac{1}{n}\sum_{k=1}^n \left(X_k - \mathbb{E}X_k\right) \xrightarrow{a.s.} 0$。
+    特别地，i.i.d. 且 $\mathbb{E}|X_1| < \infty$ 时 $S_n/n \xrightarrow{a.s.} \mathbb{E}X_1$。
+\end{theorem}
+
+\begin{theorem}[科尔莫哥洛夫三级数定理，1928]\label{thm:three-series}
+    设 $X_k$ 相互独立。级数 $\sum_k X_k$ 几乎必然收敛，当且仅当对某个 $c > 0$，下列三个级数同时收敛：
+    \begin{enumerate}[label=(\arabic*)]
+        \item $\sum_k P(|X_k| \geq c)$；
+        \item $\sum_k \mathbb{E}\left[X_k^{(c)}\right]$，其中 $X_k^{(c)} = X_k \mathbf{1}_{\{|X_k| < c\}}$；
+        \item $\sum_k \operatorname{Var}\left(X_k^{(c)}\right)$。
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Etemadi，1981]\label{thm:etemadi}
+    定理~\ref{thm:kolmogorov-slln} 的 i.i.d. 部分中，“相互独立”可减弱为“两两独立”，结论不变。
+\end{theorem}
+
+\begin{theorem}[Marcinkiewicz--Zygmund，1937]\label{thm:mz}
+    设 $X_k$ i.i.d.，$0 < p < 2$ \cite{marcinkiewicz1937}。则 $n^{-1/p}\left(S_n - n\mathbb{E}X_1 \mathbf{1}_{\{p \geq 1\}}\right) \xrightarrow{a.s.} 0$
+    当且仅当 $\mathbb{E}|X_1|^p < \infty$（且 $p \geq 1$ 时 $\mathbb{E}X_1 = 0$）。
+\end{theorem}
+
+\begin{theorem}[Glivenko--Cantelli，1933]\label{thm:gc}
+    设 $X_k$ i.i.d.，分布函数为 $F$，经验分布函数为 $F_n(x) = \frac{1}{n}\#\{k \leq n: X_k \leq x\}$，则
+    $\sup_{x \in \mathbb{R}} |F_n(x) - F(x)| \xrightarrow{a.s.} 0$。
+\end{theorem}
+
+\begin{theorem}[迭代对数定律；科尔莫哥洛夫 1929，Hartman--Wintner 1941]\label{thm:lil}
+    设 $X_k$ i.i.d.，$\mathbb{E}X_k = 0$，$\operatorname{Var}(X_k) = \sigma^2 \in (0, \infty)$ \cite{hartmanwintner1941}，则
+    \begin{equation}
+        \limsup_{n \to \infty} \frac{S_n}{\sqrt{2 n \log\log n}} = \sigma, \qquad
+        \liminf_{n \to \infty} \frac{S_n}{\sqrt{2 n \log\log n}} = -\sigma \quad a.s.
+    \end{equation}
+\end{theorem}
+
+迭代对数定律值得单独一提：它说明部分和的波动\textbf{恰好}达到 $\sqrt{2 n \log\log n}$ 量级——大数定律保证 $S_n/n \to 0$，中心极限定理给出 $S_n/\sqrt{n}$ 的分布极限，而迭代对数定律精确刻画了无界 $n$ 上的一致波动幅度，是“定律的上界之精确化”。
+
+\subsection{收敛速度：从切比雪夫到完全收敛}
+
+大数定律的定量版本构成一条独立的成果链：
+
+\begin{itemize}
+    \item \textbf{切比雪夫--马尔可夫速率}：方差有界情形 $P(|S_n/n - \mu| > \varepsilon) \leq C/(n\varepsilon^2)$；
+    \item \textbf{Hoeffding 不等式}（1963）\cite{hoeffding1963}：$X_k$ 有界于 $[a_k, b_k]$ 时，
+          $P(S_n - \mathbb{E}S_n \geq t) \leq \exp\left(-2t^2 / \sum_k (b_k - a_k)^2\right)$——指数速率，蒙特卡洛与统计学习的置信界都以此为基础；
+    \item \textbf{完全收敛}（Hsu--Robbins 1948\cite{hsurobbins1948}）：$\sum_n P(|S_n/n| > \varepsilon) < \infty$ 对一切 $\varepsilon > 0$ 成立当且仅当 $\mathbb{E}X_1 = 0$ 且 $\mathbb{E}X_1^2 < \infty$；完全收敛强于 a.s. 收敛，且等价于“$S_n/n \to 0$ a.s. 及 $S_n/n$ 最终一致小”；
+    \item \textbf{Baum--Katz 定理}（1965）\cite{baumkatz1965}：对 $r > 0$ 与权函数 $n^{r-2}$，$\sum_n n^{r-2} P(|S_n/n| > \varepsilon) < \infty$ 的矩条件刻画——把“收敛速率阶数”与“矩存在阶数”精确对齐。
+\end{itemize}
+
+这条定量链与大数定律的定性理论共同构成现代概率不等式的骨架，其延伸（Bernstein 不等式、McDiarmid 不等式、集中不等式）已成为高维统计与学习理论的标准工具。
+
+\subsection{各定理的条件对比}
+
+\begin{table}[htbp]
+    \centering
+    \caption{主要大数定律的条件与结论对比}
+    \label{tab:compare}
+    \begin{tabular}{lllll}
+        \toprule
+        定理 & 相互独立 & 同分布 & 矩条件 & 结论 \\
+        \midrule
+        伯努利（\ref{thm:bernoulli}） & \checkmark & \checkmark & 指示变量 & WLLN \\
+        切比雪夫（\ref{thm:chebyshev}） & 两两 & $\times$ & 一致方差界 & WLLN \\
+        辛钦（\ref{thm:khinchin}） & \checkmark & \checkmark & $\mathbb{E}|X|<\infty$ & WLLN（且必要） \\
+        科尔莫哥洛夫（\ref{thm:kolmogorov-slln}） & \checkmark & $\times$ & $\sum \operatorname{Var}/n^2 < \infty$ & SLLN \\
+        Etemadi（\ref{thm:etemadi}） & 两两 & \checkmark & $\mathbb{E}|X|<\infty$ & SLLN \\
+        遍历定理 & $\times$ & 平稳遍历 & $\mathbb{E}|X|<\infty$ & SLLN \\
+        \bottomrule
+    \end{tabular}
+\end{table}

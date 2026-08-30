@@ -37,6 +37,11 @@ paper/
 │   ├── sections/           # 章节文件
 │   ├── references/         # BibTeX文献库
 │   └── compile.bat         # Windows编译脚本
+├── law_of_large_numbers/   # 大数定律综述
+│   ├── main.tex            # 主LaTeX文件
+│   ├── sections/           # 章节文件
+│   ├── references/         # BibTeX文献库
+│   └── compile.bat         # Windows编译脚本
 └── paper.yaml              # Zotero 文库分类
 ```
 
@@ -51,13 +56,24 @@ paper/
 | 费马大定理：历史、进展与展望 | `fermat/` | `fermat-1.0.0` |
 | 挂谷猜想：历史、进展与展望 | `kakeya/` | `kakeya-1.0.0` |
 | 朗兰兹纲领：历史、进展与展望 | `langlands/` | `langlands-1.0.0` |
+| 大数定律：历史、进展与展望 | `law_of_large_numbers/` | `law_of_large_numbers-1.0.0` |
 
 ## 编译方法
 
 ### Windows
 ```bash
-cd goldbach && .\compile.bat
-cd riemann  && .\compile.bat
+cd goldbach    && .\compile.bat
+cd riemann     && .\compile.bat
+cd twin_primes && .\compile.bat
+cd fermat      && .\compile.bat
+cd kakeya      && .\compile.bat
+cd langlands   && .\compile.bat
+cd law_of_large_numbers && .\compile.bat
+```
+
+SVD 论文无 `compile.bat`（根文件为 `svd_paper.tex`，需先运行 `setup.sh` 由 `svd_demo.py` 生成插图再编译）：
+```bash
+cd svd && bash setup.sh && pdflatex svd_paper.tex
 ```
 
 ### Linux/macOS
@@ -75,6 +91,26 @@ pdflatex main
 目录解析规则：tag `<paper_name>-<version>` 对应顶层目录 `<paper_name>/`；根文件优先 `main.tex`，否则取目录中唯一的含 `\documentclass` 的 `.tex`。新增论文时无需修改工作流，建好顶层目录并打 tag 即可。
 
 若论文目录中存在 `setup.sh`，CI 会在编译前运行它（如 `svd/` 用它安装 Python 依赖并运行 `svd_demo.py` 生成插图）；没有 `setup.sh` 则跳过。生成的图片等中间产物不入库（见 `.gitignore`），每次构建现场生成。
+
+## 哥德巴赫猜想综述主要内容
+
+1. **引言**：问题陈述（强/弱哥德巴赫猜想）与研究意义
+2. **历史发展**：1742 年哥德巴赫致欧拉信件、哈代--李特尔伍德圆法、布伦筛法到陈景润
+3. **研究方法**：圆法（优弧与劣弧）、筛法（布伦筛法、塞尔伯格筛法）、指数和估计（华罗庚引理、外尔不等式）、大筛法
+4. **重要成果**：维诺格拉多夫三素数定理（1937）、黑尔弗戈特对弱哥德巴赫的完全证明（2013）、布伦定理、陈氏定理（1966）、数值验证纪录
+5. **相关应用与推广**：加性数论（华林问题）、密码学、计算数论、遍历理论
+6. **开放问题**：强哥德巴赫猜想及其定量形式、波利尼亚克猜想、例外集最优指数
+7. **结论**：总结与展望
+8. **附录**：维诺格拉多夫定理与陈氏定理证明概要、历史文献
+
+## SVD 论文主要内容
+
+1. **引言**：研究背景与目的
+2. **SVD 理论基础**：奇异值分解定理、奇异值性质、计算方法
+3. **SVD 的几何意义**：线性变换的分解、单位圆的变换解释
+4. **SVD 图像压缩方法**：截断 SVD 压缩原理
+5. **实验结果与分析**：压缩效果对比、奇异值分布、误差分析（`svd_demo.py` 生成插图）
+6. **结论**：主要贡献、局限性与未来方向
 
 ## 黎曼猜想综述主要内容
 
@@ -125,3 +161,14 @@ pdflatex main
 5. **应用与联系**：费马大定理与 Sato--Tate、解析数论红利、表示论与代数几何、数学物理（S-对偶）
 6. **开放问题**：广义 Artin 猜想、一般函子性与广义 Ramanujan、Selberg 特征值、$p$-adic 朗兰兹、带分歧几何朗兰兹与韦伊纲领 II
 7. **结论**：总结与展望
+
+## 大数定律综述主要内容
+
+1. **引言**：定律陈述（弱/强形式）、频率稳定性的精确化、研究意义
+2. **历史发展**：伯努利《猜度术》（1713）、泊松命名、切比雪夫与马尔可夫、博雷尔（1909）与康泰利（1917）强大数定律、科尔莫哥洛夫的综合（1928--1933）、相依与无穷维推广
+3. **研究方法**：切比雪夫不等式与方差控制、博雷尔--康泰利引理与子序列法、科尔莫哥洛夫极大值不等式与截断法、特征函数法、鞅方法、遍历论观点
+4. **重要成果**：进展时间线、伯努利/切比雪夫/辛钦/科尔莫哥洛夫/Etemadi 定理、三级数定理、Marcinkiewicz--Zygmund 定理、Glivenko--Cantelli 定理、迭代对数定律、收敛速度（Hsu--Robbins、Baum--Katz、Hoeffding）
+5. **应用与联系**：统计推断（相合性、MLE、一致大数定律与 VC 理论）、蒙特卡洛方法、信息论（AEP）、数论与动力系统（正规数、等分布）、随机过程与精算、与中心极限定理的尺度阶梯
+6. **开放问题**：无穷均值与圣彼得堡悖论的规范化、强逼近（KMT）与最优速率、相依框架边界、巴拿赫空间值与算子水平推广、随机算法与非交换概率
+7. **结论**：总结与展望
+8. **附录**：科尔莫哥洛夫不等式与强大数定律证明梗概、伯努利原始证明思想、符号与术语表

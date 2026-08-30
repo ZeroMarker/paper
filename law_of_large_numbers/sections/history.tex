@@ -1,0 +1,52 @@
+\section{历史发展}\label{sec:history}
+
+大数定律的历史是一部\textbf{条件不断弱化、结论不断强化}的历史：从伯努利的伯努利试验，到切比雪夫的方差条件，再到科尔莫哥洛夫的独立性与矩条件的最终刻画，直至对相依序列与无穷维取值的推广。
+
+\subsection{前史与《猜度术》（1713）}
+
+十七世纪的概率论以赌博问题为温床：卡尔达诺与帕斯卡、费马的通信解决了单次或有限次博弈的计算，但\textbf{“长期频率稳定性”}这一经验事实长期停留在直觉层面，无人给出证明。雅各布·伯努利（Jacob Bernoulli）在世时已完成证明（约 1689 年），却反复打磨至去世仍未定稿；1713 年其侄整理出版遗著《猜度术》（\textit{Ars Conjectandi}）\cite{bernoulli1713}，其中第四部分给出了如今称为\textbf{伯努利大数定律}的结果：若单次试验中事件成功的概率为 $p$，则 $n$ 次独立重复中成功频率 $\hat{p}_n$ 满足，对任意 $\varepsilon > 0$，
+
+\begin{equation}
+    P\left(\left|\hat{p}_n - p\right| > \varepsilon\right) \to 0 \quad (n \to \infty).
+\end{equation}
+
+伯努利的证明基于对二项式展开中各项比例的精细递推估计（等价于今天的不完全贝塔函数估计），他由此估出所需试验次数的一个\textbf{定量界}：若要使频率与真值之差小于 $\varepsilon$ 的置信度达到 $c$，则 $n$ 需满足关于 $(p, \varepsilon, c)$ 的明确不等式。这是极限定理历史上第一个定量结果——比近代的收敛速度理论早了两个半世纪（见\cref{sec:results}）。
+
+\subsection{泊松命名与“迷雾时期”（1835--1866）}
+
+泊松（Sim\'eon-Denis Poisson）在 1835 年的诉讼概率研究中首次使用\textbf{“大数定律”}（\emph{loi des grands nombres}）这一名称\cite{poisson1837}，并将伯努利定理推广到每次试验成功概率不同的情形。然而泊松把定律过度哲学化，宣称它支配着一切自然与社会现象；凯特勒等人对“平均人”的滥用，使大数定律在十九世纪中叶一度沦为思辨工具而非数学定理。这一“迷雾”直到俄国圣彼得堡学派用严格分析将其精确化才告终结。
+
+\subsection{圣彼得堡学派：切比雪夫与马尔可夫（1866--1906）}
+
+切比雪夫（Pafnuty Chebyshev）1866 年的论文《论平均值》\cite{chebyshev1867}是决定性的一步：
+
+\begin{itemize}
+    \item 他建立了\textbf{切比雪夫不等式}：$P(|X - \mathbb{E}X| \geq \varepsilon) \leq \operatorname{Var}(X)/\varepsilon^2$，从而把极限定理的证明归结为对\textbf{方差的控制}；
+    \item 由此他证明：两两独立且方差一致有界的随机变量序列满足（弱）大数定律——独立性首次被弱化为两两独立，且允许非同分布。
+\end{itemize}
+
+其学生马尔可夫（Andrei Markov）1906 年的论文\cite{markov1906}把定律推广到\textbf{相依}随机变量——正是为了处理相依序列，他提出了如今称为\textbf{马尔可夫链}的模型。马尔可夫同时引入\textbf{截断}技术（用马尔可夫不等式控制大值后分段处理），这一技术与切比雪夫不等式一起构成了此后所有证明的基本工具箱。师徒二人还开创了极限定理研究中“证明细节逐条论战”的传统，使概率论从机会演算转变为严格的分析学科。
+
+\subsection{强大数定律的诞生：博雷尔与康泰利（1909--1917）}
+
+二十世纪初，测度论的成熟使“几乎必然收敛”有了严格语言。博雷尔（\'Emile Borel）1909 年的论文\cite{borel1909}研究可数独立伯努利试验序列 $\{0,1\}^{\mathbb{N}}$ 上的测度，证明了\textbf{频率几乎必然收敛于概率}——第一个强大数定律，并立即给出算术应用：\textbf{几乎所有的实数在任意进制下都是正规数}（各位数字以渐近频率 $1/b$ 出现）。不过博雷尔的原始证明有漏洞，其中的关键估计（后世的博雷尔--康泰利引理）直到康泰利（Francesco Paolo Cantelli）1917 年的工作\cite{cantelli1917}才得到严格表述与完整证明。历史上“博雷尔定理”与“康泰利定理”曾长期混淆，恰反映了强收敛概念在当时的新颖与困难。
+
+\subsection{科尔莫哥洛夫的综合（1928--1933）}
+
+大数定律的现代形态由科尔莫哥洛夫（Andrei Nikolaevich Kolmogorov）在 1928--1933 年间完成：
+
+\begin{itemize}
+    \item 1928--1930 年的系列论文\cite{kolmogorov1928}中，他建立了\textbf{科尔莫哥洛夫极大值不等式}（对部分和的最大值的一致控制），结合\textbf{截断法}与\textbf{克罗内克尔引理}，对\textbf{独立、不必同分布}序列给出了强大数定律的充分条件 $\sum_n \operatorname{Var}(X_n)/n^2 < \infty$，并证明了完全刻画独立级数 a.s. 收敛的\textbf{三级数定理}；
+    \item 辛钦（Aleksandr Yakovlevich Khinchin）1929 年证明：i.i.d. 情形下有限均值即蕴含弱大数定律\cite{khinchin1929}——必要性一侧由截断论证完成；
+    \item 1933 年科尔莫哥洛夫出版《概率论基础》\cite{kolmogorov1933}，以测度论公理化整个学科，强大数定律作为其体系的核心定理被最终安置；同年他与格利文科（Vsevolod Glivenko）证明经验分布函数的一致几乎必然收敛（Glivenko--Cantelli 定理\cite{glivenko1933}），大数定律由此“升级”为函数值形式。
+\end{itemize}
+
+\subsection{现代：相依、速率与无穷维（1931 至今）}
+
+定律的现代发展沿三条主线推进：
+
+\begin{itemize}
+    \item \textbf{相依与遍历}：伯克霍夫（George D. Birkhoff）1931 年的逐点遍历定理\cite{birkhoff1931}证明平稳序列的时间平均几乎必然收敛——独立性被彻底抛弃，代之以平稳性，大数定律成为遍历理论的特例；杜布（Joseph L. Doob）1953 年的鞅收敛理论提供了另一条相依框架。
+    \item \textbf{收敛速率与完全收敛}：Hsu 与 Robbins 1948 年\cite{hsurobbins1948}提出\textbf{完全收敛}（$\sum_n P(|S_n/n| > \varepsilon) < \infty$），Baum 与 Katz 1965 年\cite{baumkatz1965}给出矩阶数的完全刻画；Hoeffding 1963 年\cite{hoeffding1963}的不等式与 KMT 强逼近\cite{kmt1975}提供了定量工具。
+    \item \textbf{条件的最弱化}：Etemadi 1981 年\cite{etemadi1981}以初等证明表明 i.i.d. 换成\textbf{两两独立同分布}即得强大数定律——三十年后人们才知道经典的独立条件中，“独立”二字大部分是冗余的；无穷维取值（巴拿赫空间）情形的刻画则把定律与算子几何（型与余型）联系起来\cite{ledouxtalagrand1991}。
+\end{itemize}

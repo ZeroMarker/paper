@@ -1,0 +1,42 @@
+\section{开放问题与推广方向}\label{sec:open_problems}
+
+\subsection{无穷均值与大数定律的失效边界}
+
+i.i.d. 情形下 $\mathbb{E}|X_1| < \infty$ 是大数定律的\textbf{充要}条件（辛钦定理），故定律的失效边界已被精确划定；真正的问题是在边界之外\textbf{什么替代了它}：
+
+\begin{itemize}
+    \item \textbf{圣彼得堡悖论}：赌局的收益以 $2^k$ 增长而概率以 $2^{-k}$ 衰减，$\mathbb{E}X = \infty$，$S_n/n$ 几乎必然发散。Feller 1945 年\cite{feller1945}证明存在规范化常数 $a_n \approx n\log_2 n$ 使 $S_n/a_n$ 依概率收敛于 $\log 2$，且任何其他规范化都无此性质——这开启了“无矩情形的非经典规范化”研究。
+    \item \textbf{稳定律吸引域}：$X$ 落在指标 $\alpha \in (0, 2)$ 的稳定律吸引域时，$S_n$ 需以 $n^{1/\alpha}$（非高斯尺度）规范化，弱极限为稳定律；“大数定律 + 中心极限定理”的二分图景被“广义极限定理”（regular variation 与单跳原理）取代，其完整理论仍是概率论活跃分支。
+\end{itemize}
+
+\subsection{收敛速度与强逼近}
+
+\begin{itemize}
+    \item \textbf{最优速率与中偏差}：Baum--Katz 定理给出完全收敛的矩阶数对齐，但\textbf{大偏差与中偏差区域}（$\varepsilon$ 随 $n$ 缓慢变化）内的精细估计、以及非一致椭圆条件下的定量理论仍在发展中；
+    \item \textbf{强逼近}：Koml\'os--Major--Tusn\'ady 定理\cite{kmt1975}证明 i.i.d. 部分和可被维纳过程以 $\max(n^{1/p}, \log n)$ 级误差逐点耦合（给定矩条件 $p$ 阶），使 a.s. 问题转化为布朗运动问题；把 KMT 型强逼近推广到相依（混合、马尔可夫）、无穷维与随机级数情形，是连接大数定律与经验过程理论的活跃方向。
+    \item \textbf{almost sure 不变性原理}：Strassen 泛函迭代对数定律（布朗运动 $\sqrt{2t\log\log t}$ 包络）的随机逼近版本，为“轨道级涨落何时与布朗运动同构”提供判据。
+\end{itemize}
+
+\subsection{相依框架的边界}
+
+\begin{itemize}
+    \item \textbf{混合序列}：对 $\alpha$-混合、$\beta$-混合等条件，大数定律的矩判据已有大量结果，但\textbf{最优条件}（对给定依赖度量的最小假设）与混合系数的不可验证性仍是方法论痛点；
+    \item \textbf{遍历理论中的速率}：伯克霍夫定理保证 a.s. 收敛但\textbf{不提供速率}；对特定变换（如 Gauss 映射）的偏差理论（Philipp、Maxwell--Woodroofe 条件下的重对数与速率结果）刻画“遍历但非独立”世界中大数定律的定量边界，一般平稳过程的最优条件仍未解决；
+    \item \textbf{随机图与随机结构}：大规模网络模型（如随机图上的加性泛函）中，何种“近似独立”足以承载大数定律，与扩散混合时间问题交织。
+\end{itemize}
+
+\subsection{无穷维取值与算子水平}
+
+\begin{itemize}
+    \item \textbf{巴拿赫空间值大数定律}：设 $X_k$ i.i.d. 取值于巴拿赫空间 $B$。Hoffmann--J\o rgensen 与 Pisier 的刻画表明：对一切可积 $B$-值 i.i.d. 序列强大数定律成立，当且仅当 $B$ 是\textbf{B-凸}的（不含一致 $\ell_1^n$，等价于具有非平凡 Rademacher 型）\cite{ledouxtalagrand1991}——大数定律由此成为\textbf{算子空间的几何不变量}的试金石；
+    \item \textbf{随机矩阵与自由概率}：样本协方差矩阵谱测度的极限（Mar\v{c}enko--Pastur 律）是“矩阵值大数定律”；算子范数意义下的强收敛（Bai--Silverstein）与自由概率中的 almost sure 收敛构成无穷维推广的主战场；
+    \item \textbf{经验过程的一致收敛}：VC 类之外的更一般函数类（Donsker 类、容差度量如 metric entropy）何时满足一致大数定律，联系着现代机器学习中对“过参数化模型为何不发散”的理论解释。
+\end{itemize}
+
+\subsection{结构化推广}
+
+\begin{itemize}
+    \item \textbf{随机演化系统}：随机微分方程、随机偏微分方程系数中随机输入的大数定律（随机逼近、随机梯度下降的 a.s. 收敛及其速率），在优化与采样算法中的定量版本（Polyak--Ruppert 平均、SGLD）正在成为焦点；
+    \item \textbf{非交换与量子}：自由独立随机变量序列的非交换大数定律（Voiculescu 自由概率）把“平均收敛”搬到算子代数框架，其与量子信息理论的接口刚刚打开；
+    \item \textbf{自适应与在线学习}：数据分布漂移下的“局部大数定律”（时间不齐一情形的加权收敛）与可交换性失效时的收敛理论，是统计学习面向现实数据的前沿挑战。
+\end{itemize}

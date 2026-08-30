@@ -1,0 +1,86 @@
+\section{研究方法}\label{sec:methods}
+
+大数定律的证明技术围绕一个核心困难展开：\textbf{如何从对单个时刻 $n$ 的估计，升级为对无穷多个时刻的一致控制}。本节按方法谱系依次介绍；各种方法的适用范围与威力对比总结于\cref{sec:results}。
+
+\subsection{收敛模式与基本记号}
+
+设 $(X_n)$ 为随机变量序列，$S_n = X_1 + \cdots + X_n$。本章涉及三种收敛：
+
+\begin{itemize}
+    \item \textbf{依概率收敛}：$X_n \xrightarrow{P} X$，即 $\forall \varepsilon>0,\ P(|X_n - X| > \varepsilon) \to 0$；
+    \item \textbf{几乎必然收敛}：$X_n \xrightarrow{a.s.} X$，即 $P(\omega: X_n(\omega) \to X(\omega)) = 1$；
+    \item \textbf{$L^p$ 收敛}：$\mathbb{E}|X_n - X|^p \to 0$。
+\end{itemize}
+
+关系为：a.s. 收敛与 $L^p$ 收敛均蕴含依概率收敛，反之皆不成立；依概率收敛可抽出 a.s. 收敛的子列。对样本平均 $S_n/n$ 而言，弱大数定律即依概率收敛，强大数定律即 a.s. 收敛。
+
+\subsection{方法一：切比雪夫不等式与方差控制}
+
+这是最古老也最富弹性的方法，只需二阶矩。设 $X_1, \dots, X_n$ 两两独立且 $\operatorname{Var}(X_k) \leq \sigma^2$ 一致有界，则
+
+\begin{equation}
+    P\left(\left|\frac{S_n}{n} - \frac{1}{n}\sum_{k=1}^n \mathbb{E}X_k\right| > \varepsilon\right)
+    \leq \frac{\operatorname{Var}(S_n)}{n^2 \varepsilon^2}
+    = \frac{1}{n^2\varepsilon^2}\sum_{k=1}^n \operatorname{Var}(X_k)
+    \leq \frac{\sigma^2}{n\varepsilon^2} \to 0,
+\end{equation}
+
+其中第二步用到两两独立时方差可加。方法的本质是把大偏差概率用\textbf{二阶矩除以 $\varepsilon^2$} 来控制，代价是只给出 $O(1/n)$ 量级的速率。
+
+\begin{remark}
+    该方法原则上\textbf{无法}证明强大数定律：切比雪夫不等式对每个固定 $n$ 给出的界 $O(1/n)$ 不平方可和，故不能直接对 $\sum_n P(\cdot)$ 求和再用博雷尔--康泰利引理。要超越它，或者改进尾部估计（如指数矩情形的 Hoeffding 不等式\cite{hoeffding1963}），或者改用极大值控制（方法三）。
+\end{remark}
+
+\subsection{方法二：博雷尔--康泰利引理与子序列法}
+
+强大数定律的标准策略是\textbf{“子列收敛 + 振荡控制”}：若能找到足够密的子列 $n_k$ 使 $S_{n_k}/n_k \to \mu$ a.s.，再控制相邻子列点之间的波动 $\max_{n_k < n \leq n_{k+1}} |S_n - S_{n_k}|/n_k$，两者相加即得整条序列的收敛。第一步通常这样完成：证明对某个可求和的速率 $\sum_k P(|S_{n_k}/n_k - \mu| > \varepsilon) < \infty$，再由博雷尔--康泰利第一引理推出子列 a.s. 收敛。
+
+\begin{theorem}[博雷尔--康泰利引理]\label{thm:bc}
+    \begin{enumerate}[label=(\arabic*)]
+        \item 若 $\sum_{n} P(A_n) < \infty$，则 $P(A_n \text{ i.o.}) = 0$（i.o. 指“无穷多次发生”）；
+        \item 若 $A_n$ 相互独立且 $\sum_n P(A_n) = \infty$，则 $P(A_n \text{ i.o.}) = 1$。
+    \end{enumerate}
+\end{theorem}
+
+第一部分是初等的且无需独立性，是“从概率求和到 a.s. 结论”的标准桥梁；第二部分（逆命题需要独立性）与第一部分的不对称性正是强、弱收敛之间鸿沟的体现。莱维（Paul L\'evy）将其推广到\textbf{条件}博雷尔--康泰利引理，成为鞅方法中“依条件概率求和”的收敛判据（见方法五）。
+
+\subsection{方法三：科尔莫哥洛夫极大值不等式与截断法}
+
+这是独立情形的核心武器，也是科尔莫哥洛夫证明强大数定律的引擎。
+
+\begin{theorem}[科尔莫哥洛夫极大值不等式]\label{thm:kolmogorov-ineq}
+    设 $X_1, \dots, X_n$ 独立，$\mathbb{E}X_k = 0$，则
+    \begin{equation}
+        P\left(\max_{1 \leq k \leq n} |S_k| \geq \lambda\right) \leq \frac{\operatorname{Var}(S_n)}{\lambda^2}.
+    \end{equation}
+\end{theorem}
+
+其证明只需一个组合观察：设 $\tau = \min\{k: |S_k| \geq \lambda\}$，在 $\{\tau = k\}$ 上把后续增量拆成“正向穿过”与“负向穿过”两部分对称处理，得 $\mathbb{E}[S_n^2 \mathbf{1}_{\{\max |S_k| \geq \lambda\}}] \geq \lambda^2 P(\max |S_k| \geq \lambda)$。与切比雪夫不等式相比，其革命性在于\textbf{控制的是整段路径的最大偏离}——这正是从弱到强所需的升级。
+
+在此基础上，强大数定律的完整证明（见\cref{sec:appendix}）由三步组成：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{截断}：令 $\tilde{X}_k = X_k \mathbf{1}_{\{|X_k| \leq k\}}$，用 Borel--Cantelli 与截断矩估计证明 $X_k$ 与 $\tilde{X}_k$ 在 $\sum$ 意义下渐近等价；
+    \item \textbf{方差求和}：对截断后的 $\tilde{X}_k$ 验证 $\sum_k \operatorname{Var}(\tilde{X}_k)/k^2 < \infty$（i.i.d. 且 $\mathbb{E}|X|<\infty$ 时成立），对 $\tilde{S}_n$ 用极大值不等式结合博雷尔--康泰利引理得 $\tilde{S}_n/n \to 0$ a.s.；
+    \item \textbf{克罗内克尔引理}：若 $\sum_k x_k / k$ 收敛、$b_n \uparrow \infty$，则 $b_n^{-1}\sum_{k \leq n} b_k x_k \to 0$；取 $b_n = n$ 把级数收敛转译为样本平均收敛。
+\end{enumerate}
+
+同样的机器对\textbf{独立级数}给出完全刻画：科尔莫哥洛夫\textbf{三级数定理}（\cref{sec:results}）通过截断到 $[-c, c]$ 后检查三个级数的收敛性，完全判定 $\sum_n X_n$ 是否 a.s. 收敛——这是独立情形下大数定律“既充分又必要”的最终形态。
+
+\subsection{方法四：特征函数法}
+
+对 i.i.d. 序列，辛钦用特征函数给出了不借助方差、只要求 $\mathbb{E}|X| < \infty$ 的弱大数定律证明：$S_n/n$ 的特征函数为 $\varphi(t/n)^n$，而有限均值蕴含 $\varphi(t/n) = 1 + i\mu t/n + o(1/n)$，故 $\varphi(t/n)^n \to e^{i\mu t}$——退化分布（常数 $\mu$）的特征函数，再由 L\'evy 连续性定理完成依概率收敛。方法的推广形式（Gnedenko--Kolmogorov 退化收敛判据）把“$S_n$ 减去中心化项依分布收敛到退化定律”的充要条件化为特征函数在原点的局部行为，适用于非同分布、无方差情形。特征函数法的强项在\textbf{弱}收敛与中心极限定理一侧；对 a.s. 收敛它只能通过子列法间接介入。
+
+\subsection{方法五：鞅方法}
+
+把 $X_k - \mathbb{E}[X_k \mid \mathcal{F}_{k-1}]$ 视为鞅差序列，大数定律被纳入杜布的鞅收敛理论：条件期望的上升趋势 $\mathbb{E}[X_n \mid \mathcal{F}_\infty]$ 由莱维上行定理刻画，条件博雷尔--康泰利引理给出“$\sum_n P(A_n \mid \mathcal{F}_{n-1}) = \infty \Rightarrow A_n$ i.o.”级别的判据；配合科尔莫哥洛夫极大值不等式的鞅版本（杜布不等式）与 Robins--Siegmund 半鞅收敛定理，可对\textbf{自适应、相依}的求和对象证明大数定律。典型收益包括：随机逼近（Robbins--Monro 算法）的 a.s. 收敛、随机级数与随机逼近中的加性泛函、以及 Azuma--Hoeffding 不等式对有界鞅差的定量控制。鞅方法把“独立性”弱化为“下鞅结构 + 可积性”，是从独立到相依推广中最灵活的框架。
+
+\subsection{方法六：遍历论观点}
+
+最一般的框架是平稳过程。设 $(X_n)$ 为平稳遍历序列（例如马尔可夫链的遍历平稳分布、或动力系统沿轨道的观测序列），伯克霍夫逐点遍历定理\cite{birkhoff1931}断言时间平均
+
+\begin{equation}
+    \frac{1}{n}\sum_{k=0}^{n-1} X_k \xrightarrow{a.s.} \mathbb{E}[X_0 \mid \mathcal{I}],
+\end{equation}
+
+其中 $\mathcal{I}$ 为平移不变 $\sigma$-域；遍历性（$\mathcal{I}$ 平凡）使右端等于 $\mathbb{E}X_0$。i.i.d. 序列是平稳遍历的特例，故伯克霍夫定理\textbf{蕴含强大数定律}；冯·诺伊曼的同期的平均遍历定理\cite{vonneumann1932}给出 $L^2$ 版本。从方法论看，遍历论视角揭示了诱导收敛的真正结构是\textbf{保测变换的回归性}而非独立性本身，并解释了为什么大数定律在确定性动力系统（如连分数展开、圆周旋转）中同样成立。
