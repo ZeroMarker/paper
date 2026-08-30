@@ -2,6 +2,8 @@ name: Build Paper
 
 # tag 结构: <paper_name>-<major>.<minor>.<patch>
 # 例如: goldbach-1.0.0 / svd-1.0.0 / riemann-1.0.0
+# 约定: 论文目录名只用下划线 _，不含连字符 -，因此 - 是项目名与版本号的分隔符
+# 产物 PDF 命名: <paper_name>-<major>.<minor>.<patch>.pdf
 # 目录规则: 顶层 <paper_name>/；根文件规则: 优先 main.tex，否则取目录中唯一的含 \documentclass 的 .tex
 
 on:
@@ -40,10 +42,13 @@ jobs:
           echo "未在 $DIR 中找到根 .tex 文件" >&2
           exit 1
         fi
+        VERSION="${TAG#*-}"
         echo "paper=$PAPER" >> "$GITHUB_OUTPUT"
+        echo "version=$VERSION" >> "$GITHUB_OUTPUT"
         echo "dir=$DIR" >> "$GITHUB_OUTPUT"
         echo "root=$ROOT_FILE" >> "$GITHUB_OUTPUT"
         echo "pdf=${ROOT_FILE%.tex}.pdf" >> "$GITHUB_OUTPUT"
+        echo "release_pdf=${PAPER}-${VERSION}.pdf" >> "$GITHUB_OUTPUT"
         if [ -f "$DIR/setup.sh" ]; then
           echo "has_setup=true" >> "$GITHUB_OUTPUT"
         else
@@ -70,15 +75,20 @@ jobs:
         working_directory: ${{ steps.parse.outputs.dir }}
         latexmk_use_xelatex: true
 
+    - name: Rename PDF to paper-version
+      run: |
+        mv "${{ steps.parse.outputs.dir }}/${{ steps.parse.outputs.pdf }}" \
+           "${{ steps.parse.outputs.dir }}/${{ steps.parse.outputs.release_pdf }}"
+
     - name: Upload PDF artifact
       uses: actions/upload-artifact@v4
       with:
         name: ${{ steps.parse.outputs.paper }}-pdf
-        path: ${{ steps.parse.outputs.dir }}/${{ steps.parse.outputs.pdf }}
+        path: ${{ steps.parse.outputs.dir }}/${{ steps.parse.outputs.release_pdf }}
 
     - name: Create Release and Upload PDF
       uses: softprops/action-gh-release@v2
       with:
-        files: ${{ steps.parse.outputs.dir }}/${{ steps.parse.outputs.pdf }}
+        files: ${{ steps.parse.outputs.dir }}/${{ steps.parse.outputs.release_pdf }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
