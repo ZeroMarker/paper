@@ -1,0 +1,87 @@
+\section{研究方法}\label{sec:methods}
+
+佩雷尔曼的证明围绕一个核心困难展开：\textbf{里奇流必然产生奇点，而奇点处的拓扑信息恰恰是猜想所需要的}。本节按方法的逻辑结构依次介绍：从流的方程与极值原理，到熵与单调性公式对奇点的约束，再到典范邻域、手术与有限熄灭。各技术之间的依赖关系总结于\cref{sec:results}。
+
+\subsection{基本对象：里奇流与曲率方程}
+
+里奇流是度量的演化方程
+\begin{equation}
+    \frac{\partial}{\partial t} g_{ij} = -2 R_{ij},
+\end{equation}
+即在共形因子意义上让里奇曲率“扩散”。其拓扑意义的来源是双曲方程的主导项：标准化后曲率满足反应--扩散方程
+\begin{equation}\label{eq:scalar-curvature}
+    \partial_t R = \Delta R + 2\bigl|\operatorname{Ric}\bigr|^2 \;\geq\; \Delta R + \tfrac{2}{3} R^2
+    \quad (n = 3),
+\end{equation}
+末项的平方增长使负曲率区域自我膨胀（趋于双曲几何），正曲率区域收缩（趋于球面几何）——流自动地在不同区域实现不同的模型几何，这正是几何化猜想的动力学版本。
+
+控制方程的基本工具是\textbf{极值原理}与它的高阶推广：
+
+\begin{theorem}[曲率的极值原理与夹挤]\label{thm:maxprinciple}
+    设 $g(t)$ 为闭流形上的里奇流。（i）标量曲率的最小值 $\min R(\cdot,t)$ 单调不减；（ii）若 $t=0$ 时 Ricci 曲率 $\geq \rho g$，则该下界对所有时刻保持；（iii）三维中，Hamilton--Ivey 夹挤成立：当 $R \to +\infty$ 时，截面曲率越来越被正曲率主导，负曲率只能出现在被 $R$ 压倒的稳定方向上。
+\end{theorem}
+
+夹挤的定量形式（Hamilton 的 $R \geq \frac{C}{1+t}$ 型下界与 Ivey 不等式）保证了\textbf{所有奇点在泡尺度下是正曲率的}——这是后文一切分析的支点。
+
+\subsection{方法一：熵泛函与单调性}
+
+佩雷尔曼的第一项突破是构造了里奇流的\textbf{熵}——一个在流下单调的泛函，从而把“奇点附近发生了什么”转化为“什么量在减少”。对度量 $g$、函数 $f$ 与尺度 $\tau > 0$，定义 $\mathcal{F}$-泛函与 $\mathcal{W}$-熵：
+\begin{align}
+    \mathcal{F}(g, f) &= \int_M \left( R + |\nabla f|^2 \right) e^{-f}\, \mathrm{d}\mu, \notag\\
+    \mathcal{W}(g, f, \tau) &= \int_M \Bigl[ \tau\left( R + |\nabla f|^2 \right) + f - n \Bigr] \frac{e^{-f}}{(4\pi\tau)^{n/2}}\, \mathrm{d}\mu .
+\end{align}
+令 $\mu(g,\tau)$ 与 $\lambda(g)$ 为相应泛函在约束 $\int (4\pi\tau)^{-n/2} e^{-f} \mathrm{d}\mu = 1$ 下的最小值，则
+
+\begin{theorem}[$\mathcal{W}$-熵单调性]\label{thm:entropy}
+    在里奇流下（$\tau = T - t$ 随时间递减），$\frac{\mathrm{d}}{\mathrm{d}t}\mathcal{W} \geq 0$，等号成立当且仅当流是梯度收缩孤子；$\mu(g, T-t)$ 单调不减。
+\end{theorem}
+
+证明的关键一步是把变分计算化为与共轭热方程耦合的线性迹不等式
+\begin{equation}
+    \frac{\mathrm{d}}{\mathrm{d}t} \operatorname{Tr}\bigl( \Box^* \bigr) \geq 0,
+\end{equation}
+其中 $\Box^* = -\partial_t + \Delta - R$ 是共轭热算子。这一“桥不等式”不依赖曲率大小，因此\textbf{在奇点极限下依然成立}——单调量恰是穿越奇点时的不变筹码。
+
+熵单调性的第一个推论是 \textbf{No Local Collapsing 定理}：
+
+\begin{theorem}[非坍缩定理]\label{thm:nocollapse}
+    对任意 $\varepsilon > 0$ 与时刻 $T_0$，存在 $\kappa = \kappa(\varepsilon, g(\cdot,0), T_0) > 0$，使得对 $t \leq T_0$、任意 $x$ 与 $r < \min\{T_0 - t, 1\}$ 的抛物球 $B_t(x, r)$：若 $|\operatorname{Rm}| \leq r^{-2}$ 于其中，则 $\operatorname{Vol}(B_t(x,r)) \geq \kappa r^n$。
+\end{theorem}
+
+直觉上：塌缩（体积异常小）会造成熵的异常下降，被单调性禁止。该定理替代了 Hamilton 纲领中缺失的体积控制，保证了奇点极限是非退化的光滑流形，且覆盖数有界——高维 bump 与花生的噩梦里奇流中不会出现。
+
+\subsection{方法二：奇点分析与典范邻域}
+
+奇点分析回答“流在哪里、以何种方式破裂”。由式~\eqref{eq:scalar-curvature} 的平方增长与极大值原理，曲率在有限时间内爆破；沿爆破点的\textbf{ blow-up 极限}（以 $|\operatorname{Rm}|(x,t) \to \infty$ 的速率缩放时空）给出奇点模型。佩雷尔曼的非坍缩定理与随后的\textbf{ $\kappa$-解紧性定理}把可能的极限压缩到极小清单：
+
+\begin{theorem}[$\kappa$-解与典范邻域]\label{thm:canonical}
+    设 $M$ 为 $\kappa$-解（完备、非塌缩、正曲率算子的古代解），则其每个点都位于如下典范邻域之一：
+    \begin{enumerate}[label=(\roman*)]
+        \item $\varepsilon$-颈：与圆柱段 $S^2 \times (-\varepsilon^{-1}, \varepsilon^{-1})$ 在 $C^{[\varepsilon^{-1}]}$ 意义下近似；
+        \item $(C,\varepsilon)$-帽：一端为 $\varepsilon$-颈、另一端为曲率受控的闭帽；
+        \item 闭流形情形：几乎为圆球或正曲率分量。
+    \end{enumerate}
+    此外，当 $t \to -\infty$ 时，$\kappa$-解渐近于梯度收缩孤子；三维的收缩孤子被分类为圆球、高维圆柱或唯一的玻色子--玫瑰（bald 玫瑰）——而后者因面积比较可被排除为奇点模型（否则将产生非球面的闭奇点分量）。
+\end{theorem}
+
+于是奇点的局部图像完全清楚：\textbf{爆破只以“颈缩”的方式发生}。这一结构性认识把几何问题转写为手术说明书：在颈的中段切断，把两端各换上一个标准帽，丢掉所得的紧致“帽状”分量。手术的时刻、位置与尺度由 $\varepsilon$-颈的检测给出，误差全部被熵的单调性记账。
+
+\subsection{方法三：带手术的里奇流}
+
+定义\textbf{里奇流带手术}：沿递增的时刻序列 $T_1 < T_2 < \cdots$，在每次 $T_i$ 执行（i）切除曲率超过阈值 $r_i^{-2}$ 的区域并粘帽、（ii）丢弃紧致分量、（iii）以小的时间间隔“标准化”度量，然后让流继续。核心的\textbf{手术一致性定理}断言：只要初始参数（阈值 $\varepsilon, \delta$）选取适当，则在任一手术时刻，曲率 $\geq \delta^{-2} r_i^{-2}$ 的区域都是 $\delta$-颈或帽的并——手术只切除已被分析清楚的构造。
+
+佩雷尔曼的更强估计是\textbf{与参数无关的一致性}：手术点的邻域满足与无手术流相同的典范邻域描述，这使得对整个（带手术的）流可以统一使用嫡的单调性与非坍缩（参数 $\kappa$ 只依赖初始度量与 $\varepsilon$），从而归纳推进。
+
+\subsection{方法四：有限熄灭与收官}
+
+最后一步把动力学翻译回拓扑。设 $M$ 单连通、闭，$g_0$ 为任意初始度量。
+
+\begin{theorem}[有限熄灭]\label{thm:extinction}
+    单连通闭三维流形上的（带手术的）里奇流在有限时间内熄灭：存在 $T < \infty$ 使流在 $T$ 之后无流形可延续。
+\end{theorem}
+
+证明梗概见\cref{sec:appendix}。要点是：单调量（标量曲率的 $L^1$ 质量或 $\mathcal{W}$-熵的下界）迫使流的“有效时间尺度”递减，而手术丢弃帽状分量使流形保持连通分支的收缩；若流永不熄灭，则其无限延伸与单调量的递减矛盾。熄灭前的最后一段流形必是闭的、正曲率夹挤的分量，由 Hamilton--Ivey 夹挤与其上的标准收敛定理，它就是圆球 $S^3$。反向追溯手术记录：每次手术或切除帽（不改变单连通性）、或切除 $S^2 \times S^1$ 型连通和分量——由戴帽后仍单连通，逐步拼接即得 $M \cong S^3$。
+
+\begin{remark}
+    有限熄灭只对单连通流形是免费的；对一般流形，同样的机制给出的是\textbf{几何化}：流 $(0, T]$ 上各时段的 thick--thin 分解按时间拼接，其极限块分别收敛到八种模型几何，而三维双曲块与 Seifert 纤维化块的识别归功于哈密顿与佩雷尔曼的收敛理论。这就是佩雷尔曼定理的完整内容——庞加莱猜想只是单连通情形的特例。
+\end{remark}

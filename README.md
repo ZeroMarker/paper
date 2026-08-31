@@ -42,6 +42,16 @@ paper/
 │   ├── sections/           # 章节文件
 │   ├── references/         # BibTeX文献库
 │   └── compile.bat         # Windows编译脚本
+├── poincare/               # 庞加莱猜想综述
+│   ├── main.tex            # 主LaTeX文件
+│   ├── sections/           # 章节文件
+│   ├── references/         # BibTeX文献库
+│   └── compile.bat         # Windows编译脚本
+├── abc_conjecture/         # ABC 猜想综述
+│   ├── main.tex            # 主LaTeX文件
+│   ├── sections/           # 章节文件
+│   ├── references/         # BibTeX文献库
+│   └── compile.bat         # Windows编译脚本
 └── paper.yaml              # Zotero 文库分类
 ```
 
@@ -57,6 +67,8 @@ paper/
 | 挂谷猜想：历史、进展与展望 | `kakeya/` | `kakeya-1.0.0` |
 | 朗兰兹纲领：历史、进展与展望 | `langlands/` | `langlands-1.0.0` |
 | 大数定律：历史、进展与展望 | `law_of_large_numbers/` | `law_of_large_numbers-1.0.0` |
+| 庞加莱猜想：历史、进展与展望 | `poincare/` | `poincare-1.0.0` |
+| ABC 猜想：历史、进展与展望 | `abc_conjecture/` | `abc_conjecture-1.0.0` |
 
 ## 编译方法
 
@@ -69,6 +81,8 @@ cd fermat      && .\compile.bat
 cd kakeya      && .\compile.bat
 cd langlands   && .\compile.bat
 cd law_of_large_numbers && .\compile.bat
+cd poincare    && .\compile.bat
+cd abc_conjecture && .\compile.bat
 ```
 
 SVD 论文无 `compile.bat`（根文件为 `svd_paper.tex`，需先运行 `setup.sh` 由 `svd_demo.py` 生成插图再编译）：
@@ -172,3 +186,25 @@ pdflatex main
 6. **开放问题**：无穷均值与圣彼得堡悖论的规范化、强逼近（KMT）与最优速率、相依框架边界、巴拿赫空间值与算子水平推广、随机算法与非交换概率
 7. **结论**：总结与展望
 8. **附录**：科尔莫哥洛夫不等式与强大数定律证明梗概、伯努利原始证明思想、符号与术语表
+
+## 庞加莱猜想综述主要内容
+
+1. **引言**：猜想陈述（闭单连通三维流形同胚于 $S^3$）、各维数对比、研究意义
+2. **历史发展**：庞加莱《位置分析》五补充篇与同调球面（1895--1904）、怀特海流形与 Dehn--Papakyriakopoulou--Haken--Waldhausen 积累、高维（斯梅尔 1961）与拓扑四维（弗里德曼 1982）的胜利、瑟斯顿几何化纲领与哈密顿里奇流（1982）
+3. **研究方法**：里奇流方程与曲率夹挤（Hamilton--Ivey）、$\mathcal{W}$-熵单调性与非坍缩定理、$\kappa$-解与典范邻域、带手术的里奇流与手术一致性、有限熄灭定理与拓扑重建
+4. **重要成果**：进展时间线、斯梅尔/弗里德曼定理、佩雷尔曼三篇预印本（2002--2003）、社区验证（曹--朱、摩根--田、克莱纳--洛特）、三维几何化定理
+5. **应用与联系**：三维流形分类与算法可判定性、纽结理论、四维拓扑（怪异 $\mathbb{R}^4$ 与光滑 $S^4$）、群论刻画、宇宙拓扑与量子场论
+6. **开放问题**：光滑四维庞加莱猜想与怪异 $S^4$、四维里奇流奇点分类与弱流穿越、高维非坍缩（Bamler 纲领）、四维几何化、证明的形式化
+7. **结论**：总结与展望
+8. **附录**：非坍缩定理与有限熄灭定理证明梗概、符号与术语表
+
+## ABC 猜想综述主要内容
+
+1. **引言**：猜想陈述（$c < K_\varepsilon\,\operatorname{rad}(abc)^{1+\varepsilon}$）、质量与加法--乘法不相容性、研究意义
+2. **历史发展**：函数域原型 Mason--Stothers 定理（1981）、Masser--Oesterl\'e 提出（1985）、等价网络与无条件界（Szpiro、Elkies、Stewart--Tijdeman、Stewart--Yu）、Granville--Tucker 纲领化（2002）、望月新一 IUT（2012）与 Scholze--Stix 争议（2018）
+3. **研究方法**：等价形式与 Frey 曲线桥、Wronskian 与函数域方法（特征 $p$ 例外）、Baker 对数线性型与显式下界、Belyi 映射构造优质三元组、IUT 纲领概览（霍奇剧场、$\theta$-函数异用等距、log-shell 与系 3.12）
+4. **重要成果**：进展时间线、Stewart--Yu 型下界、等价网络（ABC $\Leftrightarrow$ Szpiro $\Rightarrow$ 渐近费马/有效 Mordell）、IUT 现状的中立纪事
+5. **应用与联系**：渐近费马、广义费马（Darmon--Granville）、Catalan 型方程、Hall 弱形式、平方自由值、有效 Mordell、Szpiro 控制、算术动力系统、Vojta 纲领、实验数论（abc@home）
+6. **开放问题**：IUT 缺口的解决或绕越、显式 $K_\varepsilon$ 与质量分布、特征 $p$ 类比、Vojta 型推广、大型证明的可传递性与形式化
+7. **结论**：总结与展望
+8. **附录**：Mason--Stothers 定理证明、从 ABC 到渐近费马的推导梗概、符号与术语表

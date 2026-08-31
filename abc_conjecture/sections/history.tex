@@ -1,0 +1,37 @@
+\section{历史发展}\label{sec:history}
+
+ABC 猜想的历史是“类比先行、翻译跟进”的历史：多项式世界先有定理，整数世界先有猜想，而连接两个世界的桥梁是曲线与数域的平行论。
+
+\subsection{函数域原型：Mason--Stothers 定理（1981）}
+
+设 $K$ 为特征零域，$a, b, c \in K[t]$ 两两互素且 $a + b = c$。Stothers\cite{stothers1981}与 Mason\cite{mason1984}独立证明了多项式版本的 ABC 定理：
+
+\begin{theorem}[Mason--Stothers]\label{thm:mason}
+    在上述约定下，$\max\{\deg a, \deg b, \deg c\} < \deg \operatorname{rad}(abc)$。
+\end{theorem}
+
+这是一个\textbf{精确、无条件且指数为零}的定理——多项式世界没有 $\varepsilon$ 的损耗。其证明出奇地初等：对 $a + b = c$ 求导并考察 Wronskian $a'b - ab'$，利用“互素多项式的 Wronskian 不为零”与次数比较即得。函数域中该定理等价于 Belyi 映射的 Riemann--Hurwitz 公式，也是 Davenport--Stothers 不等式与函数域 Szpiro 的源头。
+
+这一原型的意义是双重的：它说明 ABC 型不等式\textbf{在正确的类比我（曲线 vs 谱）下是定理}；同时它的证明技术（求导 = 无穷小提升）暗示数域情形需要某种“算术求导”——三十年后，这一直觉在望月新的 $\theta$-函数框架中以极端的方式复活。
+
+\subsection{Oesterl\'e--Masser：猜想的诞生（1985）}
+
+1985 年，Masser 在伦敦大学学院的讲义\cite{masser1985}与 Oesterl\'e 在布尔巴基讨论班\cite{oesterle1988}先后提出同一命题，即今日的 ABC 猜想。两人的动机不同却互补：Masser 从广义费马方程与有效界限出发；Oesterl\'e 则从椭圆曲线的 Szpiro 比率出发，并意识到（经 Frey 曲线）ABC 与 Szpiro 互相等价——费马大定理因此成为两者共同的推论。这个时间点恰在 Frey（1984）提出“Frey 曲线 $\Rightarrow$ 费马”的著名观察之后、Wiles（1995）证明模性定理之前：ABC 被提出时，它就是“通往费马的另一条路”。
+
+\subsection{八十至九十年代：等价网络、无条件界与构造}
+
+猜想提出后的第一个十年呈现三条并行战线：
+
+\begin{itemize}
+    \item \textbf{等价网络}：Szpiro 关于椭圆曲线判别式 $\Delta$ 与导子 $N$ 的猜想（$\operatorname{ord} \Delta \leq 6 + \varepsilon$ 型，1986--1990 年间成形\cite{szpiro1990}）被证明与 ABC 等价；Elkies 的\textit{ABC implies Mordell}\cite{elkies1991}补上了“ABC $\Rightarrow$ 有效 Mordell”的关键环节，使等价网络覆盖了曲线算术的核心。
+    \item \textbf{无条件下界}：Stewart--Tijdeman\cite{stewarttijdeman1986}首次证明 $c$ 超出 $\operatorname{rad}(abc)$ 的任意对数次幂；Stewart--Yu（1991、2001）\cite{stewartyu2001}借助对数线性型的显式理论把指数推进到 $1/3$（含对数因子修正），这至今仍是无条件最好的一般结果——与猜想要求的指数 $1$ 之间，隔着 Baker 理论与方法论上的整条鸿沟（见\cref{sec:methods}）。
+    \item \textbf{优质三元组的构造}：Elkies（1991）设计了基于 Belyi 映射与椭圆曲线有理点的系统构造，找到 $2 + 3^{10}\cdot 109 = 23^5$ 等记录三元组；此后 \textit{abc@home} 项目将计算搜索变成群众科学，质量超过 $1.4$ 的三元组已编目数百万。
+\end{itemize}
+
+\subsection{新世纪：纲领化与 IUT 冲击（2002--）}
+
+\begin{itemize}
+    \item \textbf{纲领化}：Granville--Tucker 的综述《It's as easy as the abc conjecture》\cite{granvilletucker2002}把散落的推论整理成“ABC $\Rightarrow$ 数论的新常态”的全景图，并提出 ABC 与 Riemann 假设可能在“乘法结构的随机模型”下同源的哲学观点。
+    \item \textbf{广义费马}：Darmon--Granville\cite{darmongranville1995}证明（经 Faltings）签名满足 $1/p + 1/q + 1/r < 1$ 的广义费马方程只有有限多组解；ABC 进一步给出\textbf{有效}的有限性——这使 ABC 成为分类这类方程的核心输入。
+    \item \textbf{IUT 冲击}：2012 年 8 月，望月新一旦在 arXiv 贴出四篇《宇宙际 Teichm\"uller 理论》（IUT）论文\cite{mochizuki2012}，宣称从中推出 ABC 与 Szpiro 猜想（核心是第 IV 篇的系 3.12）。证明长约五百余页，建立在作者此前二十年的 $p$-adic Teichm\"uller 理论、霍奇--阿隆斯基理论与 Frobenioid 理论之上。2018 年，Scholze--Stix 在京都与作者当面讨论后公开撰文\cite{scholzestix2018}，指出系 3.12 的证明存在“无法通过局部修补解决”的缺口——核心争议在于论文中两处“等同”能否相容地保持乘法结构。Fesenko\cite{fesenko2015}则提供了同情的细致解读。IUT 论文于 2021 年在《PRIMS》刊出，但国际数学界主流至今不承认 ABC 猜想已获证明；相关论战成为当代数学最著名的未决争议（详见\cref{sec:results}）。
+\end{itemize}

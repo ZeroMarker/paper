@@ -1,0 +1,30 @@
+\section{应用与联系}\label{sec:applications}
+
+ABC 猜想的应用几乎覆盖指数型丢番图问题的全部版图。本节按“经典方程—曲线算术—结构性推论”三层展开；除特别注明外，以下各条均为\textbf{假设 ABC 成立}的推论。
+
+\subsection{经典丢番图方程}
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{渐近费马大定理}：由定理~\ref{thm:network}(c)，存在 $n_0$ 使 $x^n + y^n = z^n$ 对 $n \geq n_0$ 无解。历史上这一推论是 ABC 最初的动力之一；费马大定理本身已由 Wiles--Taylor 经模性定理无条件解决，但 ABC 给出的边界（存在性与指数依赖）在\textbf{广义}情形仍不可替代。
+    \item \textbf{广义费马方程}：对签名 $(p, q, r)$ 满足 $1/p + 1/q + 1/r < 1$ 的方程 $x^p + y^q = z^r$，Darmon--Granville\cite{darmongranville1995}经 Faltings 证明解的有限性；ABC 将其升级为\textbf{有效}有限性，并给出解数的一致上界。这是当前分类“互素签名”方程的标准工具。
+    \item \textbf{Catalan--Mih\u{a}ilescu 定理}：ABC（$\varepsilon = 1$ 已够）配合 Tijdeman\cite{tijdeman1976}的 Baker 型有效界，可得 $x^p - y^q = 1$（$p, q \geq 2$）仅有 $3^2 - 2^3 = 1$ 一解——即 Catalan 定理的“路线图版”。该定理已由 Mih\u{a}ilescu（2004）\cite{mihailescu2004}无条件证明，但 ABC 版本的意义在于它对\textbf{差为常数 $k$} 的所有 Catalan 型方程同时给出几乎完全的分类。
+    \item \textbf{Hall 猜想的弱形式}：记 $M = \max|x^3 - y^2|$（$x, y \in \mathbb{Z}$ 互素），ABC 蕴含 $|x^3 - y^2| > x^{1/2 - \varepsilon}$ 对一切 $x$ 充分大成立。Hall 原猜想（指数 $1/2$）及“Hall 代数”的构造（如 $5853886516781223 = 7823^2 - 2 \cdot 1549034^2$ 型的近失配）是椭圆曲线高度理论中与 ABC 直接对话的实验场。
+    \item \textbf{平方自由性}：$n^2 + 1$ 的平方因子被一致有界，故 $n^2 + 1$ 对几乎所有 $n$ 平方自由；同类论证覆盖一切二次多项式的平方自由值问题。一般地，Granville--Tucker\cite{granvilletucker2002}展示了 ABC 如何把“多项式几乎总是取无平方因子值”从启发式变成定理。
+\end{enumerate}
+
+\subsection{曲线与椭圆曲线的算术}
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{有效 Mordell 定理}：ABC 给出亏格 $g \geq 2$ 曲线 $C/k$ 上有理点的有效高度上界\cite{elkies1991}，从而把 Mordell 猜想（Faltings 定理）从存在性升级为可计算性。与 Baker 型方法（有效但指数爆炸）相比，ABC 版本的界是“多项式级”的，足以支撑实际枚举。
+    \item \textbf{Szpiro 比率的控制}：椭圆曲线判别式与导子满足 $|\Delta| \leq C_\varepsilon N^{6+\varepsilon}$。该不等式对 L 函数与 $\varepsilon$-因子的解析理论（如黄金比率型的 conductor--discriminant 不等式 $\sqrt{N} \leq |\Delta|^{1/12} \cdot \ldots$）是基本输入，也是 BSD 与 GRH 若干条件性结果的前提。
+    \item \textbf{预周期点与动力系统}：ABC 的循环类比（经canonical height 与 N\'eron--Tate 理论）给出自映射 $\mathbb{P}^1$ 的预周期点计数的一致界（Morton--Silverman 型猜想的 ABC 版），是算术动力系统中最常引用的条件性结果。
+\end{enumerate}
+
+\subsection{结构性推论与跨领域联系}
+
+\begin{itemize}
+    \item \textbf{高度理论的“欧几里得化”}：ABC 等价于断言：数域上迹为 $0$、判别式有界的“算术曲线”占据一个紧化的模空间——Vojta 大猜想把这一图像推广到任意簇与任意维数，ABC 是其在一维的最深检验点。
+    \item \textbf{与 Szpiro--Arakelov 几何的关系}：等价网络（定理~\ref{thm:network}）使 ABC 成为 Arakelov 几何中“算术 Riemann--Roch 是否足够强”的试金石；任何 IUT 之外的证明路线几乎必然经过新的 Arakelov 型不等式。
+    \item \textbf{计算数论}：\textit{abc@home} 数据库、Szpiro 比率分布的统计、以及基于 ABC 条件性的 Thue 方程求解器（假设 ABC 后常数可显式化），构成一个活跃的实验分支；优质三元组的记录（当前 $q \approx 1.63$）是猜想尖锐度的直接温度计。
+    \item \textbf{函数域的教训}：Mason--Stothers 定理在函数域中支撑着 Davenport--Stothers 不等式、Belyi 映射的分类与 dessin d'enfant 理论等一整套结果——它提醒我们：数域情形的任何证明都必须为“算术求导”找到替代物；这一直觉在 IUT 之外同样影响着 $\ell$-adic 层面与 Vojta 型截断理论的研究。
+\end{itemize}

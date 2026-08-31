@@ -1,0 +1,62 @@
+\section{附录：Mason--Stothers 定理的证明与两个推导梗概}\label{sec:appendix}
+
+本附录给出函数域原型的完整证明思路、从 ABC 到渐近费马与 Catalan 的推导梗概，并汇总符号约定。
+
+\subsection{Mason--Stothers 定理的证明}\label{sec:app-mason}
+
+\begin{theorem}[Mason--Stothers]\label{thm:mason-app}
+    设 $K$ 为特征零域，$a, b, c \in K[t]$ 两两互素、不全为常数且 $a + b = c$，则
+    \begin{equation}
+        \max\{\deg a, \deg b, \deg c\} < \deg \operatorname{rad}(abc).
+    \end{equation}
+\end{theorem}
+
+\begin{proof}[证明梗概]
+    不妨设 $c$ 次数最大。对 $a + b = c$ 求导并交叉相乘，得
+    \begin{equation}
+        a'b - a b' = a'c - a c' = b c' - b' c =: W \neq 0 .
+    \end{equation}
+    （特征零下 $a, b$ 互素保证 $a'b - ab' \neq 0$：若为零则 $a/b$ 为常数，迫使三者皆常数。）
+
+    关键观察：$W$ 被 $abc / \gcd$ 的\textbf{重因子}部分整除。具体地，设 $p^e \,\|\, a$（$p \nmid bc$），则 $p^{e-1}$ 整除 $a'$ 与 $W$；对 $b, c$ 同理。于是
+    \begin{equation}
+        \deg W \;\geq\; \deg(abc) - \deg\operatorname{rad}(abc) - [\text{小修正项}] .
+    \end{equation}
+    另一方面，$W = a'b - ab'$ 给出 $\deg W \leq \deg a + \deg b - 1 \leq 2\deg c - 1$（若 $\deg a \leq \deg c$；其他情形对称）。代入 $\deg(abc) \geq 3 \deg c$（由最大性），合并两式即得
+    $\deg c \cdot (\text{多余因子}) < \deg \operatorname{rad}(abc)$，
+    精确整理后即定理所述不等式。
+\end{proof}
+
+\begin{remark}
+    证明中的“求导”即 Riemann--Hurwitz 公式的代数化身：$W$ 的零点是映射 $t \mapsto [a:b:c]$ 的分歧点，$\deg\operatorname{rad}(abc)$ 恰计分支指数。特征 $p$ 时 $a'$ 可能为零，$W \neq 0$ 失效——定理在该处断裂，反例（如 $(t^{p^n} + t)^p$ 型恒等式）随之出现。
+\end{remark}
+
+\subsection{从 ABC 到渐近费马}\label{sec:app-fermat}
+
+设 $x^n + y^n = z^n$，$n \geq 3$，$(x, y, z)$ 互素。对互素三元组 $(A, B, C) = (x^n, y^n, z^n)$ 应用 ABC（取 $\varepsilon = 1$）：
+\begin{equation}
+    z^n = C < K_1 \operatorname{rad}(ABC)^{2} \leq K_1 (xyz)^{2} \leq K_1 z^{6} ,
+\end{equation}
+其中 $\operatorname{rad}(x^n y^n z^n) = \operatorname{rad}(xyz) \leq xyz$。于是 $n - 6 < \log K_1 / \log z$，故对 $n \geq 7$ 且 $z$ 充分大（或直接取 $\varepsilon$ 任意小并让 $z \to \infty$）无解；余下的 $n$ 与小 $z$ 的有限组合由 Baker 型有效界（Tijdeman\cite{tijdeman1976}路线）覆盖。这就是“渐近 + 有限检查”的标准结构，广义费马（Darmon--Granville\cite{darmongranville1995}）与 Catalan 的 ABC 推导同构。
+
+\subsection{符号与术语表}
+
+\begin{table}[htbp]
+    \centering
+    \caption{符号与术语约定}
+    \label{tab:notation}
+    \begin{tabular}{ll}
+        \toprule
+        记号 & 含义 \\
+        \midrule
+        $\operatorname{rad}(n)$ & 根基：$n$ 的不同素因子之积 \\
+        $q(a,b,c)$ & 质量：$\log c / \log \operatorname{rad}(abc)$ \\
+        $K_\varepsilon$ & 仅依赖 $\varepsilon$ 的常数 \\
+        $\Delta_E,\ N_E$ & 椭圆曲线 $E$ 的判别式与（全局）导子 \\
+        Frey 曲线 & $y^2 = x(x-a)(x+b)$，半稳定 \\
+        Belyi 映射 & 仅在 $\{0,1,\infty\}$ 上分歧的有理映射 \\
+        $\kappa$-解 / log-shell & IUT 中的核心结构（对数壳） \\
+        Wronskian & $a'b - ab'$ 型行列式，分歧计数工具 \\
+        \bottomrule
+    \end{tabular}
+\end{table}

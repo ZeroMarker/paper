@@ -1,0 +1,42 @@
+\section{开放问题}\label{sec:open_problems}
+
+庞加莱猜想的解决并未关闭这门学科，反而把研究的前沿推到了维数、范畴与方法的边界。本节列举若干核心开放方向。
+
+\subsection{光滑四维庞加莱猜想与怪异 $S^4$}
+
+最著名的后继问题是：\textbf{是否每个与 $S^4$ 同胚的光滑四维流形都微分同胚于 $S^4$？}等价地，$S^4$ 是否存在怪异光滑结构。已知事实如下：
+
+\begin{itemize}
+    \item $n \neq 4$ 时 $S^n$ 的光滑结构唯一（$n \leq 3$ 由 Moise--Munkres；$n \geq 5$ 由 Kervaire--Milnor--Smale 的把柄理论）；四维是唯一的例外。
+    \item 四维中已知的工具（Donaldson 不变量、Seiberg--Witten 理论）能检测某些怪异四维流形，但对\textbf{同伦球面}这种交型最简单的对象全部失效——规范场论的不变量依赖非平凡的基本群或交型。
+    \item Freedman 理论给出“拓扑 $S^4$ 上最多可数个光滑结构”等上界；Cappell--Shaneson 构造（1976）给出的候选怪异 $S^4$ 在多年后被 Akbulut 排除。任何新进展都需要超越现有规范场论框架的观察量。
+\end{itemize}
+
+与之平行的还有\textbf{拓扑四维庞加莱猜想的配边形式}（Freedman 纲领中圆盘嵌入定理对“双覆盖”情形的缺口）以及四维 h-协边猜想的光滑版本（与上述问题等价）。这组问题被公认为下一个千禧年级难题的候选。
+
+\subsection{里奇流的奇点理论与推广}
+
+佩雷尔曼的技术在低维三维成功，其边界本身定义了一族开放问题：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{四维里奇流的奇点分类}：三维中所有奇点都是颈缩（定理~\ref{thm:canonical}），四维中可能出现更复杂的 blow-up 模型（如四维收缩孤子、Bryant 孤子）。完整的典范邻域理论在四维尚未建立，$\kappa$-解的分类仅部分完成。
+    \item \textbf{流穿越奇点的正则延拓}：佩雷尔曼的手术是对奇点的“截断”，能否定义一个\textbf{内在的、正则的}弱里奇流（如 Haslhofer--Kopf 的 $\varepsilon$-正则性方法、Bamler--Kleiner 的流通过理论）使拓扑信息在穿越时自动保留？这将把几何化的证明从“手术拼装”升级为“连续形变”。
+    \item \textbf{高维应用}：$n \geq 4$ 的里奇流奇点是否存在与三维类似的有限模型清单？Bamler（2020 年代）对四维与高维建立了部分非坍缩与紧性理论，是当前最活跃的方向之一。
+    \item \textbf{曲率夹挤的定量最优性}：三维 Hamilton--Ivey 夹挤常数的最优形式、以及夹挤对曲率爆破速率的影响，仍缺乏完全清晰的刻画。
+\end{enumerate}
+
+\subsection{几何化思想的延伸}
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{四维几何化}：三维有八种几何，四维的齐性几何有无穷多且分类远未完成；是否存在“广义几何化”的合理表述，使四维流形可按有限/可控方式分解？Fintushel--Stern 的结手术构造表明四维光滑结构与纽结理论深度纠缠，几何化在此须与规范场论相容。
+    \item \textbf{Ricci flow 与 Thurston 边界}：对一般（含边界、非紧）三维流形，带边几何化与双曲流形的 Tameness（Agol--Calegari--Gabai 2004）之后仍有一族精细问题（端不变量、相对几何化的有效版本）。
+    \item \textbf{组合与几何的桥梁}：里奇流在图组合化（曲率 $\geq -1$ 的“组合里奇流”）与三维流形数字化的交叉，为几何化的算法实现提供新思路；其收敛性理论远未成熟。
+\end{enumerate}
+
+\subsection{方法论层面的开放课题}
+
+\begin{itemize}
+    \item \textbf{可读性与再证明}：佩雷尔曼证明至今没有“教科书式”的短证明；能否把熵、手术与熄灭三大件整合为可直接讲授的一学期课程？Morgan--Tian 与 Kleiner--Lott 的版本是目前的最佳尝试。
+    \item \textbf{形式化}：把庞加莱定理的证明完全形式化到 Lean/Coq，是一个正在兴起的长期工程（几何拓扑的形式化基础近年才逐步就绪）；它将成为“大型非组合证明形式化”的试金石。
+    \item \textbf{其他流}：逆平均曲率流、Yang--Mills 流在三维与四维上的奇点理论、以及与里奇流的类比是否可以产生新的拓扑应用，均在探索中。
+\end{itemize}

@@ -1,0 +1,73 @@
+\section{重要成果}\label{sec:results}
+
+本节总结 ABC 猜想研究的主要成果：进展时间线、无条件下界的现状、等价网络，以及 IUT 争议的完整记录。
+
+\subsection{进展时间线}
+
+\begin{table}[htbp]
+    \centering
+    \caption{ABC 猜想及相关问题的主要进展}
+    \label{tab:timeline}
+    \begin{tabular}{llp{7.8cm}}
+        \toprule
+        年份 & 人物 & 内容 \\
+        \midrule
+        1981 & Stothers; Mason & 函数域多项式 ABC 定理（Wronskian 证明） \\
+        1984--86 & Frey & Frey 曲线：ABC/Szpiro $\Rightarrow$ 费马大定理 \\
+        1985--88 & Masser; Oesterl\'e & ABC 猜想正式提出；与 Szpiro 等价 \\
+        1986 & Stewart--Tijdeman & 首个超越对数的无条件下界 \\
+        1990 & Szpiro & 判别式--导子猜想；等价网络成形 \\
+        1991 & Elkies & \textit{ABC implies Mordell}；Belyi 构造与记录三元组 \\
+        1995 & Darmon--Granville & 广义费马方程的有限性（Faltings 路线） \\
+        2001 & Stewart--Yu & 显式下界推进到指数 $1/3$（带对数因子） \\
+        2002 & Granville--Tucker & 纲领化综述；推论全景图 \\
+        2012 & 望月新一 & IUT I--IV 预印本，宣称证明 ABC 与 Szpiro \\
+        2018 & Scholze--Stix & 公开质疑系 3.12，定位核心缺口 \\
+        2020--21 & PRIMS & IUT 论文接受并刊出；争议公开化 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{无条件下界与显式化}
+
+\begin{theorem}[Stewart--Tijdeman\cite{stewarttijdeman1986}; Stewart--Yu\cite{stewartyu2001}]\label{thm:lowerbounds}
+    存在 effectively computable 常数使一切互素三元组满足
+    \begin{equation}
+        c > K \cdot \operatorname{rad}(abc)^{1/3}\big/(\log \operatorname{rad}(abc))^{C} .
+    \end{equation}
+\end{theorem}
+
+\noindent 与此平行，“显式 ABC”文献给出了形如 $c < \exp\bigl(C \operatorname{rad}(abc)^{\kappa}\bigr)$（Baker 型，$\kappa$ 逐步下调）的上界。上下界之间——\textbf{指数 $1/3$ 的多项式下界与 $\kappa < 1$ 的指数上界}——就是当前无条件的全部疆域。实验上，\textit{abc@home} 的编目显示优质三元组的数量与 $x^{2}$ 型分布相容，与猜想的预言一致。
+
+\subsection{等价网络与“后果定理”}
+
+\begin{theorem}[Oesterl\'e--Masser--Szpiro--Elkies]\label{thm:network}
+    以下命题两两（在 $\varepsilon$ 意义下）等价：
+    \begin{enumerate}[label=(\alph*)]
+        \item ABC 猜想（$\varepsilon$-形式）；
+        \item Szpiro 猜想（判别式 $\leq$ 导子 $^{6+\varepsilon}$）；
+        \item 渐近费马：$x^n + y^n = z^n$ 对 $n \geq n_0$ 无正整数解；
+        \item 有效 Mordell：亏格 $\geq 2$ 曲线上有理点高度的有效上界。
+    \end{enumerate}
+\end{theorem}
+
+\noindent 等价网络的价值不在逻辑（它们是同一个猜想），而在\textbf{翻译}：每条证明路线只需在一个陈述上发力，所有后果自动到账。IUT 以（b）为目标；若成立，其余全部随之成立。
+
+\subsection{IUT 的现状：一份中立纪事}\label{sec:iut-status}
+
+围绕望月新的四篇论文\cite{mochizuki2012}，目前可客观记录的事实如下：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{2012--2015}：预印本贴出；少数数学家（Yamashita、Fesenko\cite{fesenko2015}、Corti 等）发表同情解读；多数专家难以进入其语言体系。
+    \item \textbf{2018}：Scholze--Stix 应邀访问 RIMS；随后发布《Why abc is still a conjecture》\cite{scholzestix2018}，把争议定位到系 3.12 证明中两处“等同”的不相容：若按论文方式同时保留两者，得到的将是无从推导所需不等式的错误等式。望月发布长篇反驳，认为批评误解了异用语义。
+    \item \textbf{2020--2021}：IUT 四篇经《PRIMS》接受并刊出（望月本人时任该刊主编，编辑流程受到公开讨论）。
+    \item \textbf{当前状态}：国际数学界主流（包括菲尔兹奖级别的多位数论学家）不将 ABC 视为已解决；也没有任何团队在 IUT 框架内独立复现系 3.12，或从中提取框架外的可核验推论。ABC 在 Clay 千禧年难题之外，但其解决标准与七个难题并无不同。
+\end{enumerate}
+
+\begin{remark}
+    中立的说法是：IUT 是一个未被证伪也未被复现的理论。对数学共同体而言，ABC 猜想应被视为\textbf{开放}；对 IUT 研究者而言，证明已完成。这一分歧本身——关于“证明的可传递性”——已超出本综述的范围，但它是任何严肃的 ABC 记录都必须如实呈现的部分。
+\end{remark}
+
+\begin{remark}
+    与争议并行的是健康的旁支研究：函数域情形的特征 $p$ 反例与 Belyi 构造的极限、Szpiro 比率在椭圆曲线数据库上的统计、ABC 对广义费马方程数值实验的预言精度等，都持续为猜想（或其失效方式）积累间接证据。
+\end{remark}

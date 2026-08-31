@@ -1,0 +1,78 @@
+\section{重要成果}\label{sec:results}
+
+本节总结庞加莱猜想研究的主要成果：高维与四维的解答、佩雷尔曼的三篇预印本、证明的社区验证，以及由此确立的几何化定理。
+
+\subsection{进展时间线}
+
+\begin{table}[htbp]
+    \centering
+    \caption{庞加莱猜想及相关问题的主要进展}
+    \label{tab:timeline}
+    \begin{tabular}{llp{7.8cm}}
+        \toprule
+        年份 & 人物 & 内容 \\
+        \midrule
+        1895--1904 & 庞加莱 & 创建代数拓扑；发现同调球面；提出“最后的问题” \\
+        1934 & 怀特海德 & 证明尝试失败；发现怀特海流形 \\
+        1957 & Papakyriakopoulou & 证明 Dehn 引理、圈定理、球面定理 \\
+        1960s & Haken, Waldhausen & 不可压缩曲面理论与 Haken 流形刚性 \\
+        1961 & 斯梅尔 & $n \geq 5$ 广义庞加莱猜想（h-协边界定理） \\
+        1981 & Jaco--Shalen, Johannson & 特征子流形理论（JSJ 分解） \\
+        1982 & 弗里德曼 & 拓扑四维广义庞加莱猜想（圆盘嵌入定理） \\
+        1982 & 瑟斯顿 & 几何化猜想；Haken 流形几何化 \\
+        1982 & 哈密顿 & 引入里奇流；三维正 Ricci 曲率流形的分类 \\
+        1983 & 唐纳森 & 规范场论光滑四维约束定理 \\
+        1995 & Ivey, 哈密顿 & 曲率夹挤的定量形式；奇点分析纲领 \\
+        2002--03 & 佩雷尔曼 & 三篇预印本：熵、非坍缩、手术、几何化 \\
+        2006 & 曹怀东--朱熹平 & 首篇完整细节论文（400 余页） \\
+        2007 & 摩根--田刚 & 专著《Ricci Flow and the Poincar\'e Conjecture》 \\
+        2008 & 克莱纳--洛特 & 完整的在线评注（结构化验证） \\
+        2010 & 克雷研究所 & 千禧年奖金颁授决定；佩雷尔曼拒绝 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{高维与四维的解答}
+
+\begin{theorem}[斯梅尔，1961；弗里德曼，1982]\label{thm:higherdim}
+    闭的、单连通的 $n$ 维流形同胚于 $S^n$，当：
+    \begin{enumerate}[label=(\arabic*)]
+        \item $n \geq 5$（光滑范畴亦成立，由 h-协边界定理）；
+        \item $n = 4$（拓扑范畴；光滑范畴悬而未决）。
+    \end{enumerate}
+\end{theorem}
+
+弗里德曼与唐纳森定理的联合推论（$\mathbb{R}^4$ 的怪异光滑结构、四维交型的枚举）见\cref{sec:applications}。这里强调对比：三维的证明在 1982 年之后\textbf{既不能靠组合也不能靠协边界}，只能靠分析——这正是里奇流登场的舞台。
+
+\subsection{佩雷尔曼的三篇预印本}
+
+\begin{theorem}[佩雷尔曼，2002--2003]\label{thm:perelman}
+    \begin{enumerate}[label=(\arabic*)]
+        \item \cite{perelman2002entropy} 构造 $\mathcal{W}$-熵与约化体积，证明单调性与 No Local Collapsing 定理，给出曲率有界、体积非塌缩的 blow-up 极限的紧性；
+        \item \cite{perelman2003surgery} 构造带手术的里奇流并证明手术一致性：颈缩是奇点的唯一形态，手术可在受控尺度下进行且不破坏全局估计；
+        \item \cite{perelman2003extinction} 证明单连通情形的有限熄灭，从而给出庞加莱猜想的完整证明；同一框架给出瑟斯顿几何化猜想的证明。
+    \end{enumerate}
+\end{theorem}
+
+三篇论文共约 130 页，行文极度凝练，多处“留作练习”的部分足以填满数篇论文。其被接受的过程本身就是数学史的重要一页：
+
+\begin{itemize}
+    \item \textbf{曹怀东--朱熹平（2006）}\cite{cao2006}：发表在《Asian Journal of Mathematics》的 474 页论文，补全全部细节，明确宣称同时给出庞加莱猜想与几何化猜想的完整证明；标题与优先权引发与克莱研究所及汉密尔顿之间的公开争议。
+    \item \textbf{摩根--田刚（2007）}\cite{morgan2007}：克莱研究所组织、历时三年完成的专著，系统重建了佩雷尔曼的论证，含完整证明。
+    \item \textbf{克莱纳--洛特（2008）}\cite{kleiner2008}：自 2003 年起持续更新的在线评注（“Perelman's Papers”），以逐节对照的方式补全细节，最终成书（2011 年后版本已成标准参考）。
+    \item \textbf{共识}：2006 年国际数学家大会向佩雷尔曼颁发菲尔兹奖（他拒绝领奖）；2010 年克雷研究所宣布千禧年奖金条件满足（佩雷尔曼再次拒绝）。学界普遍认可证明属于佩雷尔曼，其先驱 credit 归哈密顿与瑟斯顿。
+\end{itemize}
+
+\subsection{几何化定理}
+
+佩雷尔曼工作所得的完整定理远强于猜想本身：
+
+\begin{theorem}[三维几何化定理]\label{thm:geometrization}
+    任何闭的、不可约三维流形沿球面与环面特征子流形（JSJ 分解）割开后，每一块 admit 局部齐性 Riemann 度量，且该度量可取为八种 Thurston 模型几何之一。
+\end{theorem}
+
+推论包括：庞加莱猜想（单连通块只能是 $S^3$）、椭圆化猜想（任何非平凡自由积分解对应球面连通和）、三维双曲流形的分类框架、Seifert 纤维化与图流形的完全刻画。从 1895 年庞加莱创立基本群算起，三维流形的分类问题历时一个世纪在此闭合。
+
+\begin{remark}
+    与四维的对比耐人寻味：三维流形的拓扑分类（几何化）先于其光滑结构理论得到解决，而四维恰好相反——光滑约束（唐纳森、Seiberg--Witten）远多于拓扑信息（弗里德曼）。几何化的“八种几何”名单在维数上不单调：二维是三种，三维是八种，四维则有无穷多且未分类。这说明“几何统一拓扑”是低维的特权，庞加莱猜想恰处在这份特权的边界上。
+\end{remark}

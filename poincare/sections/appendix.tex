@@ -1,0 +1,57 @@
+\section{附录：关键步骤的证明梗概与术语表}\label{sec:appendix}
+
+本附录给出正文中引用但未展开的两个关键步骤的证明梗概，并汇总符号约定。
+
+\subsection{非坍缩定理的证明梗概}\label{sec:app-nocollapse}
+
+反证。设存在 $\varepsilon_0 > 0$ 与抛物球 $B_t(x_0, r_0)$，满足
+\begin{equation}
+    |\operatorname{Rm}| \leq r_0^{-2} \ \text{于 } B_t(x_0, r_0),
+    \qquad
+    \operatorname{Vol}\bigl(B_t(x_0,r_0)\bigr) < \varepsilon_0 r_0^3 .
+\end{equation}
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{构造试验函数}：以 $x_0$ 为中心、半径 $r_0$ 的爆缩高斯核定义 $f$（即以 $(x_0, t)$ 为极值点的共轭热核的势函数），对应尺度 $\tau = r_0^2$。
+    \item \textbf{曲率有界 $\Rightarrow$ 熵被控制}：在 $|\operatorname{Rm}| \leq r_0^{-2}$ 的区域内，$R \leq 6r_0^{-2}$，而试验函数的构造保证 $\mathcal{W}(g, f, \tau) \geq -c$（下界只依赖维数），同时由体积塌缩假设可证 $\mu(g, \tau) \leq -c' < 0$，且 $c' \to \infty$ 当 $\varepsilon_0 \to 0$。
+    \item \textbf{单调性传导矛盾}：$\mu(g(\cdot,t), r_0^2)$ 由 $\mu(g(\cdot,0), r_0^2 + t) \geq \mu(g(\cdot,0), r_0^2 + T_0)$ 限制（$\mu$ 在尺度下单调，此为 $\mathcal{W}$-单调性的推论），后者只依赖初始度量——是个固定常数。于是 $\varepsilon_0$ 充分小时出现矛盾。
+\end{enumerate}
+
+要点：单调量把“初始度量的整体信息”无损地传送到任意时刻与任意尺度，这正是它比经典曲率估计强大的地方。
+
+\subsection{有限熄灭的证明梗概}\label{sec:app-extinction}
+
+设 $M$ 闭、单连通，$g(t)$ 为带手术的里奇流（参数 $\varepsilon$ 固定）。
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{熄灭时间与熵的关系}：每次手术丢弃帽分量并切除颈，使得 $\int R^+ \,\mathrm{d}\mu$（正曲率质量）严格下降但保持有下界的“残余”，而流段的延续时间被标量曲率的 $L^1$ 质量控制：$\int R\,\mathrm{d}\mu \geq c / (T_{i+1} - T_i)$ 型不等式。
+    \item \textbf{手术次数有限}：由（1），相邻手术间隔的倒数被 $\int R\,\mathrm{d}\mu$ 的减少量控制；后者又被初始 $\int R\,\mathrm{d}\mu$ 的有限总量控制，故手术总次数有限，流在有限时间内熄灭。
+    \item \textbf{终点识别}：熄灭前最后一段流形无奇点地演化至 $T$，其度量满足 Hamilton--Ivey 夹挤且体积趋零——由曲率归一化后的收敛定理，它是圆球 $S^3$（或其分支和，但单连通性排除后者）。
+    \item \textbf{拓扑重建}：从 $S^3$ 反向拼接手术记录。每次手术的类型为（i）切除闭帽分量——不产生新的基本群生成元；（ii）在颈 $S^2 \times I$ 中截断——由 Van Kampen 定理与 $S^2$ 的单连通性，连通和分解不改变单连通性。归纳得 $\pi_1(M) = 1$ 且 $M \cong S^3$。
+\end{enumerate}
+
+注意（2）的原始论证（佩雷尔曼第三篇\cite{perelman2003extinction}）用了两个不同的单调量分别处理有限与无限时间情形，细节因技术性从略。
+
+\subsection{符号与术语表}
+
+\begin{table}[htbp]
+    \centering
+    \caption{符号与术语约定}
+    \label{tab:notation}
+    \begin{tabular}{ll}
+        \toprule
+        记号 & 含义 \\
+        \midrule
+        $S^n$ & $n$ 维单位圆球面 \\
+        $\pi_1(M)$ & 基本群 \\
+        $R_{ij},\ R$ & Ricci 曲率张量与标量曲率 \\
+        $|\operatorname{Rm}|$ & Riemann 曲率算子的范数 \\
+        $\mathrm{d}\mu$ & 度量诱导的体积元 \\
+        $\mathcal{W}(g,f,\tau)$ & 佩雷尔曼熵泛函 \\
+        $\mu(g,\tau)$ & $\mathcal{W}$ 在概率约束下的最小值 \\
+        $\kappa$-解 & 完备、非塌缩、正曲率算子的古代解 \\
+        $\varepsilon$-颈 & 与圆柱 $S^2 \times I$ 在尺度 $\varepsilon$ 下近似区域 \\
+        blow-up 极限 & 奇点附近的时空重标度极限 \\
+        \bottomrule
+    \end{tabular}
+\end{table}

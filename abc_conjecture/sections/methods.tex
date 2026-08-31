@@ -1,0 +1,67 @@
+\section{研究方法}\label{sec:methods}
+
+围绕 ABC 猜想的方法可分为三类：\textbf{理解与转化}（等价形式、Frey 曲线桥）、\textbf{逼近}（无条件下界与显式化）、\textbf{进攻}（构造优质三元组的反方向压力与宣称的证明）。本节依次介绍。
+
+\subsection{记号与等价表述}
+
+对互素三元组 $(a, b, c)$（$a + b = c$），定义质量 $q = \log c / \log \operatorname{rad}(abc)$。基本等价形式：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{$\varepsilon$-形式}（原版）：$c < K_\varepsilon \operatorname{rad}(abc)^{1+\varepsilon}$；
+    \item \textbf{质量形式}：对任意 $\varepsilon > 0$，$q > 1 + \varepsilon$ 的三元组有限；
+    \item \textbf{Szpiro 形式}：对任意椭圆曲线 $E/\mathbb{Q}$（或数域），$\operatorname{ord}_p \Delta_E \leq 6 + \varepsilon$ 型不等式对导子 $N_E$ 成立，即 $|\Delta_E| \leq C_\varepsilon N_E^{6+\varepsilon}$。
+\end{enumerate}
+
+形式（1）与（3）的等价经 Frey 曲线完成：给定互素三元组 $a + b = c$，Frey（1984--86）构造半稳定椭圆曲线 $y^2 = x(x-a)(x+b)$，其判别式含 $abc$ 的高次幂而导子近乎 $\operatorname{rad}(abc)$，于是 Szpiro 给出 $c$ 对 $\operatorname{rad}^{6+\varepsilon}$ 的控制（再归一化即 ABC）；反方向，Oesterl\'e 从椭圆曲线的极小模型构造三元组，把 Szpiro 比率还原为质量。这一桥梁的重要性在于：\textbf{任何对 ABC 的证明路线都必须先穿越椭圆曲线的算术}——IUT 正是把 Szpiro/系 3.12 作为直接目标。
+
+\subsection{方法一：Wronskian 与函数域原型}
+
+Mason--Stothers 定理（定理~\ref{thm:mason}）的证明给出函数域方法的模板：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item 由 $a + b = c$ 求导得 $a' b - a b' = a' c - a c'$ 型公共表达式，即 Wronskian $W = a'b - ab'$ 同时被 $(a,b)$、$(a,c)$ 与 $b + c$ 侧整除；
+    \item 互素性保证 $W \neq 0$（特征零下多项式与其导数不平凡互素）；对 $W$ 的两种次数估计比较，得 $\deg$ 关系；
+    \item Riemann--Hurwitz 的翻译：$t \mapsto [a : b : c]$ 是 $\mathbb{P}^1 \to \mathbb{P}^2$ 型 Belyi 映射，$abc$ 的素因子对应分支点，Mason--Stothers 恰是 Hurwitz 公式。
+\end{enumerate}
+
+特征 $p$ 时步骤（2）失效（$t^p$ 的导数为零），且多项式 ABC 在特征 $p$ 下确有反例——这提示数域情形的任何“求导”都必须处理某种算术 Frobenius 的退化，正是 IUT 争议的技术焦点之一（见\cref{sec:results}）。
+
+\subsection{方法二：对数线性型与显式下界}
+
+无条件下界的来源是 Baker 的对数线性型理论。设 $a = a_1^n$ 型高次幂，$c - b = a$ 给出线性型 $n \log a_1 - \log(c-b)$ 的下界；与“$a$ 的素因子功率 $\leq \operatorname{rad}(abc)$”的乘法计数结合，得到 $c$ 对 $\operatorname{rad}(abc)$ 的幂次控制。Stewart--Tijdeman\cite{stewarttijdeman1986}实现这一纲领得到超越对数的下界；Stewart--Yu\cite{stewartyu2001}通过优化线性型的显式常数（Yu 的 $p$-adic 线性型下界）把指数推到 $1/3$：
+
+\begin{theorem}[Stewart--Yu 型下界]\label{thm:stewartyu}
+    存在 effectively computable 的 $K > 0$，使一切互素三元组满足
+    \begin{equation}
+        c \;>\; K \cdot \operatorname{rad}(abc)^{1/3} \big/ (\log \operatorname{rad}(abc))^{C},
+    \end{equation}
+    其中 $C$ 为显式常数。
+\end{theorem}
+
+方法论的瓶颈是结构性的：Baker 理论把“幂的意外”转化为\textbf{指数小量的对数}，损耗 $e^{c\sqrt{\log r/\log\log r}}$ 型因子不可避免；从对数世界到多项式世界（指数 $1/3 \to 1$）需要超越线性型方法的本质新思想。这正是“显式 ABC”研究（如 Baker 型显式化、Mochizuki 之前的 de Weger 等计算工作）停留在中间地带的原因。
+
+\subsection{方法三：Belyi 映射与优质三元组的搜索}
+
+反方向的压力来自构造：质量越高的三元组越接近反例，其分布刻画了猜想的“尖锐度”。Elkies\cite{elkies1991}的核心观察是：Mason--Stothers 定理在函数域中精确成立，故把\textbf{函数域的三元组沿 Belyi 映射 specialize} 到整数即得高质量候选。实现上：
+\begin{enumerate}[label=(\arabic*)]
+    \item 在 $\mathbb{Q}(t)$ 中取 Mason--Stothers 型恒等式（如由椭圆曲线的加法公式生成多项式恒等式）；
+    \item 用 Belyi 映射把 $t$ 拉回 $\mathbb{P}^1$ 的有理点，使分支结构把根的个数压到最少；
+    \item specialize 并消去公因子，得到整数三元组。
+\end{enumerate}
+Elkies 由此找到 $2 + 3^{10} \cdot 109 = 23^5$（$q \approx 1.63$）；\textit{abc@home} 项目系统化这一搜索，建成了质量 $> 1.4$ 的三元组数据库。实验边界：质量记录缓慢逼近 $1.7$，而“质量是否能被一致地压到 $2$ 以下”与“是否存在无限多条逼近 $1+\varepsilon$ 的三元组族”都是猜想本身的推论级问题。
+
+\subsection{方法四：IUT 纲领概览}\label{sec:methods-iut}
+
+望月新的 IUT\cite{mochizuki2012}把 ABC 重构为\textbf{算术基本群上的形变问题}。其概念结构（按论文体系）：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{霍奇剧场}：把椭圆曲线 $E$ 与其塔（$E$、$\mathbb{P}^1 \setminus \{0,1,\infty\}$、TAO 相关对象）组织成对偶的算术几何宇宙；
+    \item \textbf{$\theta$-函数与异用等距}：从 Szpiro 侧的 theta 函数与 Deuring 极点出发，构造不保持加法与乘法结构的“环结构变形”，把 Frobenius 的信息跨结构搬运；
+    \item \textbf{log-shell 与体积比较}：在相对 freely 生成的对数壳上比较变形前后的体积型不变量，得到判别式与导子的不等式——即系 3.12 的 Szpiro 型不等式，从而（经 Frey 桥）得到 ABC。
+\end{enumerate}
+
+纲领的哲学承诺是：Mason--Stothers 的“求导”在数域中没有直接类比，必须用\textbf{不保持环结构的}宇宙际层级变形来模拟无穷小提升。这一承诺同时也是争议的根源：Scholze--Stix\cite{scholzestix2018}的批评恰在于步骤（2）--（3）中两处结构等同不相容，导致 log-shell 的体积等式退化为不等式方向的选取无从依据；望月学派（及 Fesenko\cite{fesenko2015}的独立解读）则认为批评源于拒绝接受 IUT 的非经典语义。由于双方对“何为该理论的合法推理”没有共识，验证陷入僵局（见\cref{sec:results}）。
+
+\begin{remark}
+    值得记录的是方法论教训：IUT 的语言（Frobenioid、霍奇--阿隆斯基代数、宇宙际层级）在论文体系内自洽，但至今没有任何独立团队能从中抽取\textbf{只依赖标准对象的可核验推论}。Scholze--Stix 的贡献恰是把争议定位到一个可以用经典语言陈述的具体点——这是大型证明争议中最有建设性的形态。
+\end{remark}

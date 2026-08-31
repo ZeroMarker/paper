@@ -1,0 +1,35 @@
+\section{开放问题}\label{sec:open_problems}
+
+ABC 猜想自身的悬而未决，连同围绕它的争议，定义了一组层次分明的开放方向。
+
+\subsection{猜想的证明状态}
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{IUT 的独立复核}：当前最直接的开放问题是系 3.12 的争议能否以双方认可的方式解决。可能的出口包括：独立团队在 IUT 框架内复现证明；Scholze--Stix 指出的缺口被望月学派以可传递的经典语言补上；或出现 IUT 之外的、可独立核验的新证明。任何一种结果都将是数学基础的里程碑。
+    \item \textbf{框架外的证明路线}：在经典 Arakelov 几何与高度理论内部，是否存在逼近 ABC 的新不等式？目前的结构性下界（定理~\ref{thm:lowerbounds}）自 2001 年以来没有指数层面的改进——这一停滞本身是最重要的元问题：是技术极限，还是暗示 $\varepsilon$-形式在“线性型方法”的框架内不可达？
+    \item \textbf{条件性结果的“去条件化”}：广义费马方程的有效界、Hall 弱形式、平方自由值等推论目前都挂在 ABC 上；哪怕只对\textbf{单一固定签名}（如 $(2,3,7)$）证明有效有限性，也是重大进展。
+\end{enumerate}
+
+\subsection{显式化与定量理论}
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{显式 $K_\varepsilon$}：即使假设 ABC，常数的显式化（对每个 $\varepsilon$ 给出可计算 $K_\varepsilon$）仍是独立任务；它与 Thue 方程求解、Catalan 型方程的完全数值分类直接相连。Baker 理论提供了指数型显式上界的样板，多项式级显式化尚无路线图。
+    \item \textbf{质量的分布}：优质三元组的质量记录（$q \approx 1.63$）能否系统逼近？对固定 $\varepsilon$，$q > 1 + \varepsilon$ 的三元组个数的渐近公式（Heuristic 与 $x^2$ 型分布一致）有无条件或半条件版本吗？Szpiro 比率在椭圆曲线数据库上的分布 similarly 只有一致的启发式。
+    \item \textbf{Davenport--Stothers 不等式的最优性}：函数域中 $\deg$ 不等的精确常数已知；整数情形对应的“伪多项式”不等式的最优形式尚未确定——这是把函数域定理“数值化”的最简未决问题。
+\end{enumerate}
+
+\subsection{类比与推广}
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{函数域的特征 $p$ 例外}：多项式 ABC 在特征 $p$ 失效（Frobenius 退化）。正确的“特征 $p$ ABC”应是什么（排除方幂退化？改用导数意义的高度？）——这一问题的答案会反向指导数域方法。
+    \item \textbf{Vojta 大猜想}：ABC 是 Vojta 关于簇上高度与迹不等式的一维特例。Vojta 纲领的更高维推论（如 Siegel 定理的有效化、代数点的计数）远超现有技术；反过来，任何 IUT 型理论若成立，其推广到高维的路径也是完全开放的。
+    \item \textbf{$p$-adic 与函数域上的“宇宙际”结构}：无论 IUT 系 3.12 的争议结局如何，其使用的技术（$\theta$-函数的异用等距、Frobenioid 的环结构重建）提出了一类独立问题：不保持环结构的“变形”能否在标准语言中重建？相关尝试（如解析族与 $p$-adic Hodge 理论的语言重述）正在进行。
+    \item \textbf{等价网络的扩张}：ABC 与 Szpiro、Mordell 等价；它与 Hall 猜想、Erd\H{o}s--Woods 猜想、幂差问题的单向关系可否升级为双向？等价网络的每一次扩张都会带来新的攻击面。
+\end{enumerate}
+
+\subsection{数学共同体的层面}
+
+\begin{itemize}
+    \item \textbf{大型证明的可传递性}：IUT 事件提出的元问题——一个无法被外部专家按常规标准核验的证明是否“存在”——尚无共识答案。可能的制度化响应（结构化验证报告、社区证明审计、形式化验证在高端算术几何中的可行性）本身是开放的研究方向。
+    \item \textbf{形式化}：即便 ABC 的证明出现，把 Mason--Stothers 及其推论形式化到 Lean 级别是近期的现实目标；IUT 级别理论的形式化则远超现有工具，但其“是否可形式化”本身就是对可传递性的一个判据。
+\end{itemize}

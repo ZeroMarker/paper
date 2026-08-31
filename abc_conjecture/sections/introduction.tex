@@ -1,0 +1,36 @@
+\section{引言}\label{sec:introduction}
+
+ABC 猜想是算术几何中被引用最多的开放命题之一，其地位类似一枚“万能钥匙”：许多丢番图方程的存在性、有限性与有效性问题，只要允许一个误差指数 $\varepsilon$，都会被它一举解决。它的表述同样是出奇地朴素：
+
+\begin{quote}
+    \textit{对任意 $\varepsilon > 0$，存在仅依赖 $\varepsilon$ 的常数 $K_\varepsilon$，使得对一切两两互素且满足 $a + b = c$ 的正整数三元组，有}
+    \begin{equation*}
+        c < K_\varepsilon \cdot \operatorname{rad}(abc)^{1+\varepsilon},
+    \end{equation*}
+    \textit{其中 $\operatorname{rad}(n) = \prod_{p \mid n} p$ 为 $n$ 的根基（不同素因子之积）。}
+\end{quote}
+
+\subsection{问题的内涵：加法与乘法的不相容性}
+
+记 $q(a,b,c) = \log c / \log \operatorname{rad}(abc)$ 为三元组的\textbf{质量}。ABC 猜想等价于断言：质量超过 $1 + \varepsilon$ 的三元组只有有限多个（且随 $\varepsilon \to 0$ 的分布由 $K_\varepsilon$ 控制）。其内涵可以用一句话概括：\textbf{若 $a$ 与 $b$ 都由高次幂构成，则它们的和 $c$ 必然近乎无平方因子}。例如记录级的三元组
+\begin{equation}
+    2 + 3^{10} \cdot 109 = 23^5
+\end{equation}
+中，左右两侧分别被 $3^{10}$ 与 $23^5$ 主导，根基却只含 $2 \cdot 3 \cdot 109 \cdot 23$ 四个素数——加法不认得乘法的幂结构，这种“意外”必须稀有。
+
+把猜想写成 $1 + \varepsilon$ 而非 $1$ 并非修饰：$\varepsilon$ 吸收了根基理论中不可避免的“小公因子”损耗（如 $c$ 与 $ab$ 共享小素数幂的情形）。相应的 $\varepsilon = 0$ 的“裸形式”一般不成立，其失效方式恰由椭圆曲线的 Szpiro 比率刻画（见\cref{sec:methods}）。
+
+\subsection{研究意义}
+
+ABC 猜想的研究意义体现在多重层面：
+
+\begin{enumerate}[label=(\arabic*)]
+    \item \textbf{丢番图方程的“总开关”}：渐近形式的费马大定理、Catalan--Mih\u{a}ilescu 定理的绝大部分情形、广义费马方程 $x^p + y^q = z^r$（$1/p + 1/q + 1/r < 1$）的有效有限性、Hall 猜想弱形式、$n^2+1$ 的平方自由性等一大批经典问题，都是 ABC 的直接推论（见\cref{sec:applications}）。在“ $\varepsilon$ 换有限性”的意义上，它是已知性价比最高的猜想。
+    \item \textbf{算术几何的试金石}：ABC 与 Szpiro 猜想经 Frey 曲线互相等价，是 Vojta 关于高度与迹的大猜想在最简单曲线上的特例；它与 Szpiro、Mordell、Shafarevich 构成的等价网络，刻画了“数域上何种良性是可达的”这一根本问题。
+    \item \textbf{方法论的交汇点}：函数域中的原型定理（Mason--Stothers）可由初等微积分（Wronskian）证明，而数域情形的已知结果依赖 Baker 的对数线性型理论；构造反例候补需要 Belyi 映射与椭圆曲线的算术；宣称的证明（宇宙际 Teichm\"uller 理论）则动用了算术基本群与 $p$-adic Teichm\"uller 理论的全部武库。一个猜想让初等数论、超越数论、代数几何与形变理论同台演出，这在数学中并不多见。
+    \item \textbf{数学社会学案例}：望月新一的 IUT 论文（2012）与 Scholze--Stix 的公开质疑（2018）把“大型证明的验证规范”推到了前所未有的位置——这不仅关乎 ABC 本身，也关乎数学共同体如何处理长达数百页、依赖自建语言体系的证明。
+\end{enumerate}
+
+\subsection{本文结构}
+
+本文组织如下：\cref{sec:history} 回顾从函数域原型到 IUT 的历史发展；\cref{sec:methods} 介绍主要研究方法；\cref{sec:results} 总结已证结果、无条件界与 IUT 的现状；\cref{sec:applications} 讨论推论与应用；\cref{sec:open_problems} 列举开放问题与推广方向；\cref{sec:conclusion} 总结全文。
